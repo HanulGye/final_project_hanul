@@ -1,3 +1,4 @@
+
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page session="false" %>
 <!DOCTYPE html>
@@ -5,7 +6,7 @@
 
   <head>
 
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -29,34 +30,75 @@
   </head>
 
   <body id="page-top">
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-      <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top"><img alt="" src="${pageContext.request.contextPath}/resources/img/header_img/logoEg.png"></a>
+	
+	<nav class="navbar navbar-expand-sm bg-dark sticky">
+		<div class="collapse navbar-collapse" id="navbarResponsive">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item mr-3"><i class="fa fa-user-circle" aria-hidden="true" style="color: white;"></i></li>
+				<li class="nav-item mr-3"><i class="fa fa-user-plus" aria-hidden="true" style="color: white;"></i></li>
+				<li class="nav-item mr-3"><i class="fa fa-truck" aria-hidden="true" style="color: white;"></i></li>
+				<li class="nav-item" style="margin-right: 200px;"><i class="fa fa-shopping-cart" aria-hidden="true" style="color: white;"></i></li>
+			</ul>
+		</div>
+	</nav>
+    <!-- Navigation -->	
+    <nav class="navbar navbar-expand-lg bg-dark sticky-top" id="mainNav">	
+      
+      <div class="container">  
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">Home</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#about">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#services">Services</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
-            </li>
+          <ul class="navbar-nav mx-auto">
+             <li class="nav-item dropdown">
+		       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		          PlayStation
+		       </a>
+		       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+		         <a class="dropdown-item" href="#">PlayStation 4</a>
+		         <a class="dropdown-item" href="#">PlayStation VR</a>
+		         <a class="dropdown-item" href="#">PlayStation 3</a>
+		         <a class="dropdown-item" href="#">PlayStation Vita	</a>
+		       </div>
+		     </li>
+            <li class="nav-item dropdown">
+		       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		          Nintendo
+		       </a>
+		       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+		         <a class="dropdown-item" href="#">Nintendo Switch</a>
+		         <a class="dropdown-item" href="#">Nintendo 3DS</a>
+		       </div>
+		     </li>
+		     <li class="nav-item dropdown">
+		       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		          XBox
+		       </a>
+		       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+		         <a class="dropdown-item" href="#">XBox One</a>
+		         <a class="dropdown-item" href="#">XBox 360</a>
+		       </div>
+		     </li>
+		     <li class="nav-item dropdown">
+		       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		          Etc
+		       </a>
+		       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+		         <a class="dropdown-item" href="#">Hardware</a>
+		         <a class="dropdown-item" href="#">Peripheral</a>
+		       </div>
+		     </li>
           </ul>
         </div>
+        <form class="form-inline">
+	    	<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+	    	<button class="btn btn-dark my-2 my-sm-0" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+	  	</form>
       </div>
     </nav>
 
-    <header class="masthead text-center text-white d-flex">
+    <!-- <header class="masthead text-center text-white d-flex">
       <div class="container my-auto">
         <div class="row">
           <div class="col-lg-10 mx-auto">
@@ -71,13 +113,51 @@
           </div>
         </div>
       </div>
-    </header>
+    </header> -->
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+	  <ol class="carousel-indicators">
+	    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+	    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+	    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+	  </ol>
+	  <div class="carousel-inner">
+	    <div class="carousel-item active">
+	      <img class="d-block w-80" src="${pageContext.request.contextPath}/resources/img/slide_img/battleField_main.jpg" alt="First slide">
+	      <div class="carousel-caption d-none d-md-block">
+    		<h2 style="font-size:100px; text-shadow: 0 0 2px gray;">BATTLE FIELD V</h2>
+   	 		<h4 style="margin-bottom: 300px; text-shadow: 0 0 2px black;">정통 FPS의 최신작 지금 만나보세요.</h4>
+  		 </div>
+	    </div>
+	    <div class="carousel-item">
+	      <img class="d-block w-80" src="${pageContext.request.contextPath}/resources/img/slide_img/fifa_main.jpg" alt="Second slide">
+	      <div class="carousel-caption d-none d-md-block">
+    		<h2 style="font-size:100px; text-shadow: 0 0 2px gray;">FIFA 19</h2>
+   	 		<h4 style="margin-bottom: 300px; text-shadow: 0 0 2px black;">최신 로스터 업데이트!</h4>
+  		  </div>
+	    </div>
+	    <div class="carousel-item">
+	      <img class="d-block w-80" src="${pageContext.request.contextPath}/resources/img/slide_img/sekiro_main.jpg" alt="Third slide">
+	      <div class="carousel-caption d-none d-md-block">
+    		<h2 style="font-size:100px; text-shadow: 0 0 2px gray;">SEKIRO</h2>
+   	 		<h4 style="margin-bottom: 300px; text-shadow: 0 0 2px black;">인왕을 잇는 소울류 신작!</h4>
+  		  </div>
+	    </div>
+	  </div>
+	  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+	    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+	    <span class="sr-only">Previous</span>
+	  </a>
+	  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+	    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+	    <span class="sr-only">Next</span>
+	  </a>
+	</div>
 
     <section class="bg-primary" id="about">
       <div class="container">
         <div class="row">
           <div class="col-lg-8 mx-auto text-center">
-            <h2 class="section-heading text-white">We've got what you need!</h2>
+            <h2 class="section-heading text-white">예약 상품 보기</h2>
             <hr class="light my-4">
             <p class="text-faded mb-4">Start Bootstrap has everything you need to get your new website up and running in no time! All of the templates and themes on Start Bootstrap are open source, free to download, and easy to use. No strings attached!</p>
             <a class="btn btn-light btn-xl js-scroll-trigger" href="#services">Get Started!</a>
@@ -90,7 +170,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-12 text-center">
-            <h2 class="section-heading">At Your Service</h2>
+            <h2 class="section-heading">인기 기종별 상품 한 눈에 보기!</h2>
             <hr class="my-4">
           </div>
         </div>
@@ -99,30 +179,30 @@
         <div class="row">
           <div class="col-lg-3 col-md-6 text-center">
             <div class="service-box mt-5 mx-auto">
-              <i class="fas fa-4x fa-gem text-primary mb-3 sr-icon-1"></i>
-              <h3 class="mb-3">Sturdy Templates</h3>
-              <p class="text-muted mb-0">Our templates are updated regularly so they don't break.</p>
+              <img src="${pageContext.request.contextPath}/resources/img/icon_img/ps_icon.png" style="width: 95px; height: 95px;">
+              <h3 class="mt-3">Play Station 4</h3>
+              <p class="text-muted mb-0">View into PS4</p>
             </div>
           </div>
           <div class="col-lg-3 col-md-6 text-center">
             <div class="service-box mt-5 mx-auto">
-              <i class="fas fa-4x fa-paper-plane text-primary mb-3 sr-icon-2"></i>
-              <h3 class="mb-3">Ready to Ship</h3>
-              <p class="text-muted mb-0">You can use this theme as is, or you can make changes!</p>
+              <img src="${pageContext.request.contextPath}/resources/img/icon_img/nintendo_icon.png" style="width: 90px; height: 90px;">
+              <h3 class="mt-4">Switch</h3>
+              <p class="text-muted mb-0">View into Switch</p>
             </div>
           </div>
           <div class="col-lg-3 col-md-6 text-center">
             <div class="service-box mt-5 mx-auto">
-              <i class="fas fa-4x fa-code text-primary mb-3 sr-icon-3"></i>
-              <h3 class="mb-3">Up to Date</h3>
-              <p class="text-muted mb-0">We update dependencies to keep things fresh.</p>
+              <img src="${pageContext.request.contextPath}/resources/img/icon_img/xbox_icon.png" style="width: 90px; height: 90px;">
+              <h3 class="mt-4">Xbox One</h3>
+              <p class="text-muted mb-0">View into Xbox One</p>
             </div>
           </div>
           <div class="col-lg-3 col-md-6 text-center">
             <div class="service-box mt-5 mx-auto">
-              <i class="fas fa-4x fa-heart text-primary mb-3 sr-icon-4"></i>
-              <h3 class="mb-3">Made with Love</h3>
-              <p class="text-muted mb-0">You have to make your websites with love these days!</p>
+              <i class="fa fa-gamepad fa-6x" aria-hidden="true"></i>
+              <h3 class="mt-4">ETC</h3>
+              <p class="text-muted mb-0">View into HardWare, Controller And Etc</p>
             </div>
           </div>
         </div>
@@ -133,15 +213,15 @@
       <div class="container-fluid p-0">
         <div class="row no-gutters popup-gallery">
           <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="${pageContext.request.contextPath}/resources/img/portfolio/fullsize/1.jpg">
-              <img class="img-fluid" src="${pageContext.request.contextPath}/resources/img/portfolio/thumbnails/1.jpg" alt="">
+            <a class="portfolio-box" href="./">
+              <img class="img-fluid" src="${pageContext.request.contextPath}/resources/img/portfolio/thumbnails/action_thumbnail.png" alt="">
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
                   <div class="project-category text-faded">
-                    Category
+                    <h2>ACTION</h2>
                   </div>
                   <div class="project-name">
-                    Project Name
+                    View More Title
                   </div>
                 </div>
               </div>
@@ -149,7 +229,7 @@
           </div>
           <div class="col-lg-4 col-sm-6">
             <a class="portfolio-box" href="${pageContext.request.contextPath}/resources/img/portfolio/fullsize/2.jpg">
-              <img class="img-fluid" src="${pageContext.request.contextPath}/resources/img/portfolio/thumbnails/2.jpg" alt="">
+              <img class="img-fluid" src="${pageContext.request.contextPath}/resources/img/portfolio/thumbnails/sports_thumbnail.jpg" alt="">
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
                   <div class="project-category text-faded">
@@ -164,7 +244,7 @@
           </div>
           <div class="col-lg-4 col-sm-6">
             <a class="portfolio-box" href="${pageContext.request.contextPath}/resources/img/portfolio/fullsize/3.jpg">
-              <img class="img-fluid" src="${pageContext.request.contextPath}/resources/img/portfolio/thumbnails/3.jpg" alt="">
+              <img class="img-fluid" src="${pageContext.request.contextPath}/resources/img/portfolio/thumbnails/rpg_thumbnail.jpg" alt="">
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
                   <div class="project-category text-faded">
@@ -179,7 +259,7 @@
           </div>
           <div class="col-lg-4 col-sm-6">
             <a class="portfolio-box" href="${pageContext.request.contextPath}/resources/img/portfolio/fullsize/4.jpg">
-              <img class="img-fluid" src="${pageContext.request.contextPath}/resources/img/portfolio/thumbnails/4.jpg" alt="">
+              <img class="img-fluid" src="${pageContext.request.contextPath}/resources/img/portfolio/thumbnails/casual_thumbnail.jpg" alt="">
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
                   <div class="project-category text-faded">
@@ -193,8 +273,8 @@
             </a>
           </div>
           <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="${pageContext.request.contextPath}/resources/img/portfolio/fullsize/5.jpg">
-              <img class="img-fluid" src="${pageContext.request.contextPath}/resources/img/portfolio/thumbnails/5.jpg" alt="">
+            <a class="portfolio-box" href="#">
+              <img class="img-fluid" src="${pageContext.request.contextPath}/resources/img/portfolio/thumbnails/versus_thumbnail.jpg" alt="">
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
                   <div class="project-category text-faded">
@@ -209,7 +289,7 @@
           </div>
           <div class="col-lg-4 col-sm-6">
             <a class="portfolio-box" href="${pageContext.request.contextPath}/resources/img/portfolio/fullsize/6.jpg">
-              <img class="img-fluid" src="${pageContext.request.contextPath}/resources/img/portfolio/thumbnails/6.jpg" alt="">
+              <img class="img-fluid" src="${pageContext.request.contextPath}/resources/img/portfolio/thumbnails/etc_thumbnail.jpg" alt="">
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
                   <div class="project-category text-faded">
@@ -228,8 +308,8 @@
 
     <section class="bg-dark text-white">
       <div class="container text-center">
-        <h2 class="mb-4">Free Download at Start Bootstrap!</h2>
-        <a class="btn btn-light btn-xl sr-button" href="http://startbootstrap.com/template-overviews/creative/">Download Now!</a>
+        <h2 class="mb-4">공략보러 가자</h2>
+        <a class="btn btn-light btn-xl sr-button" href="#">Go to Community</a>
       </div>
     </section>
 
@@ -237,22 +317,42 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-8 mx-auto text-center">
-            <h2 class="section-heading">Let's Get In Touch!</h2>
+            <h2 class="section-heading">문의사항이 있으신가요?</h2>
             <hr class="my-4">
-            <p class="mb-5">Ready to start your next project with us? That's great! Give us a call or send us an email and we will get back to you as soon as possible!</p>
+            <p class="mb-5">문의 사항의 경우, 아래의 이메일 혹은 전화번호로 연락 주십시오.<br> (전화는 09:00 ~ 18:00)</p>
           </div>
         </div>
         <div class="row">
           <div class="col-lg-4 ml-auto text-center">
+        	<i class="fa fa-user-circle fa-3x mb-3 sr-contact-1"></i>
+        	<p>LogIn</p>
+          </div>
+          <div class="col-lg-4 mr-auto text-center">
             <i class="fas fa-phone fa-3x mb-3 sr-contact-1"></i>
             <p>123-456-6789</p>
           </div>
-          <div class="col-lg-4 mr-auto text-center">
+        </div>
+        <div class="row">
+         <div class="col-lg-4 ml-auto text-center">
+        	<i class="fa fa-user-plus fa-3x mb-3 sr-contact-1"></i>
+        	<p>Join</p>
+         </div>
+         <div class="col-lg-4 mr-auto text-center">
             <i class="fas fa-envelope fa-3x mb-3 sr-contact-2"></i>
             <p>
-              <a href="mailto:your-email@your-domain.com">feedback@startbootstrap.com</a>
+              <a href="mailto:your-email@your-domain.com">adminster@test.com</a>
             </p>
           </div>
+        </div>
+        <div class="row">
+         <div class="col-lg-4 ml-auto text-center">
+         	<i class="fa fa-map-marker fa-3x mb-3"></i>
+        	<p>매장 안내</p>
+         </div>
+         <div class="col-lg-4 mr-auto text-center">
+         	<i></i>
+        	<p></p>
+         </div>
         </div>
       </div>
     </section>
