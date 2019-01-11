@@ -115,21 +115,18 @@
       <div class="row">
 
         <div class="col-lg-2">
-		  <img class="mb-3 font_img_size" alt="" src="${pageContext.request.contextPath}/resources/img/icon_img/xbox_one_font.png">	
-          <!-- <h2 class="my-4">Shop Name</h2> -->
+          <h2 class="my-4">Community</h2>
           <div class="list-group list-group-flush">
             <a href="#" class="list-group-item list-group-item-action">Category 1</a>
             <a href="#" class="list-group-item list-group-item-action">Category 2</a>
             <a href="#" class="list-group-item list-group-item-action">Category 3</a>
-            <a href="#" class="list-group-item list-group-item-action">Category 4</a>
-            <a href="#" class="list-group-item list-group-item-action">Category 5</a>
-            <a href="#" class="list-group-item list-group-item-action">Category 6</a>
-            <a class="list-group-item nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		          Category 7
+            <a class="list-group-item list-group-item-action nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		          Review
 		       </a>
-		       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-		         <a class="dropdown-item" href="#">Playstation3</a>
-		         <a class="dropdown-item" href="#">Playstation2</a>
+		       <div class="dropdown-menu menu_dd_style" aria-labelledby="navbarDropdown">
+		         <a class="dropdown-item" href="#">PlayStation4</a>
+		         <a class="dropdown-item" href="#">Switch</a>
+		         <a class="dropdown-item" href="#">XBox One</a>
 		       </div>
           </div>
 
@@ -138,193 +135,27 @@
 
         <div class="col-lg-10">
 
-          <form class="form-inline" id="go_to_top">
+          <form class="form-inline mb-4" id="go_to_top">
           	<div class="mx-auto mb-4">
-		    	<input class="form-control form-control-lg mr-sm-2" type="search" placeholder="검색" aria-label="Search">
+		    	<input class="form-control form-control-lg mr-sm-2" type="search" placeholder="공략을 보자" aria-label="Search">
 		    	<button class="btn btn-dark my-2 my-sm-0" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>          	
           	</div>
 	  	  </form>
 		
-		  <div class="btn-group btn-group-sm btn-group-toggle my-4 col-lg-4 offset-lg-8" data-toggle="buttons">
-			  <label class="btn btn-outline-dark active sorting_group">
-			    <input type="radio" name="options" id="option1" autocomplete="off" checked> 최신순
-			  </label>
-			  <label class="btn btn-outline-dark sorting_group">
-			    <input type="radio" name="options" id="option2" autocomplete="off"> 평가순
-			  </label>
-			  <label class="btn btn-outline-dark sorting_group">
-			    <input type="radio" name="options" id="option3" autocomplete="off"> 판매순
-			  </label>
-			  <label class="btn btn-outline-dark sorting_group">
-			    <input type="radio" name="options" id="option2" autocomplete="off"> 높은가격순
-			  </label>
-			  <label class="btn btn-outline-dark sorting_group">
-			    <input type="radio" name="options" id="option3" autocomplete="off"> 낮은가격순
-			  </label>
-		  </div>
-		
-		
           <div class="row">
-
-            <div class="col-lg-2 col-md-6 mb-4">
-              <div class="card h-100">
-                <a href="#"><img class="card-img-top p-2" src="${pageContext.request.contextPath}/resources/img/product_test_img/0090020007002.jpg" alt="" style="height: 264px;"></a>
-                <div class="card-body">
-                  <h4 class="card-title">
-                    <a href="#">Item Two</a>
-                  </h4>
-                  <h5>$24.99</h5>
-                  <div>
-	                  <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-					  <span class="font-weight-light ml-4">4.5</span>                  
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-2 col-md-6 mb-4">
+			<c:forEach var="i" begin="1" end="12" step="1">
+			<div class="col-lg-2 col-md-6 mb-4">
               <div class="card h-100">
                 <a href="#"><img class="card-img-top" src="${pageContext.request.contextPath}/resources/img/product_test_img/0090020007002.jpg" alt="" style="height: 264px;"></a>
                 <div class="card-body">
                   <h4 class="card-title">
                     <a href="#">Item Two</a>
                   </h4>
-                  <h5>Sold Out</h5>
-                  <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
                 </div>
               </div>
-            </div>
-
-            <div class="col-lg-2 col-md-6 mb-4">
-              <div class="card h-100">
-                <a href="#"><img class="card-img-top" src="${pageContext.request.contextPath}/resources/img/product_test_img/0090020007002.jpg" alt="" style="height: 264px;"></a>
-                <div class="card-body">
-                  <h4 class="card-title">
-                    <a href="#">Item Two</a>
-                  </h4>
-                  <h5>$24.99</h5>
-                  <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                </div>
-              </div>
-            </div>
+            </div>			
+			</c:forEach>
             
-            <div class="col-lg-2 col-md-6 mb-4">
-              <div class="card h-100">
-                <a href="#"><img class="card-img-top" src="${pageContext.request.contextPath}/resources/img/product_test_img/0090020007002.jpg" alt="" style="height: 264px;"></a>
-                <div class="card-body">
-                  <h4 class="card-title">
-                    <a href="#">Item Two</a>
-                  </h4>
-                  <h5>$24.99</h5>
-                  <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                </div>
-              </div>
-            </div>
-            
-            <div class="col-lg-2 col-md-6 mb-4">
-              <div class="card h-100">
-                <a href="#"><img class="card-img-top" src="${pageContext.request.contextPath}/resources/img/product_test_img/0090020007002.jpg" alt="" style="height: 264px;"></a>
-                <div class="card-body">
-                  <h4 class="card-title">
-                    <a href="#">Item Two</a>
-                  </h4>
-                  <h5>$24.99</h5>
-                  <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                </div>
-              </div>
-            </div>
-            
-            <div class="col-lg-2 col-md-6 mb-4">
-              <div class="card h-100">
-                <a href="#"><img class="card-img-top" src="${pageContext.request.contextPath}/resources/img/product_test_img/0090020007002.jpg" alt="" style="height: 264px;"></a>
-                <div class="card-body">
-                  <h4 class="card-title">
-                    <a href="#">Item Two</a>
-                  </h4>
-                  <h5>$24.99</h5>
-                  <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                </div>
-              </div>
-            </div>
-            
-            <div class="col-lg-2 col-md-6 mb-4">
-              <div class="card h-100">
-                <a href="#"><img class="card-img-top" src="${pageContext.request.contextPath}/resources/img/product_test_img/0090020007002.jpg" alt="" style="height: 264px;"></a>
-                <div class="card-body">
-                  <h4 class="card-title">
-                    <a href="#">Item Two</a>
-                  </h4>
-                  <h5>$24.99</h5>
-                  <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                </div>
-              </div>
-            </div>
-            
-            <div class="col-lg-2 col-md-6 mb-4">
-              <div class="card h-100">
-                <a href="#"><img class="card-img-top" src="${pageContext.request.contextPath}/resources/img/product_test_img/0090020007002.jpg" alt="" style="height: 264px;"></a>
-                <div class="card-body">
-                  <h4 class="card-title">
-                    <a href="#">Item Two</a>
-                  </h4>
-                  <h5>$24.99</h5>
-                  <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                </div>
-              </div>
-            </div>
-            
-            <div class="col-lg-2 col-md-6 mb-4">
-              <div class="card h-100">
-                <a href="#"><img class="card-img-top" src="${pageContext.request.contextPath}/resources/img/product_test_img/0090020007002.jpg" alt="" style="height: 264px;"></a>
-                <div class="card-body">
-                  <h4 class="card-title">
-                    <a href="#">Item Two</a>
-                  </h4>
-                  <h5>$24.99</h5>
-                  <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                </div>
-              </div>
-            </div>
-            
-            <div class="col-lg-2 col-md-6 mb-4">
-              <div class="card h-100">
-                <a href="#"><img class="card-img-top" src="${pageContext.request.contextPath}/resources/img/product_test_img/0090020007002.jpg" alt="" style="height: 264px;"></a>
-                <div class="card-body">
-                  <h4 class="card-title">
-                    <a href="#">Item Two</a>
-                  </h4>
-                  <h5>$24.99</h5>
-                  <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                </div>
-              </div>
-            </div>
-            
-            <div class="col-lg-2 col-md-6 mb-4">
-              <div class="card h-100">
-                <a href="#"><img class="card-img-top" src="${pageContext.request.contextPath}/resources/img/product_test_img/0090020007002.jpg" alt="" style="height: 264px;"></a>
-                <div class="card-body">
-                  <h4 class="card-title">
-                    <a href="#">Item Two</a>
-                  </h4>
-                  <h5>$24.99</h5>
-                  <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                </div>
-              </div>
-            </div>
-            
-            <div class="col-lg-2 col-md-6 mb-4">
-              <div class="card h-100">
-                <a href="#"><img class="card-img-top" src="${pageContext.request.contextPath}/resources/img/product_test_img/0090020007002.jpg" alt="" style="height: 264px;"></a>
-                <div class="card-body">
-                  <h4 class="card-title">
-                    <a href="#">Item Two</a>
-                  </h4>
-                  <h5>$24.99</h5>
-                  <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                </div>
-              </div>
-            </div>
-
           </div>
           <!-- /.row -->
 		  <div class="mt-4">
