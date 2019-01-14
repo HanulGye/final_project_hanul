@@ -12,5 +12,9 @@ public class MemberController {
 		
 	}
 	
+	@RequestMapping(value="myPage")
+	public void myPage() throws Exception{
+		
+	}
 	
 }

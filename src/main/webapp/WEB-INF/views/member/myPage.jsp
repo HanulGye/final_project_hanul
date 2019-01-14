@@ -113,108 +113,169 @@
 
     
     <div id="margin-top-container">
-		<h1 class="text-center display-4 mb-5">Join Us</h1>
+      	<div class="row">
+      	 <div class="col-lg-2">
+		  <h2 class="my-4 left_menu_style">My Page</h2>	
+		  <ul class="list-group list-group-flush">
+		  	<li class="list-group-item list-group-item-action">
+		  		<a class="font-weight-bold" href="#"><i class="fa fa-user-circle mr-2" aria-hidden="true" style="color: grey;"></i>회원이름</a>
+		  	</li>
+		  	<li class="list-group-item list-group-item-action">
+		  		<a class="font-weight-bold" href="#">회원등급 현황</a>
+		  	</li>
+		  	<li class="list-group-item list-group-item-action">
+		  		<p class="font-weight-bold">쇼핑정보</p>
+		  		<a class="font-weight-light sub_line_height" href="#">주문 배송</a><br>
+		  		<a class="font-weight-light sub_line_height" href="#">취소/반품</a><br>
+		  		<a class="font-weight-light sub_line_height" href="#">반품 현황</a>
+		  	</li>
+		  	<li class="list-group-item list-group-item-action">
+		  		<p class="font-weight-bold">활동정보</p>
+		  		<a class="font-weight-light sub_line_height" href="#">상품리뷰 작성</a><br>
+		  		<a class="font-weight-light sub_line_height" href="#">열람한 공략</a><br>
+		  		<a class="font-weight-light sub_line_height" href="#">오늘 본 상품</a>
+		  	</li>
+		  	<li class="list-group-item list-group-item-action">
+		  		<p class="font-weight-bold">나의정보</p>
+		  		<a class="font-weight-light sub_line_height" href="#">배송지 관리</a><br>
+		  		<a class="font-weight-light sub_line_height" href="#">회원정보 관리</a><br>
+		  		<a class="font-weight-light sub_line_height" href="#">회원탈퇴</a>
+		  	</li>
+		  	<li class="list-group-item list-group-item-action">
+		  		<a class="font-weight-bold" href="#">1:1 문의</a>
+		  	</li>
+		  	<li class="list-group-item list-group-item-action">
+		  		<p>고객센터 번호란</p>
+		  	</li>
+		  </ul>
+
+         </div>
+         <div class="col-lg-10 pl-5">
+         	<div class="card">
+			  <div class="card-header text-left">
+			    <ul class="nav nav-pills card-header-pills row">
+			      <li class="nav-item col-lg-10">
+			        <p class="my-2">최근 주문 내역</p>
+			      </li>
+			      <li class="nav-item col-lg-2">
+			        <a class="nav-link font-weight-bold text-right" href="#">더 보기</a>
+			      </li>
+			      
+			    </ul>
+			  </div>
+			  <div class="card-body text-center">
+			     <div class="row">
+					<table class="table table-hover ml-5 table_sizing">
+						<colgroup>
+							<col style="width:13%">
+							<col style="width:61%">
+							<col style="width:13%">
+							<col style="width:13%">
+						</colgroup>
+						
+						<thead class="thead">
+							<tr>
+								<th class="text-center" scope="col">주문일자</th>
+								<th class="text-center" scope="col">상품명</th>
+								<th class="text-center" scope="col">결제금액</th>
+								<th class="text-center" scope="col">배송현황</th>
+							</tr>
+						</thead>
+						<tbody>
+							<c:forEach var="i" begin="1" end="5" step="1">
+							<tr>
+								<td class="pl-4">19-01-11</td>
+								<td class="text-center">[PS4] 메탈기어 솔리드 V 팬텀 오브 페인</td>
+								<td class="text-center">45,000</td>
+								<td class="text-center">배송 준비중</td>
+							</tr>
+							</c:forEach>	
+						</tbody>
+					</table>
+		            
+		          </div>
+			  </div>
+			</div>
+			
+			<div class="card my-5">
+			  <div class="card-header text-left">
+			    <ul class="nav nav-pills card-header-pills row">
+			      <li class="nav-item col-lg-10">
+			        <p class="my-2">오늘 본 상품</p>
+			      </li>
+			      <li class="nav-item col-lg-2">
+			        <a class="nav-link font-weight-bold text-right" href="#">더 보기</a>
+			      </li>
+			      
+			    </ul>
+			  </div>
+			  <div class="card-body text-center">
+			     <div class="row">
+					<c:forEach var="i" begin="1" end="4" step="1">
+					<div class="col-lg-3 col-md-6 mb-4">
+		              <div class="card h-100">
+		                <a href="#"><img class="card-img-top p-2" src="${pageContext.request.contextPath}/resources/img/product_test_img/0090020007002.jpg" alt="" style="height: 264px;"></a>
+		                <div class="card-body">
+		                  <h4 class="card-title">
+		                    <a href="#">Item Two</a>
+		                  </h4>
+		                  <h5>$24.99</h5>
+		                </div>
+		              </div>
+		            </div>			
+					</c:forEach>
+		            
+		          </div>
+			  </div>
+			</div>
+			
+			<div class="card">
+			  <div class="card-header text-left">
+			    <ul class="nav nav-pills card-header-pills row">
+			      <li class="nav-item col-lg-10">
+			        <p class="my-2">상품 리뷰 관리</p>
+			      </li>
+			      <li class="nav-item col-lg-2">
+			        <a class="nav-link font-weight-bold text-right" href="#">더 보기</a>
+			      </li>
+			      
+			    </ul>
+			  </div>
+			  <div class="card-body text-center">
+			     <div class="row">
+					<table class="table table-hover ml-5 table_sizing">
+						<colgroup>
+							<col style="width:70%">
+							<col style="width:15%">
+							<col style="width:15%">
+						</colgroup>
+						
+						<thead class="thead">
+							<tr>
+								<th class="pl-4 text-left" scope="col">리뷰 제목</th>
+								<th class="text-center" scope="col">평가</th>
+								<th class="text-center" scope="col">날짜</th>
+							</tr>
+						</thead>
+						<tbody>
+							<c:forEach var="i" begin="1" end="5" step="1">
+							<tr>
+								<td class="pl-4 text-left">상품 리뷰 제목입니다.</td>
+								<td class="text-center"><small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small></td>
+								<td class="text-center">19-01-11</td>
+							</tr>
+							</c:forEach>	
+						</tbody>
+					</table>
+		            
+		          </div>
+			  </div>
+			</div>
+			
+			
+         </div>
+      	</div>
       	
-      	<form class="pt-5 join_form_style">
-		  <div class="form-group">
-		    <input type="email" class="form-control" placeholder="사용하실 ID를 입력해주세요.(수신가능 E-mail)">
-		  </div>
-		  <div class="form-group">
-		    <input type="password" class="form-control" placeholder="영문+숫자+특수문자 8~16자리(특수문자 괄호()는 사용 불가)">
-		  </div>
-		  <div class="form-group">
-		    <input type="password" class="form-control" placeholder="비밀번호를 다시 입력해주세요.">
-		  </div>
-		  <div class="form-group">
-		    <input type="text" class="form-control" placeholder="이름을 입력해주세요.">
-		  </div>
-		  <div class="form-group">
-		    <input type="tel" class="form-control" placeholder="휴대전화 번호를 입력해주세요.('-'표 제외)">
-		  </div>
-		  <div class="form-group">
-		    <label for="exampleFormControlTextarea1">
-		     이용약관
-		    </label>
-		    <a href="#" class="font-weight-bold pl-5 offset-lg-9">전문보기</a>
-		    <textarea class="text-sm form-control" id="exampleFormControlTextarea1" readonly class="form-control-plaintext" rows="8">
-		    	이용약관 상세 내용
-		    </textarea>
-		    <div class="form-check">
-  				<input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-  				<label class="form-check-label" for="defaultCheck1">
-    				[필수] 이용약관에 동의합니다.
-				</label>
-			</div>
-		  </div>
-		  <div class="form-group">
-		    <label for="exampleFormControlTextarea1">
-		    	개인정보 수집, 이용 동의
-		    </label>
-		    <table class="table">
-		    	<colgroup>
-					<col style="width:20%">
-					<col style="width:30%">
-					<col style="width:30%">
-					<col style="width:20%">
-				</colgroup>
-		    	<thead class="thead">
-		    		<tr>
-						<th class="text-center" scope="col">일시</th>
-						<th class="text-center" scope="col">수집항목</th>
-						<th class="text-center" scope="col">수집목적</th>
-						<th class="text-center" scope="col">보유기간</th>
-					</tr>
-		    	</thead>
-		    	<tbody>
-		    		<tr>
-						<td>가입시</td>
-						<td>아이디, 이메일, 비밀번호, 이름, 휴대폰 번호</td>
-						<td>회원식별 및 연락</td>
-						<td class="font-weight-bold">회원탈퇴시까지</td>
-					</tr>
-					<tr>
-						<td>최초 구매시	</td>
-						<td>성별, 생년월일, 휴대폰 번호, DI</td>
-						<td>본인확인</td>
-						<td class="font-weight-bold">회원탈퇴시까지</td>
-					</tr>
-					<tr>
-						<td>상품 주문시</td>
-						<td>수령인 정보(이름, 연락처, 주소), 결제수단 정보</td>
-						<td>상품 주문 및 배송 등 구매계약의 이행, 상품구매 관련문의사항과 반품, 환불등 민원사항의 상담 및 처리</td>
-						<td class="font-weight-bold">전자상거래법 등 관련 법령에 따른 보관기간</td>
-					</tr>
-		    	</tbody>
-		    </table>
-		    <div class="form-check">
-  				<input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
-  				<label class="form-check-label" for="defaultCheck2">
-    				[필수] 개인정보 수집, 이용 동의
-				</label>
-				<p>※ 약관 및 개인정보 처리방침은 홈페이지 하단에 전문이 게재되어 있습니다.</p>
-				<p>※ 이용약관 및 개인정보 수집.이용 내용에 대해 동의 거부가 가능하며, 
-					이 경우 회원가입 및 관련 서비스는 이용이 불가합니다.
-				</p>
-			</div>
-		  </div>
-		  <div class="form-check">
-  				<input class="form-check-input" type="checkbox" value="" id="defaultCheck3">
-  				<label class="form-check-label" for="defaultCheck3">
-    				(선택) 쇼핑정보 E-mail 수신 동의
-				</label>
-		  </div>
-		  <div class="form-check">
-  				<input class="form-check-input" type="checkbox" value="" id="defaultCheck4">
-  				<label class="form-check-label" for="defaultCheck4">
-    				(선택) 쇼핑정보 SMS 수신 동의
-				</label>
-				<br>
-				<br>
-				<p>※ 선택항목의 경우 동의하지 않아도 불이익을 받지 않습니다.</p>
-				<p class="font-weight-bold">※ 만 14세 미만은 회원가입 및 서비스 이용이 불가합니다.</p>
-		  </div>
-		  <button class="my-5 btn btn-dark btn-lg btn-block">회원가입 하기</button>	
-		</form>
       
       
     </div>

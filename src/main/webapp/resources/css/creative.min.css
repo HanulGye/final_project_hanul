@@ -349,6 +349,33 @@ header.masthead p {
 	font-size: 0.850rem;
 }
 
+.left_menu_style{
+	font-weight: 300;
+}
+
+.sub_line_height{
+	line-height: 1.9;
+	margin-left: 10%;
+}
+
+.btn_plus_minus{
+	font-size: x-large;
+}
+
+.bold_and_large{
+	font-size: large;
+	font-weight: bold;
+}
+
+.margin_two_per{
+	margin-left: 0.1%;
+}
+
+.btn_radius{
+	border-radius: unset;
+}
+/* Join form */
+
 .join_form_style{
 	width: 45%;
 	margin-right: auto;
@@ -386,4 +413,52 @@ header.masthead p {
 
 .join_form_style > div > p{
 	font-size: 0.750rem;
+}
+
+/* Login form */
+
+#loginWindow{
+	width: 440px;
+	height: 580px;
+	margin: auto;
+}
+
+.login_form_style{
+	margin-top: 10%;
+	margin-bottom: 10%;
+}
+
+.login_form_style > div > input{
+	font-size: 0.800rem;
+}
+
+.img_size{
+	width: 50%;
+	margin-left: 25%;
+}
+
+.font_sizing{
+	font-size: 0.750rem;
+}
+
+.font_sizing2{
+	font-size: 0.690rem;
+}
+
+.btn_sizing{
+	width: 222px;
+}
+
+.text_box_sizing{
+	width: 60%;
+	margin-left: 20%;
+}
+
+.ml_25p{
+	margin-left: 25%;	
+}
+
+.ml_30p_bold{
+	margin-left: 37%;
+	font-weight: bold;
 }

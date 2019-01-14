@@ -113,108 +113,254 @@
 
     
     <div id="margin-top-container">
-		<h1 class="text-center display-4 mb-5">Join Us</h1>
+      	<h1 class="text-center display-4 mb-5">Order</h1>
+      	<div class="row">
+         <div class="col-lg-8">
+         	<div class="card">
+			  <div class="card-header text-left">
+			    <ul class="nav nav-pills card-header-pills row">
+			      <li class="nav-item col-lg-10">
+			        <p class="my-3 bold_and_large">주문고객</p>
+			      </li>
+			      <li class="nav-item col-lg-2">
+			        <a class="nav-link font-weight-bold text-right btn_plus_minus" href="#">+</a>
+			      </li>
+			      
+			    </ul>
+			  </div>
+			  <div class="card-body text-left ml-3">
+				<p>이름 데이터</p>
+				<p>전화번호 데이터</p>
+				<p>이메일 데이터</p>
+			  </div>
+			</div>
+			
+			<div class="card mt-5">
+			  <div class="card-header text-left">
+			    <ul class="nav nav-pills card-header-pills row">
+			      <li class="nav-item col-lg-10">
+			        <p class="my-3 bold_and_large">배송지 정보</p>
+			      </li>
+			      <li class="nav-item col-lg-2">
+			        <a class="nav-link font-weight-bold text-right btn_plus_minus" href="#">+</a>
+			      </li>
+			      
+			    </ul>
+			  </div>
+			  <div class="card-body text-left ml-3">
+				<div class="card">
+				  <div class="card-header text-center">
+				    <ul class="nav nav-tabs card-header-tabs row">
+				      <li class="nav-item col-lg-6">
+				        <a class="nav-link" href="#">이전 주소</a>
+				      </li>
+				      <li class="nav-item col-lg-6">
+				        <a class="nav-link active" href="#">새로 입력</a>
+				      </li>
+				    </ul>
+				  </div>
+				  <div class="card-body">
+				    <form action="">
+				    	<div class="form-group row">
+		    				<div class="col-lg-6">
+			    				<label class="form-control-label" for="recipient">
+	    							받으시는 분
+								</label>
+			    				<input type="text" id="recipient" class="form-control" placeholder="이름">
+		    				</div>
+		    				<div class="col-lg-6">
+			    				<label class="form-control-label" for="phone_number">
+	    							연락처
+								</label>
+			    				<input type="tel" id="phone_number" class="form-control" placeholder="-없이 입력">
+		    				</div>
+		 				</div>
+		 				<div class="form-group">
+			    				<label class="form-control-label" for="delivery_address">
+	    							배송주소
+								</label>
+			    				<span class="row margin_two_per">
+				    				<input type="text" id="delivery_address" class="form-control col-lg-10" placeholder="예) 문래동 강서타워,선유로 82">
+				    				<button type="button" class="btn btn-light col-lg-2 btn_radius">검색</button>
+			    				</span>
+			    				<input type="text" class="mt-1 form-control" placeholder="나머지 주소 입력">
+		    		   </div>
+		    		   <div class="form-check ml-2">
+			  				<input class="form-check-input" type="checkbox" value="" id="del_check">
+			  				<label class="form-check-label" for="del_check">
+			    				기본 주소 사용
+							</label>
+					  </div>
+					  <div class="input-group my-3">
+						  <select class="custom-select">
+						    <option selected>배송 메모를 선택해주세요.</option>
+						    <option value="1">배송시, 연락 부탁드립니다.</option>
+						    <option value="2">빠른 배송 부탁드립니다.</option>
+						    <option value="3">직접입력</option>
+						  </select>
+					  </div>
+					  <small>주문한 상품은 영업일 3일 (공휴일/주말 제외) 이내에 받아보실수 있습니다.</small><br>
+					  <small>상품준비에 에러사항이 있거나, 발송지연이 불가피할 경우 고객께 안내연락을 드립니다.</small>
+					  <button type="button" class="my-4 btn btn-dark btn-lg btn-block">다음 단계 진행</button>
+				    </form>
+				  </div>
+				</div>
+			  </div>
+			</div>
+			
+			<div class="card mt-5">
+			  <div class="card-header text-left">
+			    <ul class="nav nav-pills card-header-pills row">
+			      <li class="nav-item col-lg-10">
+			        <p class="my-3 bold_and_large">할인/혜택 사용</p>
+			      </li>
+			      <li class="nav-item col-lg-2">
+			        <a class="nav-link font-weight-bold text-right btn_plus_minus" href="#">+</a>
+			      </li>
+			      
+			    </ul>
+			  </div>
+			  <div class="card-body text-left ml-3">
+				<label class="form-control-label" for="promo_code">
+	    		 쿠폰 코드 
+				</label>
+				<span class="row">
+			    <input type="text" id="promo_code" class="form-control col-lg-10" placeholder="쿠폰 코드 입력">
+			    <button type="button" class="btn btn-light col-lg-2 btn_radius">적용</button>
+			    </span>
+			    
+			    <label class="form-control-label mt-3" for="point_usable">
+	    		 적립금 사용 
+				</label>
+				<span class="row">
+			    <input type="text" id="point_usable" class="form-control col-lg-10" placeholder="회원별 사용가능 적립금 명시">
+			    <button type="button" class="btn btn-light col-lg-2 btn_radius">적용</button>
+			    </span>
+			  </div>
+			</div>
+			
+			<div class="card mt-5">
+			  <div class="card-header text-left">
+			    <ul class="nav nav-pills card-header-pills row">
+			      <li class="nav-item col-lg-10">
+			        <p class="my-3 bold_and_large">결제수단 선택</p>
+			      </li>
+			      <li class="nav-item col-lg-2">
+			        <a class="nav-link font-weight-bold text-right btn_plus_minus" href="#">+</a>
+			      </li>
+			      
+			    </ul>
+			  </div>
+			  <div class="card-body text-left ml-3">
+				<div class="btn-group-vertical btn-block my-3" role="group">
+				 <button type="button" class="btn btn-dark btn_radius">신용카드</button>
+				 <button type="button" class="btn btn-dark btn_radius">실시간계좌이체</button>
+				 <button type="button" class="btn btn-dark btn_radius">무통장입금</button>
+				 <button type="button" class="btn btn-dark btn_radius">카카오페이</button>
+				</div>
+				<p class="font_sizing font-weight-bold">※휴대폰 소액결제로 주문하시는 경우, 부분 반품 진행이 불가합니다.</p>
+				<p class="font_sizing">주문한 상품은 영업일 3일 (공휴일/주말 제외) 이내에 받아보실수 있습니다.</p>
+				<p class="font_sizing">상품준비에 에러사항이 있거나, 발송지연이 불가피할 경우 고객께 안내연락을 드립니다.</p>
+				<div class="form-check">
+			  	 <input class="form-check-input" type="checkbox" value="" id="final_check">
+			  	 <label class="form-check-label font_sizing" for="final_check">
+			    	위 주문의 상품, 가격, 할인, 배송정보에 동의합니다.
+				 </label>
+				</div>
+				<button type="button" class="my-4 btn btn-dark btn-lg btn-block">45,950원 결제하기</button>
+			  </div>
+			</div>
+			
+			
+			
+			
+			
+         </div>
+         
+         <div class="col-lg-4">
+         	<div class="card">
+			  <div class="card-header text-left">
+			    <ul class="nav nav-pills card-header-pills row">
+			      <li class="nav-item col-lg-10">
+			        <p class="my-3 bold_and_large">주문내역</p>
+			      </li>
+			      <li class="nav-item col-lg-2">
+			      </li>
+			      
+			    </ul>
+			  </div>
+			  <div class="card-body text-left ml-3">
+				<table class="font_sizing text-center">
+				  <tbody>
+				    <tr>
+				      <td rowspan="5"><img class="pr-3" style="height: 30%" alt="" src="${pageContext.request.contextPath}/resources/img/product_test_img/rockman_11.jpg"></td>
+				      <td class="font-weight-bold" colspan="2">Rockman 11</td>
+				    </tr>
+				    <tr>
+				      <td class="text-left">Platform</td>
+				      <td>PlayStation4</td>
+				    </tr>
+				    <tr>
+				      <td class="text-left">Option</td>
+				      <td>[상세 보기]</td>
+				    </tr>
+				    <tr>
+				      <td class="text-left">Quantity</td>
+				      <td>1</td>
+				    </tr>
+				    <tr>
+				      <td class="font-weight-bold" colspan="2">45,950 원</td>
+				    </tr>
+				  </tbody>
+				</table>
+				<table class="mt-4" style="width: 100%">
+					<tbody>
+						<tr>
+							<td>상품금액</td>
+							<td class="text-right">45,950 원</td>
+						</tr>
+						<tr>
+							<td>배송비</td>
+							<td class="text-right">2,500 원</td>
+						</tr>
+						<tr>
+							<td>상품 할인금액</td>
+							<td class="text-right">0 원</td>
+						</tr>
+						<tr>
+							<td>주문 할인금액</td>
+							<td class="text-right">0 원</td>
+						</tr>
+					</tbody>
+				</table>
+				<table class="mt-3" style="width: 100%">
+					<tbody>
+						<tr>
+							<td class="font-weight-bold">총 결제 예정 금액</td>
+							<td class="font-weight-bold text-right">48,450 원</td>
+						</tr>
+					</tbody>
+				</table>
+				<ul class="list-unstyled font_sizing mt-4">
+				  
+				  <li class="font-weight-bold">※ 배송비 안내
+				    <ul class="list-unstyled font-weight-light font_sizing2">
+				      <li># 기본 배송비 2,500 원/ 도서산간지역 추가비용</li>
+				      <li># 50,000원 이상 구매시 배송비 무료.</li>
+				    </ul>
+				  </li>
+				  <li class="font-weight-bold mt-4">※ 프로모션 코드 및 적립금 사용 안내
+				    <ul class="list-unstyled font-weight-light font_sizing2">
+				      <li># 프로모션 코드 사용에 따라 최종 금액이 변동될 수 있습니다.</li>
+				      <li># 적립금은 최소 1,000 원 이상부터 사용 가능합니다.</li>
+				    </ul>
+				  </li>
+				</ul>
+			  </div>
+			</div>
+         </div>
+      	</div>
       	
-      	<form class="pt-5 join_form_style">
-		  <div class="form-group">
-		    <input type="email" class="form-control" placeholder="사용하실 ID를 입력해주세요.(수신가능 E-mail)">
-		  </div>
-		  <div class="form-group">
-		    <input type="password" class="form-control" placeholder="영문+숫자+특수문자 8~16자리(특수문자 괄호()는 사용 불가)">
-		  </div>
-		  <div class="form-group">
-		    <input type="password" class="form-control" placeholder="비밀번호를 다시 입력해주세요.">
-		  </div>
-		  <div class="form-group">
-		    <input type="text" class="form-control" placeholder="이름을 입력해주세요.">
-		  </div>
-		  <div class="form-group">
-		    <input type="tel" class="form-control" placeholder="휴대전화 번호를 입력해주세요.('-'표 제외)">
-		  </div>
-		  <div class="form-group">
-		    <label for="exampleFormControlTextarea1">
-		     이용약관
-		    </label>
-		    <a href="#" class="font-weight-bold pl-5 offset-lg-9">전문보기</a>
-		    <textarea class="text-sm form-control" id="exampleFormControlTextarea1" readonly class="form-control-plaintext" rows="8">
-		    	이용약관 상세 내용
-		    </textarea>
-		    <div class="form-check">
-  				<input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-  				<label class="form-check-label" for="defaultCheck1">
-    				[필수] 이용약관에 동의합니다.
-				</label>
-			</div>
-		  </div>
-		  <div class="form-group">
-		    <label for="exampleFormControlTextarea1">
-		    	개인정보 수집, 이용 동의
-		    </label>
-		    <table class="table">
-		    	<colgroup>
-					<col style="width:20%">
-					<col style="width:30%">
-					<col style="width:30%">
-					<col style="width:20%">
-				</colgroup>
-		    	<thead class="thead">
-		    		<tr>
-						<th class="text-center" scope="col">일시</th>
-						<th class="text-center" scope="col">수집항목</th>
-						<th class="text-center" scope="col">수집목적</th>
-						<th class="text-center" scope="col">보유기간</th>
-					</tr>
-		    	</thead>
-		    	<tbody>
-		    		<tr>
-						<td>가입시</td>
-						<td>아이디, 이메일, 비밀번호, 이름, 휴대폰 번호</td>
-						<td>회원식별 및 연락</td>
-						<td class="font-weight-bold">회원탈퇴시까지</td>
-					</tr>
-					<tr>
-						<td>최초 구매시	</td>
-						<td>성별, 생년월일, 휴대폰 번호, DI</td>
-						<td>본인확인</td>
-						<td class="font-weight-bold">회원탈퇴시까지</td>
-					</tr>
-					<tr>
-						<td>상품 주문시</td>
-						<td>수령인 정보(이름, 연락처, 주소), 결제수단 정보</td>
-						<td>상품 주문 및 배송 등 구매계약의 이행, 상품구매 관련문의사항과 반품, 환불등 민원사항의 상담 및 처리</td>
-						<td class="font-weight-bold">전자상거래법 등 관련 법령에 따른 보관기간</td>
-					</tr>
-		    	</tbody>
-		    </table>
-		    <div class="form-check">
-  				<input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
-  				<label class="form-check-label" for="defaultCheck2">
-    				[필수] 개인정보 수집, 이용 동의
-				</label>
-				<p>※ 약관 및 개인정보 처리방침은 홈페이지 하단에 전문이 게재되어 있습니다.</p>
-				<p>※ 이용약관 및 개인정보 수집.이용 내용에 대해 동의 거부가 가능하며, 
-					이 경우 회원가입 및 관련 서비스는 이용이 불가합니다.
-				</p>
-			</div>
-		  </div>
-		  <div class="form-check">
-  				<input class="form-check-input" type="checkbox" value="" id="defaultCheck3">
-  				<label class="form-check-label" for="defaultCheck3">
-    				(선택) 쇼핑정보 E-mail 수신 동의
-				</label>
-		  </div>
-		  <div class="form-check">
-  				<input class="form-check-input" type="checkbox" value="" id="defaultCheck4">
-  				<label class="form-check-label" for="defaultCheck4">
-    				(선택) 쇼핑정보 SMS 수신 동의
-				</label>
-				<br>
-				<br>
-				<p>※ 선택항목의 경우 동의하지 않아도 불이익을 받지 않습니다.</p>
-				<p class="font-weight-bold">※ 만 14세 미만은 회원가입 및 서비스 이용이 불가합니다.</p>
-		  </div>
-		  <button class="my-5 btn btn-dark btn-lg btn-block">회원가입 하기</button>	
-		</form>
       
       
     </div>
