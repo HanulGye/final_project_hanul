@@ -277,7 +277,7 @@
 			
          </div>
          
-         <div class="col-lg-4">
+         <div class="col-lg-4 ">
          	<div class="card">
 			  <div class="card-header text-left">
 			    <ul class="nav nav-pills card-header-pills row">
