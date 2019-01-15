@@ -113,171 +113,60 @@
 
     
     <div id="margin-top-container">
-      	<h1 class="text-center display-4 mb-5">Order</h1>
+      	<h1 class="text-center display-4 mb-5">Cart</h1>
       	<div class="row">
-         <div class="col-lg-8">
-         	<div class="card">
-			  <div class="card-header text-left">
-			    <ul class="nav nav-pills card-header-pills row">
-			      <li class="nav-item col-lg-10">
-			        <p class="my-3 bold_and_large">주문고객</p>
-			      </li>
-			      <li class="nav-item col-lg-2">
-			        <a class="nav-link font-weight-bold text-right btn_plus_minus" href="#">+</a>
-			      </li>
-			      
-			    </ul>
-			  </div>
-			  <div class="card-body text-left ml-3">
-				<p>이름 데이터</p>
-				<p>전화번호 데이터</p>
-				<p>이메일 데이터</p>
-			  </div>
-			</div>
-			
-			<div class="card mt-5">
-			  <div class="card-header text-left">
-			    <ul class="nav nav-pills card-header-pills row">
-			      <li class="nav-item col-lg-10">
-			        <p class="my-3 bold_and_large">배송지 정보</p>
-			      </li>
-			      <li class="nav-item col-lg-2">
-			        <a class="nav-link font-weight-bold text-right btn_plus_minus" href="#">+</a>
-			      </li>
-			      
-			    </ul>
-			  </div>
-			  <div class="card-body text-left ml-3">
-				<div class="card">
-				  <div class="card-header text-center">
-				    <ul class="nav nav-tabs card-header-tabs row">
-				      <li class="nav-item col-lg-6">
-				        <a class="nav-link" href="#">이전 주소</a>
-				      </li>
-				      <li class="nav-item col-lg-6">
-				        <a class="nav-link active" href="#">새로 입력</a>
-				      </li>
-				    </ul>
-				  </div>
-				  <div class="card-body">
-				    <form action="">
-				    	<div class="form-group row">
-		    				<div class="col-lg-6">
-			    				<label class="form-control-label" for="recipient">
-	    							받으시는 분
-								</label>
-			    				<input type="text" id="recipient" class="form-control" placeholder="이름">
-		    				</div>
-		    				<div class="col-lg-6">
-			    				<label class="form-control-label" for="phone_number">
-	    							연락처
-								</label>
-			    				<input type="tel" id="phone_number" class="form-control" placeholder="-없이 입력">
-		    				</div>
-		 				</div>
-		 				<div class="form-group">
-			    				<label class="form-control-label" for="delivery_address">
-	    							배송주소
-								</label>
-			    				<span class="row margin_two_per">
-				    				<input type="text" id="delivery_address" class="form-control col-lg-10" placeholder="예) 문래동 강서타워,선유로 82">
-				    				<button type="button" class="btn btn-light col-lg-2 btn_radius">검색</button>
-			    				</span>
-			    				<input type="text" class="mt-1 form-control" placeholder="나머지 주소 입력">
-		    		   </div>
-		    		   <div class="form-check ml-2">
-			  				<input class="form-check-input" type="checkbox" value="" id="del_check">
-			  				<label class="form-check-label" for="del_check">
-			    				기본 주소 사용
-							</label>
-					  </div>
-					  <div class="input-group my-3">
-						  <select class="custom-select">
-						    <option selected>배송 메모를 선택해주세요.</option>
-						    <option value="1">배송시, 연락 부탁드립니다.</option>
-						    <option value="2">빠른 배송 부탁드립니다.</option>
-						    <option value="3">직접입력</option>
-						  </select>
-					  </div>
-					  <small>주문한 상품은 영업일 3일 (공휴일/주말 제외) 이내에 받아보실수 있습니다.</small><br>
-					  <small>상품준비에 에러사항이 있거나, 발송지연이 불가피할 경우 고객께 안내연락을 드립니다.</small>
-					  <button type="button" class="my-4 btn btn-dark btn-lg btn-block">다음 단계 진행</button>
-				    </form>
-				  </div>
-				</div>
-			  </div>
-			</div>
-			
-			<div class="card mt-5">
-			  <div class="card-header text-left">
-			    <ul class="nav nav-pills card-header-pills row">
-			      <li class="nav-item col-lg-10">
-			        <p class="my-3 bold_and_large">할인/혜택 사용</p>
-			      </li>
-			      <li class="nav-item col-lg-2">
-			        <a class="nav-link font-weight-bold text-right btn_plus_minus" href="#">+</a>
-			      </li>
-			      
-			    </ul>
-			  </div>
-			  <div class="card-body text-left ml-3">
-				<label class="form-control-label" for="promo_code">
-	    		 쿠폰 코드 
-				</label>
-				<span class="row">
-			    <input type="text" id="promo_code" class="form-control col-lg-10" placeholder="쿠폰 코드 입력">
-			    <button type="button" class="btn btn-light col-lg-2 btn_radius">적용</button>
-			    </span>
-			    
-			    <label class="form-control-label mt-3" for="point_usable">
-	    		 적립금 사용 
-				</label>
-				<span class="row">
-			    <input type="text" id="point_usable" class="form-control col-lg-10" placeholder="회원별 사용가능 적립금 명시">
-			    <button type="button" class="btn btn-light col-lg-2 btn_radius">적용</button>
-			    </span>
-			  </div>
-			</div>
-			
-			<div class="card mt-5">
-			  <div class="card-header text-left">
-			    <ul class="nav nav-pills card-header-pills row">
-			      <li class="nav-item col-lg-10">
-			        <p class="my-3 bold_and_large">결제수단 선택</p>
-			      </li>
-			      <li class="nav-item col-lg-2">
-			        <a class="nav-link font-weight-bold text-right btn_plus_minus" href="#">+</a>
-			      </li>
-			      
-			    </ul>
-			  </div>
-			  <div class="card-body text-left ml-3">
-				<div class="btn-group-vertical btn-block my-3" role="group">
-				 <button type="button" class="btn btn-dark btn_radius">신용카드</button>
-				 <button type="button" class="btn btn-dark btn_radius">실시간계좌이체</button>
-				 <button type="button" class="btn btn-dark btn_radius">무통장입금</button>
-				 <button type="button" class="btn btn-dark btn_radius">카카오페이</button>
-				</div>
-				<p class="font_sizing font-weight-bold">※휴대폰 소액결제로 주문하시는 경우, 부분 반품 진행이 불가합니다.</p>
-				<p class="font_sizing">주문한 상품은 영업일 3일 (공휴일/주말 제외) 이내에 받아보실수 있습니다.</p>
-				<p class="font_sizing">상품준비에 에러사항이 있거나, 발송지연이 불가피할 경우 고객께 안내연락을 드립니다.</p>
-				<div class="form-check">
-			  	 <input class="form-check-input" type="checkbox" value="" id="final_check">
-			  	 <label class="form-check-label font_sizing" for="final_check">
-			    	위 주문의 상품, 가격, 할인, 배송정보에 동의합니다.
-				 </label>
-				</div>
-				<button type="button" class="my-4 btn btn-dark btn-lg btn-block">45,950원 결제하기</button>
-			  </div>
-			</div>
-			
-			
-			
-			
-			
-         </div>
+         <div class="col-lg-7">
+         	<table class="table">
+			  <colgroup>
+					<col style="width:70%">
+					<col style="width:10%">
+					<col style="width:10%">
+				</colgroup>
+			  <thead class="table-outerfont-size">
+			    <tr>
+			      <th colspan="4">전체 삭제</th>
+			    </tr>
+			  </thead>
+			  <tbody class="table-outerfont-size">
+			    <c:forEach var="i" begin="1" end="3">
+			    <tr class="tr-border-style">
+			      <td>
+			      	<table class="cart-innerTable-style">
+			      		
+			      		<tr>
+			      			<td rowspan="5"><img class="pr-3" style="height: 30%" alt="" src="${pageContext.request.contextPath}/resources/img/product_test_img/rockman_11.jpg"></td>
+			      		</tr>
+			      		<tr>
+			      			<td class="text-center font-weight-bold">Rockman 11</td>
+			      		</tr>
+			      		<tr>
+			      			<td>플랫폼 : PS4</td>
+			      		</tr>
+			      		<tr>
+			      			<td class="border-none">옵션 : 옵션내용이 들어가는 영역입니다.</td>
+			      			
+			      		</tr>
+			      		<tr>
+			      			<td class="border-none">수량 : 1</td>
+			      		</tr>
+			      		<tr>
+			      			<td class="text-center font-weight-bold" colspan="2"><button type="button" class="rounded btn btn-dark btn-sm" data-toggle="modal" data-target="#option_change_window">옵션 & 수량변경</button></td>
+			      		</tr>
+			      	</table>
+			      </td>
+			      <td class="pt-4 font-weight-bold">45,000 원</td>
+			      <td>
+			      	<button type="button" class="close" aria-label="Close">
+  						<span aria-hidden="true">&times;</span>
+					</button>
+				  </td>
+			    </tr>
+			    </c:forEach>
+			  </tbody>
+			</table>
+         </div>	
          
-         <div class="col-lg-4 ">
+         <div class="col-lg-3 offset-lg-2 ">
          	<div class="card">
 			  <div class="card-header text-left">
 			    <ul class="nav nav-pills card-header-pills row">
@@ -290,29 +179,7 @@
 			    </ul>
 			  </div>
 			  <div class="card-body text-left ml-3">
-				<table class="font_sizing text-center">
-				  <tbody>
-				    <tr>
-				      <td rowspan="5"><img class="pr-3" style="height: 30%" alt="" src="${pageContext.request.contextPath}/resources/img/product_test_img/rockman_11.jpg"></td>
-				      <td class="font-weight-bold" colspan="2">Rockman 11</td>
-				    </tr>
-				    <tr>
-				      <td class="text-left">Platform</td>
-				      <td>PlayStation4</td>
-				    </tr>
-				    <tr>
-				      <td class="text-left">Option</td>
-				      <td>[상세 보기]</td>
-				    </tr>
-				    <tr>
-				      <td class="text-left">Quantity</td>
-				      <td>1</td>
-				    </tr>
-				    <tr>
-				      <td class="font-weight-bold" colspan="2">45,950 원</td>
-				    </tr>
-				  </tbody>
-				</table>
+				
 				<table class="mt-4" style="width: 100%">
 					<tbody>
 						<tr>
@@ -320,7 +187,7 @@
 							<td class="text-right">45,950 원</td>
 						</tr>
 						<tr>
-							<td>배송비</td>
+							<td>예상배송비</td>
 							<td class="text-right">2,500 원</td>
 						</tr>
 						<tr>
@@ -338,6 +205,9 @@
 						<tr>
 							<td class="font-weight-bold">총 결제 예정 금액</td>
 							<td class="font-weight-bold text-right">48,450 원</td>
+						</tr>
+						<tr>
+							<td class="pt-3" colspan="2"><button type="button" class="rounded btn btn-danger btn-block">주문하기</button></td>						
 						</tr>
 					</tbody>
 				</table>
@@ -409,7 +279,7 @@
       </div>
     </section>
     
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+ <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-body">
@@ -453,8 +323,50 @@
     </div>
   </div>
 </div>
-   
 
+
+<div class="modal fade" tabindex="-1" role="dialog" id="option_change_window">
+<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+<div class="modal-content">
+<div class="modal-body">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+	  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	    <span aria-hidden="true">&times;</span>
+	  </button>
+      </div>
+    </div>
+    <div class="row my-5">
+    	<div class="col-md-12 text-center">
+    		<p class="h3">Option & Quantity</p>
+    	</div>
+    </div>
+    <div class="row mb-5">
+      <div class="col-md-6"><img class="ml-4" style="width: 100%" alt="" src="${pageContext.request.contextPath}/resources/img/product_test_img/rockman_11.jpg"></div>
+      <div class="col-md-5 offset-md-1 modal_box_style">
+      	<p class="h5 font-weight-bold text-center mb-3">Rockman 11</p>
+      	<p class="mt-4">옵션</p>
+      	<select class="form-control form-control-sm mb-4">
+  			<option>[옵션 1] 옵션 1 문구 영역입니다.</option>
+  			<option>[옵션 2] 옵션 2 문구 영역입니다.</option>
+		</select>
+		<p class="mt-4">수량</p>
+		<div class="input-group mb-4">
+		  <input type="text" readonly class="form-control-plaintext" placeholder="기존 수량 표시" aria-label="Recipient's username with two button addons" aria-describedby="button-addon4">
+		  <div class="input-group-append" id="button-addon4">
+		    <button class="btn btn-outline-dark rounded-0" type="button">+</button>
+		    <button class="btn btn-outline-dark rounded-0" type="button">-</button>
+		  </div>
+		</div>
+      	<button type="button" class="rounded btn btn-danger btn-block">변경하기</button>
+      </div>
+    </div>
+  </div>
+</div>   
+</div>
+</div>
+</div>
 
 	<!-- kakao api -->
 	<script type='text/javascript'>

@@ -12,4 +12,9 @@ public class NaviController {
 		
 	}
 	
+	@RequestMapping(value="product")
+	public void product() throws Exception{
+		
+	}
+	
 }

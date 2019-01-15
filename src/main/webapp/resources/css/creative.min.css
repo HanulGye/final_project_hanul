@@ -462,3 +462,40 @@ header.masthead p {
 	margin-left: 37%;
 	font-weight: bold;
 }
+
+.footer_margin{
+	margin: 10%;
+}
+
+/* cart */
+
+.border-none{
+	border-top-style: none !important;
+}
+
+.cart-innerTable-style{
+	font-size: 0.850rem;
+	margin-right: 10%;
+}
+
+.table-outerfont-size{
+	font-size: 0.860rem;
+}
+.tr-border-style{
+	border-top: lightgray;
+	border-top-style: solid;
+}
+
+.modal_box_style{
+	padding-top: 7%;
+}
+.modal_box_style > select > option{
+	font-size: 0.800rem;
+}
+
+/* product */
+
+.card_bottom_margin{
+	margin-bottom: 10%;
+}
+

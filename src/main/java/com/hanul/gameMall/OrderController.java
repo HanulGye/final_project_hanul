@@ -12,5 +12,9 @@ public class OrderController {
 		
 	}
 	
+	@RequestMapping(value="cart")
+	public void cart() throws Exception{
+		
+	}
 	
 }
