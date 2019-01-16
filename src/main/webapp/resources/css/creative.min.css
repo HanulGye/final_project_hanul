@@ -321,6 +321,15 @@ header.masthead p {
 
 /* 수정한 부분 */
 
+.nanum{
+	font-family: 'NanumGothic';
+	font-size: 1.0rem;
+}
+
+.nanum_onlyFont{
+	font-family: 'NanumGothic';
+}
+
 #margin-top-container{
 	margin-top: 200px;
 	width: 80%;
@@ -499,3 +508,18 @@ header.masthead p {
 	margin-bottom: 10%;
 }
 
+.star_style{
+	padding-top: 6%;
+	padding-right: 0;
+}
+
+.border_bottom_gray{
+	border-bottom-style: solid;
+	border-bottom-color: lightgray;
+}
+
+/* article */
+
+.little_margin{
+	margin-bottom: 0.2rem;
+}

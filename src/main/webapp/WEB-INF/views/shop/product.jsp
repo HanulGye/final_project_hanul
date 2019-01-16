@@ -224,59 +224,250 @@
 			</div>
 			
 			<div class="card">
-			  <div class="card-header text-left">
+			  <div class="card-header text-left bg-light inner_toggle2" data-toggle="collapse" data-target="#collapse_cb1">
 			    <ul class="nav nav-pills card-header-pills row">
-			      <li class="nav-item col-lg-10">
+			      <li class="nav-item col-lg-5">
 			        <p class="my-3 bold_and_large">REVIEW</p>
 			      </li>
-			      <li class="nav-item col-lg-2">
-			      	<button type="button" class="close" aria-label="Close">
-  						<span aria-hidden="true"><i class="fa fa-angle-up" aria-hidden="true"></i></span>
+			      <li class="nav-item col-lg-4 offset-lg-1 font_sizing star_style">
+			      	<i class="fas fa-star"></i>
+			      	<i class="fas fa-star"></i>
+			      	<i class="fas fa-star"></i>
+			      	<i class="fas fa-star-half-alt"></i>
+			      	<i class="far fa-star"></i>
+			      </li>
+			      <li class="nav-item col-lg-2 pt-3">
+			      	<button type="button" class="close product_toggle_btn" data-toggle="collapse" data-target="#collapse_cb1" aria-label="Close">
+  						<span aria-hidden="true"><i id="review_icon" class="fa fa-angle-down" aria-hidden="true"></i></span>
 					</button>	
 			      </li>
 			      
 			    </ul>
 			  </div>
-			  <div class="card-body card_bottom_margin text-left ml-3">
-			
+			  <div class="collapse" id="collapse_cb1">
+				  <div class="card-body card_bottom_margin text-left ml-3 row">
+					<table class="font_sizing col-md-11 mb-2 mt-4">
+						<tr>
+							<th>제품 평점</th>
+						</tr>
+						<tr>
+							<td>
+								<i class="fas fa-star"></i>
+			      				<i class="fas fa-star"></i>
+			      				<i class="fas fa-star"></i>
+			      				<i class="fas fa-star-half-alt"></i>
+			      				<i class="far fa-star"></i>
+			      				<span class="pl-3">3.5</span>
+			      			</td>
+						</tr>
+						<tr class="text-right">
+							<td>리뷰 작성</td>
+						</tr>
+					</table>
+					
+					<!-- review 글 한 개 -->
+					<table class="font_sizing mt-3 col-md-11">
+						<colgroup>
+							<col style="width: 35%">
+							<col style="width: 30%">
+							<col style="width: 35%">
+						</colgroup>
+						<tr>
+							<th colspan="3" style="font-size: 0.800rem;">리뷰 제목</th>
+						</tr>
+						<tr><td>&nbsp;</td></tr>
+						<tr>
+							<td class="font_sizing2">
+								<i class="fas fa-star"></i>
+								<i class="fas fa-star"></i>
+								<i class="fas fa-star"></i>
+								<i class="fas fa-star"></i>
+								<i class="fas fa-star"></i>
+							</td>
+							<td class="text-right">
+								회원 이름 영역
+							</td>
+							<td class="text-right">
+								2019/01/16
+							</td>
+						</tr>
+						<tr><td>&nbsp;</td></tr>
+						<tr>
+							<td colspan="3">
+								<p>리뷰는 카드를 열었을 때 최초 3개 노출</p>
+								<p>또 다른 리뷰가 있을 경우,</p>
+								<p>'리뷰 더 보기' 버튼이 생성됨</p>
+							</td>
+						</tr>
+					</table>
+					
+					<table class="font_sizing mt-3 col-md-11">
+						<colgroup>
+							<col style="width: 35%">
+							<col style="width: 30%">
+							<col style="width: 35%">
+						</colgroup>
+						<tr>
+							<th colspan="3" style="font-size: 0.800rem;">제목이 길면 ... 표시</th>
+						</tr>
+						<tr><td>&nbsp;</td></tr>
+						<tr>
+							<td class="font_sizing2">
+								<i class="fas fa-star"></i>
+								<i class="fas fa-star"></i>
+								<i class="fas fa-star"></i>
+								<i class="fas fa-star"></i>
+								<i class="fas fa-star"></i>
+							</td>
+							<td class="text-right">
+								홍길동
+							</td>
+							<td class="text-right">
+								2019/01/16
+							</td>
+						</tr>
+						<tr><td>&nbsp;</td></tr>
+						<tr>
+							<td colspan="3">
+								<p>리뷰의 상세내용 란입니다.</p>
+								<p>최초 3줄이 노출됩니다.</p>
+								<p>이후에는 더 보기 버튼을 생성합니다.</p>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="3">
+								<button type="button" class="btn btn-light btn-sm btn-block rounded">더 보기</button>
+							</td>
+						</tr>	
+					</table>
+					
+					<table class="font_sizing mt-3 col-md-11">
+						<colgroup>
+							<col style="width: 35%">
+							<col style="width: 30%">
+							<col style="width: 35%">
+						</colgroup>
+						<tr>
+							<th colspan="3" style="font-size: 0.800rem;">리뷰 제목</th>
+						</tr>
+						<tr><td>&nbsp;</td></tr>
+						<tr>
+							<td class="font_sizing2">
+								<i class="fas fa-star"></i>
+								<i class="fas fa-star"></i>
+								<i class="fas fa-star"></i>
+								<i class="fas fa-star"></i>
+								<i class="fas fa-star"></i>
+							</td>
+							<td class="text-right">
+								회원 이름 영역
+							</td>
+							<td class="text-right">
+								2019/01/16
+							</td>
+						</tr>
+						<tr><td>&nbsp;</td></tr>
+						<tr>
+							<td colspan="3">
+								<p>smartEditor로 작성시켜, 자동 p 태그 생성 </p>
+								<p>문제는 에디터에서 enter 안 치고 한 줄로 계속 쓰게되는 경우이다. 이러면 3줄이 넘어감에도 더 보기 버튼이 안 생기기 때문에, 어떤 조치를 취해야 할 것으로 보인다.</p>
+							</td>
+						</tr>
+					</table>
+					
+					
+					
+					
+					
+				  </div>
+			  
 			  </div>
 			</div>
 			
 			<div class="card">
-			  <div class="card-header text-left">
+			  <div class="card-header text-left bg-light inner_toggle" data-toggle="collapse" data-target="#collapse_cb2">
 			    <ul class="nav nav-pills card-header-pills row">
 			      <li class="nav-item col-lg-10">
 			        <p class="my-3 bold_and_large">NOTICE</p>
 			      </li>
-			      <li class="nav-item col-lg-2">
-			      	<button type="button" class="close" aria-label="Close">
-  						<span aria-hidden="true"><i class="fa fa-angle-up" aria-hidden="true"></i></span>
+			      <li class="nav-item col-lg-2 pt-3">
+			      	<button type="button" class="close product_toggle_btn" aria-label="Close">
+  						<span aria-hidden="true"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
 					</button>	
 			      </li>
 			      
 			    </ul>
 			  </div>
-			  <div class="card-body card_bottom_margin text-left ml-3">
-			
+			  <div class="collapse" id="collapse_cb2">
+				  <div class="card-body card_bottom_margin text-left ml-3">
+					<dl class="font_sizing">
+						<dt>배송 안내</dt>
+					    <dd>- 배송안내에 대한 사항을 적는 공간입니다.</dd>
+					    <dd>- 기본 배송비는 선불 <span class="text-danger">2,500원</span>입니다.</dd>
+					</dl>
+					<dl class="font_sizing">
+					    <dt>반품 교환안내</dt>
+					    <dd>- 반품 교환안내에 대한 사항을 적는 공간입니다.</dd>
+					    <dd>- 관리자가 수정 가능하게 DB를 거쳐 insert하는 방식을 사용하려 합니다.</dd>
+					    <dd>- 관리자가 text form에 작성을 할 때, enter를 치면 자동으로 dd 태그가 생성되는 방식을 생각하고 있습니다.</dd>
+					</dl>
+					<dl class="font_sizing">
+						<dt>구매 안내</dt>
+					    <dd>- 구매안내에 대한 사항을 적는 공간입니다.</dd>
+					</dl>     
+				  </div>
 			  </div>
 			</div>
 			
 			<div class="card">
-			  <div class="card-header text-left">
+			  <div class="card-header text-left bg-light inner_toggle" data-toggle="collapse" data-target="#collapse_cb3">
 			    <ul class="nav nav-pills card-header-pills row">
 			      <li class="nav-item col-lg-10">
 			        <p class="my-3 bold_and_large">QnA</p>
 			      </li>
-			      <li class="nav-item col-lg-2">
-			      		<button type="button" class="close" aria-label="Close">
-  							<span aria-hidden="true"><i class="fa fa-angle-up" aria-hidden="true"></i></span>
+			      <li class="nav-item col-lg-2 pt-3">
+			      		<button type="button" class="product_toggle_btn close" data-toggle="collapse" data-target="#collapse_cb3" aria-label="Close">
+  							<span aria-hidden="true"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
 						</button>	
 			      </li>
 			      
 			    </ul>
 			  </div>
-			  <div class="card-body card_bottom_margin text-left ml-3">
-				<p>collapseExample를 통한 토글링</p>
+			  <div class="collapse" id="collapse_cb3">
+				  <div class="card-body card_bottom_margin text-left ml-3 row">
+					<table class="font_sizing col-md-11 mb-2 mt-4">
+						<colgroup>
+							<col style="width: 5%">
+							<col style="width: 75%">
+							<col style="width: 20%">
+						</colgroup>
+						<tr class="border_bottom_gray">
+							<td><i class="fas fa-question"></i></td>
+							<td>록맨은 몇살인가요?</td>
+							<td class="text-right">19/01/06</td>
+						</tr>
+						<tr><td>&nbsp;</td></tr>
+						<!-- 문의 글 한 묶음  -->
+						<tr class="border_bottom_gray">
+							<td><i class="far fa-comment"></i></td>
+							<td>저도 잘 모르겠네요.</td>
+							<td class="text-right">19/01/06</td>
+						</tr>
+						<tr><td>&nbsp;</td></tr>
+						<!-- 문의 글 한 묶음 끝 -->
+						<c:forEach var="i" begin="1" end="8">
+							<tr class="border_bottom_gray">
+								<td><i class="fas fa-question"></i></td>
+								<td>이 제품에 대해 궁금합니다.</td>
+								<td class="text-right">19/01/06</td>
+							</tr>
+							<tr><td>&nbsp;</td></tr>
+						</c:forEach>
+						<tr>
+							<td colspan="3"><button type="button" class="btn btn-light btn-sm btn-block rounded">리뷰 더 보기</button></td>
+						</tr>
+					</table>
+				  </div>
 			  </div>
 			</div>
 			

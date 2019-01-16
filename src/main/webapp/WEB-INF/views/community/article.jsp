@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <%@ page session="false" %>
 <!DOCTYPE html>
 <html>
@@ -28,7 +29,8 @@
 
     <!-- Custom styles for this template -->
     <link href="${pageContext.request.contextPath}/resources/css/creative.min.css" rel="stylesheet">
-
+	<!-- url var에 담기 -->
+	<c:set var="uri" value="${pageContext.request.requestURI}" />
   </head>
 
   <body id="page-top">
@@ -110,7 +112,7 @@
 	<!-- navigation 끝 각 메뉴별 링크 걸어둘 때까진 냅두기 -->
 
     
-    <div id="margin-top-container" class="nanum_onlyFont text-dark">
+    <div id="margin-top-container">
 
       <div class="row">
 
@@ -121,12 +123,11 @@
             <a href="#" class="list-group-item list-group-item-action">Category 2</a>
             <a href="#" class="list-group-item list-group-item-action">Category 3</a>
             <a class="list-group-item list-group-item-action nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		          Review
+		          Category 4
 		       </a>
-		       <div class="dropdown-menu menu_dd_style" aria-labelledby="navbarDropdown">
-		         <a class="dropdown-item" href="#">PlayStation4</a>
-		         <a class="dropdown-item" href="#">Switch</a>
-		         <a class="dropdown-item" href="#">XBox One</a>
+		       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+		         <a class="dropdown-item" href="#">Playstation3</a>
+		         <a class="dropdown-item" href="#">Playstation2</a>
 		       </div>
           </div>
 
@@ -135,43 +136,90 @@
 
         <div class="col-lg-10">
 
-          <form class="form-inline mb-4" id="go_to_top">
-          	<div class="mx-auto mb-4">
-		    	<input class="form-control form-control-lg mr-sm-2" type="search" placeholder="공략을 보자" aria-label="Search">
-		    	<button class="btn btn-dark my-2 my-sm-0" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>          	
-          	</div>
-	  	  </form>
+          
+		
+		  <div class="btn-group btn-group-sm btn-group-toggle my-4 col-lg-4 offset-lg-8" data-toggle="buttons">
+			  <label class="btn btn-outline-dark active sorting_group">
+			    <input type="radio" name="options" id="option1" autocomplete="off" checked> 제목
+			  </label>
+			  <label class="btn btn-outline-dark sorting_group">
+			    <input type="radio" name="options" id="option2" autocomplete="off"> 작성자
+			  </label>
+			  <label class="btn btn-outline-dark sorting_group">
+			    <input type="radio" name="options" id="option3" autocomplete="off"> 내용
+			  </label>
+			  <form class="form-inline" id="go_to_top">
+	          	<div class="">
+			    	<input class="form-control form-control-sm mr-sm-2" type="search" placeholder="검색" aria-label="Search">
+			    	<button class="btn btn-dark my-2 my-sm-0" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>          	
+	          	</div>
+	  	  	  </form>
+		  </div>
+		
 		
           <div class="row">
-			<c:forEach var="i" begin="1" end="12" step="1">
-			<div class="col-lg-2 col-md-6 mb-4">
-              <div class="card h-100">
-                <a href="#"><img class="card-img-top" src="${pageContext.request.contextPath}/resources/img/product_test_img/0090020007002.jpg" alt="" style="height: 264px;"></a>
-                <div class="card-body">
-                  <h4 class="card-title">
-                    <a href="#">Item Two</a>
-                  </h4>
-                  <a href="{{ site.url }}{{ page.url }}#disqus_thread"  data-disqus-identifier="{{ page.id }}"><i class="far fa-comments">댓글 갯수</i></a>
-                </div>
-              </div>
-            </div>			
-			</c:forEach>
+			<table class="table font_sizing nanum_onlyFont mb-5">
+				<thead>
+					<tr>
+						<th colspan="2" class="text-center"><p class="mb-0 nanum">[PS4] psn 1월의 무료게임 안내!</p></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="text-left">
+							<p class="little_margin">날짜 : <span>2019/01/16</span></p>
+							<p class="little_margin">작성자 : <span>tester</span></p>
+						</td>
+						<td class="text-right">조회수 : <span>0</span></td>
+					</tr>
+					<tr>
+						<td colspan="2" class="pt-5 pb-5 text-center">
+						<c:choose>
+							<c:when test="${uri eq '/gameMall/WEB-INF/views//community/article.jsp'}">
+								<img alt="" src="${pageContext.request.contextPath}/resources/img/test_img/review_sample.png">
+							</c:when>
+							<c:otherwise>
+								<img alt="" src="${pageContext.request.contextPath}/resources/img/test_img/article_test_img1.jpg">
+							</c:otherwise>
+						</c:choose>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2" class="text-right font-weight-bold">목록보기</td>
+					</tr>
+				</tbody>
+			</table>
             
           </div>
           <!-- /.row -->
-		  <div class="mt-4">
-			 <nav aria-label="Page navigation example">
-			  <ul class="pagination justify-content-center">
-			    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-			    <li class="page-item"><a class="page-link" href="#">1</a></li>
-			    <li class="page-item active" aria-current="page">
-			      <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-			    </li>
-			    <li class="page-item"><a class="page-link" href="#">3</a></li>
-			    <li class="page-item"><a class="page-link" href="#">Next</a></li>
-			  </ul>
-			 </nav>
-	     </div>
+		  
+		  <!-- disqus는 article.jsp 페이지로 갈 때 어떤 table을 거쳤는가에 따라 jstl if문 사용하여 없애고 지우고 할거임. -->
+		  <c:if test="${uri eq '/gameMall/WEB-INF/views//community/article.jsp'}">
+			  <div id="disqus_thread"></div>
+		  </c:if>
+			<script>
+			
+			/**
+			*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+			*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+			/*
+			var disqus_config = function () {
+			this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+			this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+			};
+			*/
+			(function() { // DON'T EDIT BELOW THIS LINE
+			var d = document, s = d.createElement('script');
+			s.src = 'https://hanulgye.disqus.com/embed.js';
+			s.setAttribute('data-timestamp', +new Date());
+			(d.head || d.body).appendChild(s);
+			})();
+			</script>
+			<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                            
+		
+		
+		
 		
         </div>
         <!-- /.col-lg-9 -->
@@ -236,6 +284,7 @@
 
     <!-- Custom scripts for this template -->
     <script src="${pageContext.request.contextPath}/resources/js/creative.min.js"></script>
+
 	<!-- disqus count -->
 	<script id="dsq-count-scr" src="//hanulgye.disqus.com/count.js" async></script>
   </body>
