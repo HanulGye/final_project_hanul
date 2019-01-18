@@ -24,7 +24,6 @@
     <link href="http://fonts.googleapis.com/earlyaccess/nanumgothic.css" rel="stylesheet" type='text/css'>
 
     <!-- Plugin CSS -->
-    <link href="${pageContext.request.contextPath}/resources/vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="${pageContext.request.contextPath}/resources/css/creative.min.css" rel="stylesheet">
@@ -379,7 +378,6 @@
     <!-- Plugin JavaScript -->
     <script src="${pageContext.request.contextPath}/resources/vendor/jquery-easing/jquery.easing.min.js"></script>
     <script src="${pageContext.request.contextPath}/resources/vendor/scrollreveal/scrollreveal.min.js"></script>
-    <script src="${pageContext.request.contextPath}/resources/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
 
     <!-- Custom scripts for this template -->
     <script src="${pageContext.request.contextPath}/resources/js/creative.min.js"></script>

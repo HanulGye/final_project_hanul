@@ -96,7 +96,7 @@
 		       </a>
 		       <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
 		         <a class="dropdown-item text-light" href="#">Notice</a>
-		         <a class="dropdown-item text-light" href="#">Review</a>
+				 <a class="dropdown-item text-light" href="#">Review</a>
 		         <a class="dropdown-item text-light" href="#">QnA</a>
 		         <a class="dropdown-item text-light" href="#">Off-line Market</a>
 		         <a class="dropdown-item text-light" href="#">What's New</a>
@@ -117,17 +117,41 @@
         <div class="col-lg-2">
           <h2 class="my-4">Community</h2>
           <div class="list-group list-group-flush">
-            <a href="#" class="list-group-item list-group-item-action">Category 1</a>
-            <a href="#" class="list-group-item list-group-item-action">Category 2</a>
-            <a href="#" class="list-group-item list-group-item-action">Category 3</a>
-            <a class="list-group-item list-group-item-action nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a href="#" class="list-group-item list-group-item-action">Notice</a>
+            <div>
+            <a class="list-group-item list-group-item-action nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 		          Review
 		       </a>
-		       <div class="dropdown-menu menu_dd_style" aria-labelledby="navbarDropdown">
+		       <div class="dropdown-menu menu_dd_style" aria-labelledby="navbarDropdown1">
 		         <a class="dropdown-item" href="#">PlayStation4</a>
 		         <a class="dropdown-item" href="#">Switch</a>
 		         <a class="dropdown-item" href="#">XBox One</a>
 		       </div>
+            </div>
+            
+            <div>
+		    <a class="list-group-item list-group-item-action nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		          QnA
+		       </a>
+		       <div class="dropdown-menu menu_dd_style" aria-labelledby="navbarDropdown2">
+		         <a class="dropdown-item" href="#">FAQ</a>
+		         <a class="dropdown-item" href="#">1:1 QnA</a>
+		       </div>
+            </div>
+		    
+		    <div>
+		    <a class="list-group-item list-group-item-action nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		          Off-line Market
+		       </a>
+		       <div class="dropdown-menu menu_dd_style" aria-labelledby="navbarDropdown3">
+		         <a class="dropdown-item" href="#">Market1</a>
+		         <a class="dropdown-item" href="#">Market2</a>
+		         <a class="dropdown-item" href="#">Market3</a>
+		       </div>
+		    </div>
+		    
+		    <a href="#" class="list-group-item list-group-item-action">What's NEW</a>
+		          
           </div>
 
         </div>
