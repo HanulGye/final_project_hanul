@@ -1,0 +1,330 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page session="false" %>
+<!DOCTYPE html>
+<html>
+
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Creative - Start Bootstrap Theme</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="${pageContext.request.contextPath}/resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="${pageContext.request.contextPath}/resources/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link href="http://fonts.googleapis.com/earlyaccess/nanumgothic.css" rel="stylesheet" type='text/css'>
+
+    <!-- Plugin CSS -->
+    <link href="${pageContext.request.contextPath}/resources/vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="${pageContext.request.contextPath}/resources/css/creative.min.css" rel="stylesheet">
+
+  </head>
+
+  <body id="page-top">
+	<nav class="fixed-top">
+	<nav class="navbar navbar-expand-lg bg-dark sticky">
+		<div class="collapse navbar-collapse" id="navbarResponsive">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item mr-3"><i class="fa fa-user-circle" aria-hidden="true" style="color: white;"> login</i></li>
+				<li class="nav-item mr-3"><i class="fa fa-user-plus" aria-hidden="true" style="color: white;"> Join</i></li>
+				<li class="nav-item mr-3"><i class="fa fa-truck" aria-hidden="true" style="color: white;"> Order</i></li>
+				<li class="nav-item" style="margin-right: 30px;"><i class="fa fa-shopping-cart" aria-hidden="true" style="color: white;"> Cart</i></li>
+			</ul>
+		</div>
+	</nav>
+    <!-- Navigation -->	
+    <nav class="navbar navbar-dark navbar-expand-lg bg-dark" id="mainNav">	
+      <div class="container">  
+        <a class="navbar-brand js-scroll-trigger" href="#go_to_top">Home</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav mx-auto">
+             <li class="nav-item dropdown">
+		       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		          PlayStation
+		       </a>
+		       <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+		         <a class="dropdown-item text-light" href="#">PlayStation 4</a>
+		         <a class="dropdown-item text-light" href="#">PlayStation VR</a>
+		         <a class="dropdown-item text-light" href="#">PlayStation 3</a>
+		         <a class="dropdown-item text-light" href="#">PlayStation Vita	</a>
+		       </div>
+		     </li>
+            <li class="nav-item dropdown">
+		       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		          Nintendo
+		       </a>
+		       <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+		         <a class="dropdown-item text-light" href="#">Nintendo Switch</a>
+		         <a class="dropdown-item text-light" href="#">Nintendo 3DS</a>
+		       </div>
+		     </li>
+		     <li class="nav-item dropdown">
+		       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		          XBox
+		       </a>
+		       <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+		         <a class="dropdown-item text-light" href="#">XBox One</a>
+		         <a class="dropdown-item text-light" href="#">XBox 360</a>
+		       </div>
+		     </li>
+		     <li class="nav-item dropdown">
+		       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		          Etc
+		       </a>
+		       <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+		         <a class="dropdown-item text-light" href="#">Hardware</a>
+		         <a class="dropdown-item text-light" href="#">Peripheral</a>
+		       </div>
+		     </li>
+		     <li class="nav-item dropdown">
+		       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		          Community
+		       </a>
+		       <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+		         <a class="dropdown-item text-light" href="#">Notice</a>
+		         <a class="dropdown-item text-light" href="#">Review</a>
+		         <a class="dropdown-item text-light" href="#">QnA</a>
+		         <a class="dropdown-item text-light" href="#">Off-line Market</a>
+		         <a class="dropdown-item text-light" href="#">What's New</a>
+		       </div>
+		     </li>
+          </ul>
+        </div>
+        <form class="form-inline">
+	    	<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+	    	<button class="btn btn-dark my-2 my-sm-0" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+	  	</form>
+      </div>
+    </nav>
+	</nav>
+	<!-- navigation 끝 각 메뉴별 링크 걸어둘 때까진 냅두기 -->
+
+    
+    <div id="margin-top-container">
+
+      <div class="row">
+      
+       <div class="col-lg-2">
+          <h2 class="my-4">Community</h2>
+          <div class="list-group list-group-flush">
+            <a href="#" class="list-group-item list-group-item-action">Notice</a>
+            <div>
+            <a class="list-group-item list-group-item-action nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		          Review
+		       </a>
+		       <div class="dropdown-menu menu_dd_style" aria-labelledby="navbarDropdown1">
+		         <a class="dropdown-item" href="#">PlayStation4</a>
+		         <a class="dropdown-item" href="#">Switch</a>
+		         <a class="dropdown-item" href="#">XBox One</a>
+		       </div>
+            </div>
+            
+            <div>
+		    <a class="list-group-item list-group-item-action nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		          QnA
+		       </a>
+		       <div class="dropdown-menu menu_dd_style" aria-labelledby="navbarDropdown2">
+		         <a class="dropdown-item" href="#">FAQ</a>
+		         <a class="dropdown-item" href="#">1:1 QnA</a>
+		       </div>
+            </div>
+		    
+		    <div>
+		    <a class="list-group-item list-group-item-action nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		          Off-line Market
+		       </a>
+		       <div class="dropdown-menu menu_dd_style" aria-labelledby="navbarDropdown3">
+		         <a class="dropdown-item" href="#">Market1</a>
+		         <a class="dropdown-item" href="#">Market2</a>
+		         <a class="dropdown-item" href="#">Market3</a>
+		       </div>
+		    </div>
+		    
+		    <a href="#" class="list-group-item list-group-item-action">What's NEW</a>
+		          
+          </div>
+
+        </div>
+        
+        <div class="col-lg-10">
+        	<form action="" id="frm" class="pten">
+	        	<div class="input-group mb-3 input-group-sm col-lg-6">
+				  <div class="input-group-prepend">
+				    <label class="input-group-text" for="inputGroupSelect01">게시판</label>
+				  </div>
+				  <select class="custom-select" id="inputGroupSelect01">
+				    <option selected>종류를 선택하십시오</option>
+				    <option value="1">공지사항</option>
+				    <option value="2">리뷰</option>
+				    <option value="3">문의</option>
+				    <option value="4">오프라인 매장</option>
+				    <option value="5">새 소식</option>
+				  </select>
+				</div>
+				<div class="input-group mb-3 input-group-sm col-lg-6">
+				  <div class="input-group-prepend">
+				    <label class="input-group-text" for="inputGroupSelect02">하위분류</label>
+				  </div>
+				  <select class="custom-select" id="inputGroupSelect02">
+				    <option selected>종류를 선택하십시오</option>
+				    <option value="1">PlayStation 4</option>
+				    <option value="2">Switch</option>
+				    <option value="3">XBox One</option>
+				  </select>
+				</div>
+				
+				<div class="input-group mb-3 input-group-sm col-lg-6">
+				  <div class="input-group-prepend">
+				    <label class="input-group-text" for="inputGroupSelect03">상품명</label>
+				  </div>
+				  <select class="custom-select" id="inputGroupSelect03">
+				    <option selected>종류를 선택하십시오</option>
+				    <option value="1">DB의 product table에서</option>
+				    <option value="2">상품명 컬럼 foreign key로 연결해서</option>
+				    <option value="3">해당 옵션에다가 뿌릴 것임.</option>
+				  </select>
+				</div>
+				
+				<div class="input-group mb-3 input-group-sm col-lg-6">
+				  <div class="input-group-prepend">
+				    <div class="input-group-text">
+				      <input type="checkbox" aria-label="Checkbox for following text input">
+				    </div>
+				  </div>
+				  <input type="text" readonly class="form-control-plaintext form-control-sm" aria-label="Text input with checkbox" value="&nbsp; 공지사항 및 매장 공지사항에서의 '중요표시' 버튼">
+				</div>
+        		
+        		<div class="form-group form-control-sm row mb-3">
+				    <label for="writer" class="col-lg-2 col-form-label">작성자</label>
+				    <div class="col-lg-4">
+				      <input type="text" class="form-control form-control-sm" id="writer">
+				    </div>
+				</div>
+				
+				<div class="form-group form-control-sm row mb-3">
+				    <label for="title" class="col-lg-2 col-form-label">제목</label>
+				    <div class="col-lg-4">
+				      <input type="text" class="form-control form-control-sm" id="title">
+				    </div>
+				</div>
+        		
+	        	<textarea rows="" cols="" id="contents"></textarea>
+				<input type="submit" id="save" value="등록!" class="rounded btn btn-secondary positioning mt-4">        	
+        	</form>
+        
+        </div>
+      
+      </div>
+    
+    </div>     
+		
+     
+    <section id="contact">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center">
+            <h2 class="section-heading">문의사항이 있으신가요?</h2>
+            <hr class="my-4">
+            <p class="mb-5">문의 사항의 경우, 아래의 이메일 혹은 전화번호로 연락 주십시오.<br> (전화는 09:00 ~ 18:00)</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 ml-auto text-center">
+        	<i class="fa fa-user-circle fa-3x mb-3 sr-contact-1"></i>
+        	<p>LogIn</p>
+          </div>
+          <div class="col-lg-4 mr-auto text-center">
+            <i class="fas fa-phone fa-3x mb-3 sr-contact-1"></i>
+            <p>123-456-6789</p>
+          </div>
+        </div>
+        <div class="row">
+         <div class="col-lg-4 ml-auto text-center">
+        	<i class="fa fa-user-plus fa-3x mb-3 sr-contact-1"></i>
+        	<p>Join</p>
+         </div>
+         <div class="col-lg-4 mr-auto text-center">
+            <i class="fas fa-envelope fa-3x mb-3 sr-contact-2"></i>
+            <p>
+              <a href="mailto:your-email@your-domain.com">administer@test.com</a>
+            </p>
+          </div>
+        </div>
+        <div class="row">
+         <div class="col-lg-4 ml-auto text-center">
+         	<i class="fa fa-map-marker fa-3x mb-3"></i>
+        	<p>매장 안내</p>
+         </div>
+         <div class="col-lg-4 mr-auto text-center">
+         	<i></i>
+        	<p></p>
+         </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="${pageContext.request.contextPath}/resources/vendor/jquery/jquery.min.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="${pageContext.request.contextPath}/resources/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/vendor/scrollreveal/scrollreveal.min.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="${pageContext.request.contextPath}/resources/js/creative.min.js"></script>
+
+	<!-- smartEditor2 -->
+	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/SE2/js/HuskyEZCreator.js" charset="utf-8"></script>
+	
+	<script type="text/javascript">
+	var oEditors = [];
+	$(function(){
+      	nhn.husky.EZCreator.createInIFrame({
+          oAppRef: oEditors,
+          //textArea의 id를 elPlaceHolder에 설정
+          elPlaceHolder: "contents",
+          //SmartEditor2Skin.html 파일이 존재하는 경로
+          sSkinURI: "${pageContext.request.contextPath}/resources/SE2/SmartEditor2Skin.html",  
+          htParams : {
+              // 툴바 사용 여부 (true:사용/ false:사용하지 않음)
+              bUseToolbar : true,             
+              // 입력창 크기 조절바 사용 여부 (true:사용/ false:사용하지 않음)
+              bUseVerticalResizer : true,     
+              // 모드 탭(Editor | HTML | TEXT) ?ъ슜 ?щ? (true:?ъ슜/ false:?ъ슜?섏? ?딆쓬)
+              bUseModeChanger : true,         
+              fOnBeforeUnload : function(){
+                   
+              }
+          }
+      	});
+      
+      //저장버튼 클릭시 form 전송 (아래의 id="save" 식별자는 form tag의 submit 버튼에 해당하는 태그에 걸어줄것)
+      //++ id="frm" 식별자 역시, 스마트에디터가 사용되는 form tag의 id에 넣어줄 것	
+      $("#save").click(function(){
+          oEditors.getById["contents"].exec("UPDATE_CONTENTS_FIELD", []);
+          $("#frm").submit();
+      	});
+      });
+	</script>
+	
+
+  </body>
+
+</html>
+

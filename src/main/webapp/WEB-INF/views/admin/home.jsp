@@ -301,10 +301,16 @@
                             <a href="#"><i class="fas fa-cubes"></i> 상품 관리<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="blank.html">Blank Page</a>
+                                    <a href="#">상품 등록</a>
                                 </li>
                                 <li>
-                                    <a href="login.html">Login Page</a>
+                                    <a href="#">재고 리스트</a>
+                                </li>
+                                <li>
+                                    <a href="#">상품 삭제</a>
+                                </li>
+                                <li>
+                                    <a href="#"></a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -315,10 +321,10 @@
                             <a href="#"><i class="fas fa-chart-bar"></i> 총계 정보<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="blank.html">Blank Page</a>
+                                    <a href="blank.html">매출액 열람</a>
                                 </li>
                                 <li>
-                                    <a href="login.html">Login Page</a>
+                                    <a href="login.html">사이트 내 이용빈도</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -328,7 +334,7 @@
                             <a href="#"><i class="fas fa-users-cog"></i> 회원 관리<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="blank.html">Blank Page</a>
+                                    <a href="blank.html">회원 리스트</a>
                                 </li>
                                 <li>
                                     <a href="login.html">Login Page</a>
@@ -341,7 +347,7 @@
                             <a href="#"><i class="fas fa-columns"></i> 게시판 관리<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="blank.html">Blank Page</a>
+                                    <a href="blank.html">글 등록</a>
                                 </li>
                                 <li>
                                     <a href="login.html">Login Page</a>

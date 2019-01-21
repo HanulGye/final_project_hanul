@@ -11,4 +11,9 @@ public class AdminController {
 	public void home() throws Exception{
 		
 	}
+	
+	@RequestMapping(value="login")
+	public void login() throws Exception{
+		
+	}
 }

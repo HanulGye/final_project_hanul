@@ -30,4 +30,9 @@ public class CommController {
 		return modelAndView;
 	}
 	
+	@RequestMapping(value="write")
+	public void writeform() throws Exception{
+		
+	}
+	
 }

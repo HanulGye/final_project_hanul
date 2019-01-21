@@ -117,14 +117,14 @@
 		  <img class="mb-3 font_img_size" alt="" src="${pageContext.request.contextPath}/resources/img/icon_img/xbox_one_font.png">	
           <!-- <h2 class="my-4">Shop Name</h2> -->
           <div class="list-group list-group-flush">
-            <a href="#" class="list-group-item list-group-item-action">Category 1</a>
-            <a href="#" class="list-group-item list-group-item-action">Category 2</a>
-            <a href="#" class="list-group-item list-group-item-action">Category 3</a>
-            <a href="#" class="list-group-item list-group-item-action">Category 4</a>
-            <a href="#" class="list-group-item list-group-item-action">Category 5</a>
-            <a href="#" class="list-group-item list-group-item-action">Category 6</a>
+            <a href="#" class="list-group-item list-group-item-action">Action</a>
+            <a href="#" class="list-group-item list-group-item-action">Sports</a>
+            <a href="#" class="list-group-item list-group-item-action">RPG</a>
+            <a href="#" class="list-group-item list-group-item-action">Casual & Character</a>
+            <a href="#" class="list-group-item list-group-item-action">Fighting</a>
+            <a href="#" class="list-group-item list-group-item-action">ETC</a>
             <a class="list-group-item nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		          Category 7
+		          더 보기
 		       </a>
 		       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 		         <a class="dropdown-item" href="#">Playstation3</a>
