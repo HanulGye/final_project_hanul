@@ -16,4 +16,9 @@ public class AdminController {
 	public void login() throws Exception{
 		
 	}
+	
+	@RequestMapping(value="board/list")
+	public void list() throws Exception{
+		
+	}
 }

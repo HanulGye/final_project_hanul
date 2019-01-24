@@ -518,6 +518,14 @@ header.masthead p {
 	border-bottom-color: lightgray;
 }
 
+.back_new{
+	background-image: url("../img/product_test_img/ico_main_new.png");
+	background-repeat: no-repeat;
+	position: absolute;
+	width: 100px;
+	height: 100px;
+}
+
 /* article */
 
 .little_margin{
@@ -529,3 +537,15 @@ header.masthead p {
 	padding-left: 15%;
 }
 
+/* qna */
+.qna_con_style{
+	padding-left: 5%;
+	font-size: 0.850rem;
+}
+
+.qna_contents{
+	margin-top: 5%;
+}
+.qna_row{
+	display: none;
+}

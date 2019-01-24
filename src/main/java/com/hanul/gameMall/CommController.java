@@ -13,6 +13,11 @@ public class CommController {
 		
 	}
 	
+	@RequestMapping(value="qna")
+	public void qna() throws Exception{
+		
+	}
+	
 	@RequestMapping(value="review/main")
 	public void reviewMain() throws Exception{
 		

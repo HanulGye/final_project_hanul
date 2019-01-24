@@ -168,6 +168,7 @@
             <div class="col-lg-2 col-md-6 mb-4">
               <div class="card h-100">
                 <a href="#"><img class="card-img-top p-2" src="${pageContext.request.contextPath}/resources/img/product_test_img/0090020007002.jpg" alt="" style="height: 264px;"></a>
+                <span class="back_new"></span>
                 <div class="card-body">
                   <h4 class="card-title">
                     <a href="#">Item Two</a>
@@ -175,7 +176,8 @@
                   <h5>$24.99</h5>
                   <div>
 	                  <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-					  <span class="font-weight-light ml-4">4.5</span>                  
+					  <span class="font-weight-light ml-4">4.5</span>
+					  <span><img alt="" src="${pageContext.request.contextPath}/resources/img/icon_img/freeShipping.png"></span>                  
                   </div>
                 </div>
               </div>
@@ -189,7 +191,10 @@
                     <a href="#">Item Two</a>
                   </h4>
                   <h5>Sold Out</h5>
-                  <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                  <div>
+	                  <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+	                  <span><img alt="" src="${pageContext.request.contextPath}/resources/img/icon_img/freeShipping.png"></span>
+                  </div>
                 </div>
               </div>
             </div>

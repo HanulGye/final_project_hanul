@@ -111,21 +111,21 @@
 
     
     <div id="margin-top-container">
-	  <h1 class="text-center display-4 mb-5">BoardName</h1>
+	  <h1 class="text-center display-4 mb-5">QnA</h1>
       <div class="row">
 
         <div class="col-lg-2">
-          <h2 class="my-4">Community</h2>
+          <h2 class="my-4" id="side_menu_title">Community</h2>
           <div class="list-group list-group-flush">
-            <a href="#" class="list-group-item list-group-item-action">Category 1</a>
-            <a href="#" class="list-group-item list-group-item-action">Category 2</a>
-            <a href="#" class="list-group-item list-group-item-action">Category 3</a>
+            <a href="#" class="list-group-item list-group-item-action side_menu_contents">Category 1</a>
+            <a href="#" class="list-group-item list-group-item-action side_menu_contents">Category 2</a>
+            <a href="#" class="list-group-item list-group-item-action side_menu_contents">Category 3</a>
             <a class="list-group-item list-group-item-action nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 		          Category 4
 		       </a>
 		       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-		         <a class="dropdown-item" href="#">Playstation3</a>
-		         <a class="dropdown-item" href="#">Playstation2</a>
+		         <a class="dropdown-item side_menu_contents" href="#">Playstation3</a>
+		         <a class="dropdown-item side_menu_contents" href="#">Playstation2</a>
 		       </div>
           </div>
 
@@ -136,51 +136,100 @@
 
           
 		
-		  <div class="btn-group btn-group-sm btn-group-toggle my-4 col-lg-4 offset-lg-8" data-toggle="buttons">
-			  <label class="btn btn-outline-dark active sorting_group">
-			    <input type="radio" name="options" id="option1" autocomplete="off" checked> 제목
-			  </label>
-			  <label class="btn btn-outline-dark sorting_group">
-			    <input type="radio" name="options" id="option2" autocomplete="off"> 작성자
-			  </label>
-			  <label class="btn btn-outline-dark sorting_group">
-			    <input type="radio" name="options" id="option3" autocomplete="off"> 내용
-			  </label>
-			  <form class="form-inline" id="go_to_top">
-	          	<div class="">
-			    	<input class="form-control form-control-sm mr-sm-2" type="search" placeholder="검색" aria-label="Search">
-			    	<button class="btn btn-dark my-2 my-sm-0" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>          	
-	          	</div>
-	  	  	  </form>
-		  </div>
+		  
 		
-		
+		  	
           <div class="row">
-			<table class="table table-hover ml-5 table_sizing">
+          	<div class="btn-group btn-group-sm rounded mt-3 mb-3" role="group">
+          		<button type="button" class="btn btn-outline-secondary font-weight-light qna_btns_all">전체</button>
+  				<button type="button" class="btn btn-outline-secondary font-weight-light qna_btns">회원가입/정보</button>
+  				<button type="button" class="btn btn-outline-secondary font-weight-light qna_btns">주문</button>
+  				<button type="button" class="btn btn-outline-secondary font-weight-light qna_btns">결제/배송</button>
+  				<button type="button" class="btn btn-outline-secondary font-weight-light qna_btns">교환/반품/환불</button>
+  				<button type="button" class="btn btn-outline-secondary font-weight-light qna_btns">적립금</button>
+  				<button type="button" class="btn btn-outline-secondary font-weight-light qna_btns">A/S 관련문의</button>
+			</div>
+			<table class="table font_sizing">
 				<colgroup>
-					<col style="width:70%">
-					<col style="width:10%">
-					<col style="width:10%">
-					<col style="width:10%">
+					<col style="width: 20%;">
+					<col style="">
 				</colgroup>
-				
-				<thead class="thead">
-					<tr>
-						<th class="text-center" scope="col">TITLE</th>
-						<th class="text-center" scope="col">WRITER</th>
-						<th class="text-center" scope="col">DATE</th>
-						<th class="text-center" scope="col">HIT</th>
+				<thead>
+					<tr class="text-center">
+						<th>분류</th>
+						<th>내용</th>
 					</tr>
 				</thead>
-				<tbody>
-					<c:forEach var="i" begin="1" end="10" step="1">
-					<tr>
-						<td class="pl-4">test title</td>
-						<td class="text-center">tester</td>
-						<td class="text-center">19-01-11</td>
-						<td class="text-center">0</td>
+				<tbody id="qna_table">
+					<tr class="qna_row">
+						<td class="text-center qna_topic">회원가입/정보</td>
+						<td class="qna_con_style">
+							<div data-toggle="collapse" data-target="#asdf">
+							<i class="fas fa-question-circle pr-3"></i>
+							<a data-toggle="collapse" href="#asdf" role="button">
+								hi
+							</a>
+							<button type="button" class="close">
+  								<span aria-hidden="true"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
+							</button>	
+							</div>
+							<div class="collapse" id="asdf">
+								<div class="qna_contents">
+									<p>고객 사유에 의한 환불 시 차감 후 환불 진행 되고 있습니다.</p>
+									<br>
+									<p>반송비 착불 반송시 : 6,000원 차감</p>
+									<br>
+									<p>반송비 선불 반송시 : 3,000원 차감</p>
+								</div>
+							</div>
+  						</td>
 					</tr>
-					</c:forEach>	
+					<tr class="qna_row">
+						<td class="text-center qna_topic">주문</td>
+						<td class="qna_con_style">
+							<div data-toggle="collapse" data-target="#bbbb">
+							<i class="fas fa-question-circle pr-3"></i>
+							<a data-toggle="collapse" href="#bbbb" role="button">
+								hi
+							</a>
+							<button type="button" class="close">
+  								<span aria-hidden="true"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
+							</button>	
+							</div>
+							<div class="collapse" id="bbbb">
+								<div class="qna_contents">
+									<p>고객 사유에 의한 환불 시 차감 후 환불 진행 되고 있습니다.</p>
+									<br>
+									<p>반송비 착불 반송시 : 6,000원 차감</p>
+									<br>
+									<p>반송비 선불 반송시 : 3,000원 차감</p>
+								</div>
+							</div>
+  						</td>
+					</tr>
+					<tr class="qna_row">
+						<td class="text-center qna_topic">회원가입/정보</td>
+						<td class="qna_con_style">
+							<div data-toggle="collapse" data-target="#cccc">
+							<i class="fas fa-question-circle pr-3"></i>
+							<a data-toggle="collapse" href="#cccc" role="button">
+								hi
+							</a>
+							<button type="button" class="close">
+  								<span aria-hidden="true"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
+							</button>	
+							</div>
+							<div class="collapse" id="cccc">
+								<div class="qna_contents">
+									<p>고객 사유에 의한 환불 시 차감 후 환불 진행 되고 있습니다.</p>
+									<br>
+									<p>반송비 착불 반송시 : 6,000원 차감</p>
+									<br>
+									<p>반송비 선불 반송시 : 3,000원 차감</p>
+								</div>
+							</div>
+  						</td>
+					</tr>
 				</tbody>
 			</table>
             
