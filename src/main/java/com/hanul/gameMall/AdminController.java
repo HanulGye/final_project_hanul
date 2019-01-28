@@ -21,4 +21,10 @@ public class AdminController {
 	public void list() throws Exception{
 		
 	}
+	
+	@RequestMapping(value="product/regist")
+	public void regist() throws Exception{
+		
+	}
+	
 }

@@ -40,3 +40,7 @@ $(function() {
         }
     }
 });
+
+$(function() {
+	$('#formGroupExampleInput7').datepicker({});
+});
