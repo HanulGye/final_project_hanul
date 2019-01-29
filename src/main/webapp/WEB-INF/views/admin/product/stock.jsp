@@ -58,67 +58,35 @@
 		<div id="page-wrapper">
 			<div class="row">
 				<div class="col-lg-12">
-					<h2 class="page-header">상품 등록</h2>
+					<h2 class="page-header">재고 리스트</h2>
 				</div>
 				<!-- /.col-lg-12 -->
+				<div class="col-lg-8">
+					<table class="table text-center table-hover">
+						<colgroup>
+							<col style="width: 10%">
+							<col style="width: 70%">
+							<col style="width: 20%">
+						</colgroup>
+						<thead>
+					    	<tr>
+					      		<th class="text-center">기종명</th>
+					      		<th class="text-center">상품명</th>
+					      		<th class="text-center">상세보기</th>
+					    	</tr>
+					  	</thead>
+					  	<tbody>
+					  		<c:forEach items="${productList}" var="dto">
+						  		<tr>
+						  			<td>${dto.platform}</td>
+						  			<td>${dto.name}</td>
+						  			<td><a class="a_non_style" href="#"><button type="button" class="btn btn-secondary">상세 보기</button></a></td>
+						  		</tr>
+					  		</c:forEach>
+					  	</tbody>
+					</table>
+				</div>
 			</div>
-			<form action="./regist" method="post" enctype="multipart/form-data">
-				<div class="form-group">
-					<label for="formGroupExampleInput">상품명</label> <input
-						type="text" class="form-control" id="formGroupExampleInput"
-						placeholder="상품명을 입력하세요." name="name">
-				</div>
-				<div class="form-group">
-					<label for="formGroupExampleInput2">가격설정</label> <input
-						type="number" class="form-control" id="formGroupExampleInput2"
-						placeholder="원을 제외한 숫자만을 입력하세요." name="price">
-				</div>
-				<div class="form-group">
-					<label for="mainImg1">대표 이미지 설정</label> <input
-						type="file" class="form-control" id="mainImg1"
-						placeholder="상품 리스트 페이지에 노출되는 이미지 영역입니다." name="mainImg">
-				</div>
-				<div class="form-group">
-					<label for="subImg1">설명 이미지 설정</label> <input
-						type="file" class="form-control" id="subImg1"
-						placeholder="개별 상품 페이지에 노출되는 이미지 영역입니다." name="subImg">
-				</div>
-				<div class="form-group">
-					<label for="formGroupExampleInput5">기종</label> 
-					<select id="formGroupExampleInput5" class="form-control" name="platform">
-        				<option selected>하단의 기종을 선택해주세요.</option>
-        				<optgroup label="PlayStation">
-        					<option value="[PS4]">[PS4]</option>
-        					<option value="[PS VR]">[PS VR]</option>
-        					<option value="[PS3]">[PS3]</option>
-        					<option value="[PS Vita]">[PS Vita]</option>
-        				</optgroup>
-        				<optgroup label="Nintendo">
-        					<option value="[Switch]">[Switch]</option>
-        					<option value="[3DS]">[3DS]</option>
-        				</optgroup>
-        				<optgroup label="XBox">
-        					<option value="[XBox One]">[XBox One]</option>
-        					<option value="[Xbox 360]">[Xbox 360]</option>
-        				</optgroup>
-        				<optgroup label="ETC">
-	        				<option value="[Hardware]">[Hardware]</option>
-	        				<option value="[Peripheral]">[Peripheral]</option>        				
-        				</optgroup>
-      				</select>
-				</div>
-				<div class="form-group">
-					<label for="formGroupExampleInput6">제조사</label> <input
-						type="text" class="form-control" id="formGroupExampleInput6"
-						placeholder="제조사를 입력해주세요." name="company">
-				</div>
-				<div class="form-group">
-					<label for="formGroupExampleInput7">출시일</label> 
-					<input
-						type="date" class="form-control" id="formGroupExampleInput7" name="relase_date">
-				</div>
-				<button type="submit" class="btn btn-success btn-lg btn-block">상품 등록!</button>
-			</form>
 
 
 		</div>

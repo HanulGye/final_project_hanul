@@ -441,3 +441,8 @@ table.dataTable thead .sorting:after {
 .p_threeone{
 	padding-right: 13%;
 }
+
+.a_non_style{
+	color: black;
+	text-decoration: none;
+}

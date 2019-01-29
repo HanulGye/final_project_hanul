@@ -5,7 +5,13 @@
 
 <mapper namespace="productMapper">
 	<insert id="insert" parameterType="ProductDTO">
-		insert into product values(product_seq.nextval, #{name}, #{price}, #{platform}, #{company}, #{relase_date})
+		insert into product values(#{id_product}, #{name}, #{price}, #{platform}, #{company}, #{relase_date})
 	</insert>
+	<select id="getProductId" resultType="Integer" >
+  		select product_seq.nextval from dual
+  	</select>
+  	<select id="selectList" resultType="ProductDTO">
+  		select * from product order by platform asc
+  	</select>
 </mapper>  
   

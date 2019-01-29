@@ -9,6 +9,7 @@
 		<typeAlias type="java.lang.Integer" alias="Integer"/>
 		<typeAlias type="java.lang.String" alias="String"/>
 		<typeAlias type="com.hanul.product.ProductDTO" alias="ProductDTO"/>
+		<typeAlias type="com.hanul.product_stock.Product_stockDTO" alias="Product_stockDTO"/>
 	</typeAliases>
 
 </configuration>  
