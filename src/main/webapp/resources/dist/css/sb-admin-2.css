@@ -446,3 +446,8 @@ table.dataTable thead .sorting:after {
 	color: black;
 	text-decoration: none;
 }
+
+.mar_top_two{
+	margin-top: 1.5%;
+}
+

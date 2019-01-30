@@ -12,6 +12,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.hanul.product_img.Product_imgDAO;
 import com.hanul.product_img.Product_imgDTO;
+import com.hanul.product_option.Product_optionDAO;
+import com.hanul.product_option.Product_optionDTO;
 import com.hanul.util.FileSaver;
 
 @Service
@@ -21,12 +23,20 @@ public class ProductService {
 	private ProductDAO productDAO;
 	@Inject
 	private Product_imgDAO product_imgDAO;
+	@Inject
+	private Product_optionDAO product_optionDAO;
 	private ModelAndView modelAndView;
 	
-	public ModelAndView insert(ProductDTO productDTO, HttpSession session, MultipartFile mainImg, MultipartFile subImg) throws Exception {
+	public ModelAndView insert(ProductDTO productDTO, List<Product_optionDTO> productOptions, HttpSession session, MultipartFile mainImg, MultipartFile subImg) throws Exception {
 		int productId = productDAO.getProductId();
 		productDTO.setId_product(productId);
 		int result = productDAO.insert(productDTO);
+		
+		if(!productOptions.isEmpty()) {
+			for(Product_optionDTO product_optionDTO : productOptions) {
+				product_optionDAO.insert(product_optionDTO);
+			}
+		}
 		
 		FileSaver fileSaver = new FileSaver();
 		String realPath = session.getServletContext().getRealPath("resources/product");

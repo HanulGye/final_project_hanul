@@ -47,3 +47,23 @@ $(function() {
 });
 
 
+
+$(function() {
+	$('#addBtn_opt').click(addOpt);
+	$(document).on('click', '.close', function(event) {
+		count--;
+		$(this).parent().remove();
+	});
+});
+var count = 0;
+function addOpt() {
+	var add_opt = '<div class="form-group mar_top_two"><label for="opt_name">옵션 상품명</label><button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button><input type="text" class="form-control" id="opt_name" placeholder="옵션 상품명을 입력하세요." name="productOptions"></div>'
+	if(count<5){
+		count++;
+		$('#add_opt_area').append(add_opt);
+	}else{
+		alert('옵션 상품 추가는 최대 5개.');
+	}
+}
+
+

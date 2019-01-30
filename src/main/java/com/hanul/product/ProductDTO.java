@@ -8,7 +8,7 @@ import com.hanul.product_img.Product_imgDTO;
 public class ProductDTO {
 
 	private int id_product, price;
-	private String name, platform, company;
+	private String name, platform, company, genre;
 	private Date relase_date;
 	
 	private List<Product_imgDTO> product_imgs;
@@ -17,6 +17,12 @@ public class ProductDTO {
 	
 	
 	
+	public String getGenre() {
+		return genre;
+	}
+	public void setGenre(String genre) {
+		this.genre = genre;
+	}
 	public List<Product_imgDTO> getProduct_imgs() {
 		return product_imgs;
 	}

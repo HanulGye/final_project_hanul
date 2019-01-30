@@ -14,6 +14,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.hanul.product.ProductDTO;
 import com.hanul.product.ProductService;
+import com.hanul.product_option.Product_optionDTO;
 
 @Controller
 @RequestMapping("/admin/**")
@@ -43,8 +44,8 @@ public class AdminController {
 	}
 	
 	@RequestMapping(value="product/regist", method=RequestMethod.POST )
-	public ModelAndView registProcess(ProductDTO productDTO, HttpSession session, MultipartFile mainImg, MultipartFile subImg, RedirectAttributes redirectAttributes) throws Exception{
-		return productService.insert(productDTO, session, mainImg, subImg);
+	public ModelAndView registProcess(ProductDTO productDTO, List<Product_optionDTO> productOptions, HttpSession session, MultipartFile mainImg, MultipartFile subImg, RedirectAttributes redirectAttributes) throws Exception{
+		return productService.insert(productDTO, productOptions, session, mainImg, subImg);
 	}
 	
 	@RequestMapping(value="product/stock")

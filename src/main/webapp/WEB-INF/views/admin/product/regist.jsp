@@ -54,7 +54,7 @@
 <body>
 	<div id="wrapper">
 		<%@include file="/WEB-INF/views/admin/common/navigation.jsp"%>
-
+		
 		<div id="page-wrapper">
 			<div class="row">
 				<div class="col-lg-12">
@@ -62,7 +62,8 @@
 				</div>
 				<!-- /.col-lg-12 -->
 			</div>
-			<form action="./regist" method="post" enctype="multipart/form-data">
+			<div class="row">
+			<form class="col-lg-8" action="./regist" method="post" enctype="multipart/form-data">
 				<div class="form-group">
 					<label for="formGroupExampleInput">상품명</label> <input
 						type="text" class="form-control" id="formGroupExampleInput"
@@ -117,8 +118,30 @@
 					<input
 						type="date" class="form-control" id="formGroupExampleInput7" name="relase_date">
 				</div>
+				<div class="form-group">
+					<label for="formGroupExampleInput8">장르</label> 
+					<select class="form-control" id="formGroupExampleInput8" name="genre">
+						<option value="action">Action</option>
+						<option value="sports">Sports</option>
+						<option value="rpg">RPG</option>
+						<option value="casualNcharacter">Casual&Character</option>
+						<option value="fighting">Fighting</option>
+						<option value="etc">ETC</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="radio_option">옵션 상품 유무</label>
+					<div id="radio_option">
+						<button class="btn btn-warning" type="button" id="addBtn_opt">
+   	 						옵션 추가
+ 	 					</button>
+ 	 					<div id="add_opt_area">
+						</div>
+					</div>
+				</div>
 				<button type="submit" class="btn btn-success btn-lg btn-block">상품 등록!</button>
 			</form>
+			</div>
 
 
 		</div>
