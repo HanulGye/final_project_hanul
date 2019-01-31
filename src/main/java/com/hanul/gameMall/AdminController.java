@@ -1,5 +1,6 @@
 package com.hanul.gameMall;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -44,7 +45,7 @@ public class AdminController {
 	}
 	
 	@RequestMapping(value="product/regist", method=RequestMethod.POST )
-	public ModelAndView registProcess(ProductDTO productDTO, List<Product_optionDTO> productOptions, HttpSession session, MultipartFile mainImg, MultipartFile subImg, RedirectAttributes redirectAttributes) throws Exception{
+	public ModelAndView registProcess(ProductDTO productDTO, String [] productOptions, HttpSession session, MultipartFile mainImg, MultipartFile subImg, RedirectAttributes redirectAttributes) throws Exception{
 		return productService.insert(productDTO, productOptions, session, mainImg, subImg);
 	}
 	

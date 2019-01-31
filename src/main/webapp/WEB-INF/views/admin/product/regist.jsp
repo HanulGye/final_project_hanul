@@ -139,6 +139,8 @@
 						</div>
 					</div>
 				</div>
+				
+				
 				<button type="submit" class="btn btn-success btn-lg btn-block">상품 등록!</button>
 			</form>
 			</div>

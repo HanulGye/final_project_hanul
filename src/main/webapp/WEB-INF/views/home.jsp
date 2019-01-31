@@ -31,102 +31,8 @@
   </head>
 
   <body id="page-top">
-	<nav class="fixed-top">
-	<nav class="navbar navbar-expand-lg bg-dark sticky">
-		<div class="collapse navbar-collapse" id="navbarResponsive">
-			<ul class="navbar-nav ml-auto">
-				<li class="nav-item mr-3"><i class="fa fa-user-circle" aria-hidden="true" style="color: white;"> login</i></li>
-				<li class="nav-item mr-3"><i class="fa fa-user-plus" aria-hidden="true" style="color: white;"> Join</i></li>
-				<li class="nav-item mr-3"><i class="fa fa-truck" aria-hidden="true" style="color: white;"> Order</i></li>
-				<li class="nav-item" style="margin-right: 30px;"><i class="fa fa-shopping-cart" aria-hidden="true" style="color: white;"> Cart</i></li>
-			</ul>
-		</div>
-	</nav>
-    <!-- Navigation -->	
-    <nav class="navbar navbar-dark navbar-expand-lg bg-dark" id="mainNav">	
-      <div class="container">  
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">Home</a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav mx-auto">
-             <li class="nav-item dropdown">
-		       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		          PlayStation
-		       </a>
-		       <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
-		         <a class="dropdown-item text-light" href="./shop/smallCategory">PlayStation 4</a>
-		         <a class="dropdown-item text-light" href="#">PlayStation VR</a>
-		         <a class="dropdown-item text-light" href="#">PlayStation 3</a>
-		         <a class="dropdown-item text-light" href="#">PlayStation Vita	</a>
-		       </div>
-		     </li>
-            <li class="nav-item dropdown">
-		       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		          Nintendo
-		       </a>
-		       <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
-		         <a class="dropdown-item text-light" href="#">Nintendo Switch</a>
-		         <a class="dropdown-item text-light" href="#">Nintendo 3DS</a>
-		       </div>
-		     </li>
-		     <li class="nav-item dropdown">
-		       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		          XBox
-		       </a>
-		       <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
-		         <a class="dropdown-item text-light" href="#">XBox One</a>
-		         <a class="dropdown-item text-light" href="#">XBox 360</a>
-		       </div>
-		     </li>
-		     <li class="nav-item dropdown">
-		       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		          Etc
-		       </a>
-		       <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
-		         <a class="dropdown-item text-light" href="#">Hardware</a>
-		         <a class="dropdown-item text-light" href="#">Peripheral</a>
-		       </div>
-		     </li>
-		     <li class="nav-item dropdown">
-		       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		          Community
-		       </a>
-		       <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
-		         <a class="dropdown-item text-light" href="#">Notice</a>
-		         <a class="dropdown-item text-light" href="#">Review</a>
-		         <a class="dropdown-item text-light" href="#">QnA</a>
-		         <a class="dropdown-item text-light" href="#">Off-line Market</a>
-		         <a class="dropdown-item text-light" href="#">What's New</a>
-		       </div>
-		     </li>
-          </ul>
-        </div>
-        <form class="form-inline">
-	    	<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-	    	<button class="btn btn-dark my-2 my-sm-0" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
-	  	</form>
-      </div>
-    </nav>
-	</nav>
+	<%@include file="/WEB-INF/views/temp/header.jsp"%>
 
-    <!-- <header class="masthead text-center text-white d-flex">
-      <div class="container my-auto">
-        <div class="row">
-          <div class="col-lg-10 mx-auto">
-            <h1 class="text-uppercase">
-              <strong>Your Favorite Source of Free Bootstrap Themes</strong>
-            </h1>
-            <hr>
-          </div>
-          <div class="col-lg-8 mx-auto">
-            <p class="text-faded mb-5">Start Bootstrap can help you build better websites using the Bootstrap CSS framework! Just download your template and start going, no strings attached!</p>
-            <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Find Out More</a>
-          </div>
-        </div>
-      </div>
-    </header> -->
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
 	  <ol class="carousel-indicators">
 	    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -327,49 +233,8 @@
       </div>
     </section>
 
-    <section id="contact">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 mx-auto text-center">
-            <h2 class="section-heading">문의사항이 있으신가요?</h2>
-            <hr class="my-4">
-            <p class="mb-5">문의 사항의 경우, 아래의 이메일 혹은 전화번호로 연락 주십시오.<br> (전화는 09:00 ~ 18:00)</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-4 ml-auto text-center">
-        	<i class="fa fa-user-circle fa-3x mb-3 sr-contact-1"></i>
-        	<p>LogIn</p>
-          </div>
-          <div class="col-lg-4 mr-auto text-center">
-            <i class="fas fa-phone fa-3x mb-3 sr-contact-1"></i>
-            <p>123-456-6789</p>
-          </div>
-        </div>
-        <div class="row">
-         <div class="col-lg-4 ml-auto text-center">
-        	<i class="fa fa-user-plus fa-3x mb-3 sr-contact-1"></i>
-        	<p>Join</p>
-         </div>
-         <div class="col-lg-4 mr-auto text-center">
-            <i class="fas fa-envelope fa-3x mb-3 sr-contact-2"></i>
-            <p>
-              <a href="mailto:your-email@your-domain.com">adminster@test.com</a>
-            </p>
-          </div>
-        </div>
-        <div class="row">
-         <div class="col-lg-4 ml-auto text-center">
-         	<i class="fa fa-map-marker fa-3x mb-3"></i>
-        	<p>매장 안내</p>
-         </div>
-         <div class="col-lg-4 mr-auto text-center">
-         	<i></i>
-        	<p></p>
-         </div>
-        </div>
-      </div>
-    </section>
+	<%@include file="/WEB-INF/views/temp/footer.jsp"%>
+	<%@include file="/WEB-INF/views/temp/loginBox.jsp"%>
 
     <!-- Bootstrap core JavaScript -->
     <script src="${pageContext.request.contextPath}/resources/vendor/jquery/jquery.min.js"></script>

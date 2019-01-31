@@ -27,17 +27,23 @@ public class ProductService {
 	private Product_optionDAO product_optionDAO;
 	private ModelAndView modelAndView;
 	
-	public ModelAndView insert(ProductDTO productDTO, List<Product_optionDTO> productOptions, HttpSession session, MultipartFile mainImg, MultipartFile subImg) throws Exception {
+	public ModelAndView insert(ProductDTO productDTO, String [] productOptions, HttpSession session, MultipartFile mainImg, MultipartFile subImg) throws Exception {
+		//상품 인서트
 		int productId = productDAO.getProductId();
 		productDTO.setId_product(productId);
 		int result = productDAO.insert(productDTO);
 		
-		if(!productOptions.isEmpty()) {
-			for(Product_optionDTO product_optionDTO : productOptions) {
+		//옵션 인서트
+		if(productOptions.length!=0) {
+			for(int i=0;i<productOptions.length;i++) {
+				Product_optionDTO product_optionDTO = new Product_optionDTO();
+				product_optionDTO.setName_option(productOptions[i]);
+				product_optionDTO.setId_product(productId);
 				product_optionDAO.insert(product_optionDTO);
 			}
 		}
 		
+		//이미지 실제 저장
 		FileSaver fileSaver = new FileSaver();
 		String realPath = session.getServletContext().getRealPath("resources/product");
 		List<Product_imgDTO> imgs = new ArrayList<Product_imgDTO>();
@@ -46,7 +52,7 @@ public class ProductService {
 			imgs.add(product_imgDTO);
 		}
 		
-			
+		//이미지 테이블 인서트	
 		for(int i=0;i<imgs.size();i++) {
 			
 			if(mainImg.isEmpty()||subImg.isEmpty()) {

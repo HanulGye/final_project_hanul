@@ -34,82 +34,7 @@
   </head>
 
   <body id="page-top">
-	<nav class="fixed-top">
-	<nav class="navbar navbar-expand-lg bg-dark sticky">
-		<div class="collapse navbar-collapse" id="navbarResponsive">
-			<ul class="navbar-nav ml-auto">
-				<li class="nav-item mr-3"><a id="login_popup" href="#" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-user-circle" aria-hidden="true" style="color: white;"> login</i></a></li>
-				<li class="nav-item mr-3"><i class="fa fa-user-plus" aria-hidden="true" style="color: white;"> Join</i></li>
-				<li class="nav-item mr-3"><i class="fa fa-truck" aria-hidden="true" style="color: white;"> Order</i></li>
-				<li class="nav-item" style="margin-right: 30px;"><i class="fa fa-shopping-cart" aria-hidden="true" style="color: white;"> Cart</i></li>
-			</ul>
-		</div>
-	</nav>
-    <!-- Navigation -->	
-    <nav class="navbar navbar-dark navbar-expand-lg bg-dark" id="mainNav">	
-      <div class="container">  
-        <a class="navbar-brand js-scroll-trigger" href="#go_to_top">HOME</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav mx-auto">
-             <li class="nav-item dropdown">
-		       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		          PlayStation
-		       </a>
-		       <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
-		         <a class="dropdown-item text-light" href="#">PlayStation 4</a>
-		         <a class="dropdown-item text-light" href="#">PlayStation VR</a>
-		         <a class="dropdown-item text-light" href="#">PlayStation 3</a>
-		         <a class="dropdown-item text-light" href="#">PlayStation Vita	</a>
-		       </div>
-		     </li>
-            <li class="nav-item dropdown">
-		       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		          Nintendo
-		       </a>
-		       <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
-		         <a class="dropdown-item text-light" href="#">Nintendo Switch</a>
-		         <a class="dropdown-item text-light" href="#">Nintendo 3DS</a>
-		       </div>
-		     </li>
-		     <li class="nav-item dropdown">
-		       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		          XBox
-		       </a>
-		       <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
-		         <a class="dropdown-item text-light" href="#">XBox One</a>
-		         <a class="dropdown-item text-light" href="#">XBox 360</a>
-		       </div>
-		     </li>
-		     <li class="nav-item dropdown">
-		       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		          Etc
-		       </a>
-		       <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
-		         <a class="dropdown-item text-light" href="#">Hardware</a>
-		         <a class="dropdown-item text-light" href="#">Peripheral</a>
-		       </div>
-		     </li>
-		     <li class="nav-item dropdown">
-		       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		          Community
-		       </a>
-		       <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
-		         <a class="dropdown-item text-light" href="#">Notice</a>
-		         <a class="dropdown-item text-light" href="#">Review</a>
-		         <a class="dropdown-item text-light" href="#">QnA</a>
-		         <a class="dropdown-item text-light" href="#">Off-line Market</a>
-		         <a class="dropdown-item text-light" href="#">What's New</a>
-		       </div>
-		     </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-	</nav>
-	<!-- navigation 끝 각 메뉴별 링크 걸어둘 때까진 냅두기 -->
+	<%@include file="/WEB-INF/views/temp/header.jsp"%>
 
     
     <div id="margin-top-container">
@@ -280,114 +205,14 @@
       
     </div>
      
-    <section id="contact">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 mx-auto text-center">
-            <h2 class="section-heading">문의사항이 있으신가요?</h2>
-            <hr class="my-4">
-            <p class="mb-5">문의 사항의 경우, 아래의 이메일 혹은 전화번호로 연락 주십시오.<br> (전화는 09:00 ~ 18:00)</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-4 ml-auto text-center">
-        	<i class="fa fa-user-circle fa-3x mb-3 sr-contact-1"></i>
-        	<p>LogIn</p>
-          </div>
-          <div class="col-lg-4 mr-auto text-center">
-            <i class="fas fa-phone fa-3x mb-3 sr-contact-1"></i>
-            <p>123-456-6789</p>
-          </div>
-        </div>
-        <div class="row">
-         <div class="col-lg-4 ml-auto text-center">
-        	<i class="fa fa-user-plus fa-3x mb-3 sr-contact-1"></i>
-        	<p>Join</p>
-         </div>
-         <div class="col-lg-4 mr-auto text-center">
-            <i class="fas fa-envelope fa-3x mb-3 sr-contact-2"></i>
-            <p>
-              <a href="mailto:your-email@your-domain.com">adminster@test.com</a>
-            </p>
-          </div>
-        </div>
-        <div class="row">
-         <div class="col-lg-4 ml-auto text-center">
-         	<i class="fa fa-map-marker fa-3x mb-3"></i>
-        	<p>매장 안내</p>
-         </div>
-         <div class="col-lg-4 mr-auto text-center">
-         	<i></i>
-        	<p></p>
-         </div>
-        </div>
-      </div>
-    </section>
+    <%@include file="/WEB-INF/views/temp/footer.jsp"%>
+	<%@include file="/WEB-INF/views/temp/loginBox.jsp"%>
     
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-body">
-      	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-        <img class="img_size my-4" alt="" src="${pageContext.request.contextPath}/resources/img/icon_img/test_logo.png">
- 		<h1 class="display-4 my-4 text-center">L.O.G.I.N</h1>
- 		<form action="" class="login_form_style mx_5 my_5">
- 		<div class="form-group text_box_sizing">
-		    <input type="email" class="form-control" placeholder="E-mail 주소 입력">
-		</div>
-		<div class="form-group text_box_sizing">
-			<input type="password" class="form-control" placeholder="비밀번호 입력">
-		</div>
-		<div class="row">
-		<div class="col-sm form-group" style="margin-left: 12%">
-		  	<input class="form-check-input" type="checkbox" value="" id="maintain_login_status">
-  			<label class="form-check-label font_sizing" for="maintain_login_status">
-    			로그인 상태를 유지합니다.
-			</label>
-		</div>
-		<a class="col-sm font_sizing text-center" href="#">비밀번호를 잊어버리셨나요?</a>
-		
-		</div>
-		<div class="row">
-			<p class="font_sizing col-sm text-center">아직 계정이 없으신가요?</p>
-			<a class="font_sizing col-sm text-center" href="#">등록하러 가기</a>		  
-		</div>
-		<div class="ml_25p">
-			<button type="button" class="btn btn-dark btn_lg btn_sizing mt-4 mb-4">Login</button>
-			<div>
-				<a id="kakao-login-btn"></a>
-				<a href="http://developers.kakao.com/logout"></a>
-			</div>
-		</div>
-		<a class="font_sizing ml_30p_bold" href="#">비회원 주문번호 조회</a>
-		  		
- 	</form>
-      </div>
-    </div>
-  </div>
-</div>
+    
    
 
 
-	<!-- kakao api -->
-	<script type='text/javascript'>
-  		//<![CDATA[
-    	// 사용할 앱의 JavaScript 키를 설정해 주세요.
-    	Kakao.init('8855bdefcad85a49302a2c5061b45c6d');
-   		 // 카카오 로그인 버튼을 생성합니다.
-   		Kakao.Auth.createLoginButton({
-      container: '#kakao-login-btn',
-      success: function(authObj) {
-        alert(JSON.stringify(authObj));
-      },
-      fail: function(err) {
-         alert(JSON.stringify(err));
-      }
-    });
-  	//]]>
-	</script>
+	
 
     <!-- Bootstrap core JavaScript -->
     <script src="${pageContext.request.contextPath}/resources/vendor/jquery/jquery.min.js"></script>

@@ -11,7 +11,6 @@ public class ProductDTO {
 	private String name, platform, company, genre;
 	private Date relase_date;
 	
-	private List<Product_imgDTO> product_imgs;
 	
 	
 	
@@ -22,12 +21,6 @@ public class ProductDTO {
 	}
 	public void setGenre(String genre) {
 		this.genre = genre;
-	}
-	public List<Product_imgDTO> getProduct_imgs() {
-		return product_imgs;
-	}
-	public void setProduct_imgs(List<Product_imgDTO> product_imgs) {
-		this.product_imgs = product_imgs;
 	}
 	public int getId_product() {
 		return id_product;

@@ -70,10 +70,10 @@
                             <a href=""><i class="fas fa-cubes fa-fw"></i> 상품 관리<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="blank.html">상품 등록</a>
+                                    <a href="${pageContext.request.contextPath}/admin/product/regist">상품 등록</a>
                                 </li>
                                 <li>
-                                    <a href="blank.html">재고 리스트</a>
+                                    <a href="${pageContext.request.contextPath}/admin/product/stock">재고 리스트</a>
                                 </li>
                                 <li>
                                     <a href="blank.html">상품 삭제</a>
