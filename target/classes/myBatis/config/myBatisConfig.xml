@@ -12,6 +12,7 @@
 		<typeAlias type="com.hanul.product_img.Product_imgDTO" alias="Product_imgDTO"/>
 		<typeAlias type="com.hanul.product_stock.Product_stockDTO" alias="Product_stockDTO"/>
 		<typeAlias type="com.hanul.product_option.Product_optionDTO" alias="Product_optionDTO"/>
+		<typeAlias type="com.hanul.product_evaluation.Product_evaluationDTO" alias="Product_evaluationDTO"/>
 	</typeAliases>
 
 </configuration>  

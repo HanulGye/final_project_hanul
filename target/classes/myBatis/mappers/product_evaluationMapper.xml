@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="product_evaluationMapper">
+	<insert id="insert" parameterType="Product_evaluationDTO">
+		insert into product_evaluation values(proeva_seq.nextval, #{id_product}, #{id_member}, #{title_eval}, #{contents_eval}, #{score_eval})
+	</insert>
+</mapper>  
