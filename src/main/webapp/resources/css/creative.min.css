@@ -424,6 +424,10 @@ header.masthead p {
 	font-size: 0.750rem;
 }
 
+.cautionText{
+	display: none;
+}
+
 /* Login form */
 
 #loginWindow{

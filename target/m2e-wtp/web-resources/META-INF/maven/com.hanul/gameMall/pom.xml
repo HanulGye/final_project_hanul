@@ -21,6 +21,21 @@
 	</repositories>
 	
 	<dependencies>
+		<!-- hibernate annotations-->
+		<dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-annotations</artifactId>
+            <version>3.5.6-Final</version>
+        </dependency>  
+		
+		<!-- hibernate validator -->
+		<dependency> 
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>4.3.2.Final</version> 
+		</dependency>
+
+	
 		<!-- jackson -->
 		<dependency>
 		    <groupId>com.fasterxml.jackson.core</groupId>

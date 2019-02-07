@@ -40,21 +40,26 @@
     <div id="margin-top-container">
 		<h1 class="text-center display-4 mb-5">Join Us</h1>
       	
-      	<form class="pt-5 join_form_style">
+      	<form onsubmit="return check();" action="./join" method="get" class="pt-5 join_form_style" id="frm">
 		  <div class="form-group">
-		    <input type="email" class="form-control" placeholder="사용하실 ID를 입력해주세요.(수신가능 E-mail)">
+		    <input type="email" class="form-control" placeholder="사용하실 ID를 입력해주세요.(수신가능 E-mail)" id="input_id" name="id_member">
+		    <p class="cautionText" id="idText"></p>
 		  </div>
 		  <div class="form-group">
-		    <input type="password" class="form-control" placeholder="영문+숫자+특수문자 8~16자리(특수문자 괄호()는 사용 불가)">
+		    <input type="password" class="form-control" placeholder="영문+숫자+특수문자 8~16자리(특수문자 괄호()는 사용 불가)" id="input_pw" name="pw">
+		    <p class="cautionText" id="pwText"></p>
 		  </div>
 		  <div class="form-group">
-		    <input type="password" class="form-control" placeholder="비밀번호를 다시 입력해주세요.">
+		    <input type="password" class="form-control" placeholder="비밀번호를 다시 입력해주세요." id="check_pw">
+		    <p class="cautionText" id="pwCheck"></p>
 		  </div>
 		  <div class="form-group">
-		    <input type="text" class="form-control" placeholder="이름을 입력해주세요.">
+		    <input type="text" class="form-control" placeholder="이름을 입력해주세요." id="input_name" name="name">
+		    <p class="cautionText" id="nameText"></p>
 		  </div>
 		  <div class="form-group">
-		    <input type="tel" class="form-control" placeholder="휴대전화 번호를 입력해주세요.('-'표 제외)">
+		    <input type="tel" class="form-control" placeholder="휴대전화 번호를 입력해주세요.(eg. 010-0000-0000)" id="input_phone" name="phone">
+		    <p class="cautionText" id="phnText"></p>
 		  </div>
 		  <div class="form-group">
 		    <label for="exampleFormControlTextarea1">
@@ -138,11 +143,13 @@
 				<p>※ 선택항목의 경우 동의하지 않아도 불이익을 받지 않습니다.</p>
 				<p class="font-weight-bold">※ 만 14세 미만은 회원가입 및 서비스 이용이 불가합니다.</p>
 		  </div>
-		  <button class="my-5 btn btn-dark btn-lg btn-block">회원가입 하기</button>	
+		  <input type="submit" class="my-5 btn btn-dark btn-lg btn-block" value="회원가입 하기" id="smt_btn">
 		</form>
       
       
     </div>
+    
+    
      
  	<%@include file="/WEB-INF/views/temp/footer.jsp"%>
 	<%@include file="/WEB-INF/views/temp/loginBox.jsp"%>
@@ -163,6 +170,8 @@
 
     <!-- Custom scripts for this template -->
     <script src="${pageContext.request.contextPath}/resources/js/creative.min.js"></script>
+    
+    <script src="${pageContext.request.contextPath}/resources/js/join_form.js"></script>
 
   </body>
 

@@ -7,4 +7,7 @@
 	<select id="selectList" resultType="Product_evaluationDTO" parameterType="Integer">
 		select * from PRODUCT_EVALUATION where ID_PRODUCT = #{ID_PRODUCT}
 	</select>
+	<insert id="insert" parameterType="Product_evaluationDTO">
+		insert into product_evaluation values(proeva_seq.nextval, #{id_product}, #{id_member}, #{title_eval}, #{contents_eval}, #{score_eval})
+	</insert>
  </mapper>
