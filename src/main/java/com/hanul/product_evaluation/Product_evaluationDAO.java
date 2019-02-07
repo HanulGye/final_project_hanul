@@ -16,5 +16,9 @@ public class Product_evaluationDAO {
 	
 	public List<Product_evaluationDTO> selectList(Integer id_product) throws Exception{
 		return sqlSession.selectList(NAMESPACE+"selectList", id_product);
+	}	
+	
+	public int insert(Product_evaluationDTO product_evaluationDTO) throws Exception{
+		return sqlSession.insert(NAMESPACE+"insert", product_evaluationDTO);
 	}
 }

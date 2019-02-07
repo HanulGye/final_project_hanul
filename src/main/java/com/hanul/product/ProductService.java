@@ -38,6 +38,7 @@ public class ProductService {
 		int result = productDAO.insert(productDTO);
 		
 		//옵션 인서트
+
 		if(productOptions!=null) {
 			for(int i=0;i<productOptions.length;i++) {
 				Product_optionDTO product_optionDTO = new Product_optionDTO();
