@@ -50,9 +50,15 @@ public class AdminController {
 	}
 	
 	@RequestMapping(value="product/stock")
-	public ModelAndView stock() throws Exception{
-		ModelAndView modelAndView = productService.selectList();
+	public ModelAndView stock(String platform, Integer id_product) throws Exception{
+		//ModelAndView modelAndView = productService.selectList();
+		platform = "[PS4]";
+		id_product = 15;
+		ModelAndView modelAndView = productService.selectListBySearch(platform, id_product);
 		return modelAndView;
 	}
 	
+	
+	
+
 }

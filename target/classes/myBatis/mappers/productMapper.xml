@@ -13,5 +13,8 @@
   	<select id="selectList" resultType="ProductDTO">
   		select * from product order by platform asc
   	</select>
+  	<select id="selectListBySearch" resultType="ProductDTO" parameterType="String">
+  		select * from product where platform = #{platform} order by relase_date desc
+  	</select>
 </mapper>  
   

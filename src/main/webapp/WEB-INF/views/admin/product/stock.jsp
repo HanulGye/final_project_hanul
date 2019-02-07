@@ -79,7 +79,7 @@
 					  		<c:forEach items="${productList}" var="dto">
 						  		<tr>
 						  			<td>${dto.platform}</td>
-						  			<td>${dto.name}</td>
+						  			<td>${dto.name}&nbsp;${dto.sum_score}</td>
 						  			<td><a class="a_non_style" href="#"><button type="button" class="btn btn-secondary">상세 보기</button></a></td>
 						  		</tr>
 					  		</c:forEach>

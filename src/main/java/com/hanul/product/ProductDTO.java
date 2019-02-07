@@ -10,12 +10,20 @@ public class ProductDTO {
 	private int id_product, price;
 	private String name, platform, company, genre;
 	private Date relase_date;
+	private double sum_score;
 	
 	
 	
 	
 	
 	
+	
+	public double getSum_score() {
+		return sum_score;
+	}
+	public void setSum_score(double sum_score) {
+		this.sum_score = sum_score;
+	}
 	public String getGenre() {
 		return genre;
 	}

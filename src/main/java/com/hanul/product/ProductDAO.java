@@ -25,4 +25,8 @@ public class ProductDAO {
 	public List<ProductDTO> selectList() throws Exception{
 		return sqlSession.selectList(NAMESPACE+"selectList");
 	}
+	
+	public List<ProductDTO> selectListBySearch(String platform) throws Exception{
+		return sqlSession.selectList(NAMESPACE+"selectListBySearch", platform);
+	}
 }
