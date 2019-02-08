@@ -1,9 +1,16 @@
 
 
-$(function check() {
+$(function() {
+	
+	var result = 0;
+	var result2 = 0;
+	var result3 = 0;
+	var result4 = 0;
+	var result5 = 0;
 	
 	
-	
+	//아래의 5개의 함수는 각각 입력값에 대한 유효성 검사 역할
+	//아이디 중복여부 검사 남음(2019-02-08)
 	$(function() {
 		var regExpId = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
 		$('#input_id').blur(function() {
@@ -14,18 +21,22 @@ $(function check() {
 				$('#idText').addClass('text-success');
 				$('#idText').text(message);
 				$('#idText').attr('style','display:block');
-				return true;
+				result = 1;
+				return result;
 			}else{
 				message = 'Id는 이메일 형식으로 입력해주십시오.';
 				$('#idText').removeClass('text-success');
 				$('#idText').addClass('text-danger');
 				$('#idText').text(message);
 				$('#idText').attr('style','display:block');
-				return false;
+				result = 0;
+				return result;
 			}
 		});
 		
 	})
+	
+	
 	
 	$(function() {
 		var regExpPw = /^(?=.*[a-zA-Z])(?=.*[^a-zA-Z0-9])(?=.*[0-9]).{8,16}$/;
@@ -37,14 +48,16 @@ $(function check() {
 				$('#pwText').addClass('text-success');
 				$('#pwText').text(message);
 				$('#pwText').attr('style','display:block');
-				return true;
+				result2 = 1;
+				return result2;
 			}else{
 				message = '비밀번호 조건(8~16자, 영문, 특수문자 포함)이 맞지 않습니다.';
 				$('#pwText').removeClass('text-success');
 				$('#pwText').addClass('text-danger');
 				$('#pwText').text(message);
 				$('#pwText').attr('style','display:block');
-				return false;
+				result2 = 0;
+				return result2;
 			}
 		});
 	})
@@ -60,14 +73,16 @@ $(function check() {
 				$('#pwCheck').addClass('text-success');
 				$('#pwCheck').text(message);
 				$('#pwCheck').attr('style','display:block');
-				return true;
+				result3 = 1;
+				return result3;
 			}else{
 				message = '비밀번호가 일치하지 않습니다.';
 				$('#pwCheck').removeClass('text-success');
 				$('#pwCheck').addClass('text-danger');
 				$('#pwCheck').text(message);
 				$('#pwCheck').attr('style','display:block');
-				return false;
+				result3 = 0;
+				return result3;
 			}
 		})
 	})
@@ -79,12 +94,15 @@ $(function check() {
 			var message = '이름을 입력해주세요.';
 			if(naVal.match(regExpName) != null){
 				$('#nameText').attr('style','display:none');
-				return true;
+				result4 = 1;
+				return result4;
 			}else{
 				$('#nameText').addClass('text-danger');
 				$('#nameText').text(message);
 				$('#nameText').attr('style','display:block');
-				return false;
+				result4 = 0;
+				return result4;
+				
 			}
 		})
 	})
@@ -96,15 +114,47 @@ $(function check() {
 			var message = '휴대전화 번호를 입력해주세요(eg. 010-0000-0000)';
 			if(phnVal.match(regExpPhn) != null){
 				$('#phnText').attr('style','display:none');
-				return true;
+				result5 = 1;
+				return result5;
 			}else{
 				$('#phnText').addClass('text-danger');
 				$('#phnText').text(message);
 				$('#phnText').attr('style','display:block'); 
-				return false;
+				result5 = 0;
+				return result5;
 			}
 		})
 	
+	})
+	
+	
+
+	//submit event
+	$(function() {
+		$('#frm').submit(function(event) {
+			if(result==1 && result2==1 && result3==1 && result4==1 && result5==1 && $('#defaultCheck1').is(':checked') && $('#defaultCheck2').is(':checked')){
+				//checkbox의 경우 check 되어있지 않으면 submit할 때 밸류가 넘어가지 않음.
+				//이럴 때는 hidden tag 사용 
+				if($('#defaultCheck3').is(':checked')){
+					$('#defaultCheck3').val('yes');
+				}else{
+					$('#defaultCheck3').removeAttr('name');
+					$('#c_1').attr('name', 'mailing');
+					$('#c_1').val('no');
+				}
+				if($('#defaultCheck4').is(':checked')){
+					$('#defaultCheck4').val('yes');
+				}else{
+					$('#defaultCheck4').removeAttr('name');
+					$('#c_2').attr('name', 'sms');
+					$('#c_2').val('no');
+				}
+			}else{
+				alert('입력 값이 잘못되었습니다. 다시 확인해주십시오.');
+				event.preventDefault();
+				//조건에 만족하지 못할 경우, 실제로 form의 data들이 넘어가면 안되기 때문에, 위와 같은 .preventDefault() 사용
+			}
+		});
 		
 	})
 

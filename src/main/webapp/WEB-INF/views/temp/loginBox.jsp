@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>   
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<c:set var="URL" value="${pageContext.request.requestURL}" />
+<c:set var="URI" value="${pageContext.request.requestURI}" />
 
 
   <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -12,12 +15,12 @@
         </button>
         <img class="img_size my-4" alt="" src="${pageContext.request.contextPath}/resources/img/icon_img/test_logo.png">
  		<h1 class="display-4 my-4 text-center">L.O.G.I.N</h1>
- 		<form action="" class="login_form_style mx_5 my_5">
+ 		<form action="${pageContext.request.contextPath}/member/login" method="post" class="login_form_style mx_5 my_5">
  		<div class="form-group text_box_sizing">
-		    <input type="email" class="form-control" placeholder="E-mail 주소 입력">
+		    <input type="email" class="form-control" placeholder="E-mail 주소 입력" name="id_member">
 		</div>
 		<div class="form-group text_box_sizing">
-			<input type="password" class="form-control" placeholder="비밀번호 입력">
+			<input type="password" class="form-control" placeholder="비밀번호 입력" name="pw">
 		</div>
 		<div class="row">
 		<div class="col-sm form-group" style="margin-left: 12%">
@@ -33,8 +36,9 @@
 			<p class="font_sizing col-sm text-center">아직 계정이 없으신가요?</p>
 			<a class="font_sizing col-sm text-center" href="#">등록하러 가기</a>		  
 		</div>
+		<input type="hidden" value="${URI}" name="uri">
 		<div class="ml_25p">
-			<button type="button" class="btn btn-dark btn_lg btn_sizing mt-4 mb-4">Login</button>
+			<button type="submit" class="btn btn-dark btn_lg btn_sizing mt-4 mb-4">Login</button>
 			<div>
 				<a id="kakao-login-btn"></a>
 				<a href="http://developers.kakao.com/logout"></a>

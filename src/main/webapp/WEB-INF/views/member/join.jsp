@@ -39,8 +39,7 @@
     
     <div id="margin-top-container">
 		<h1 class="text-center display-4 mb-5">Join Us</h1>
-      	
-      	<form onsubmit="return check();" action="./join" method="get" class="pt-5 join_form_style" id="frm">
+      	<form action="./join" method="post" class="pt-5 join_form_style" id="frm">
 		  <div class="form-group">
 		    <input type="email" class="form-control" placeholder="사용하실 ID를 입력해주세요.(수신가능 E-mail)" id="input_id" name="id_member">
 		    <p class="cautionText" id="idText"></p>
@@ -128,22 +127,23 @@
 			</div>
 		  </div>
 		  <div class="form-check">
-  				<input class="form-check-input" type="checkbox" value="" id="defaultCheck3">
+  				<input class="form-check-input" type="checkbox" value="no" id="defaultCheck3" name="mailing">
+  				<input type="hidden" id="c_1" name="">
   				<label class="form-check-label" for="defaultCheck3">
     				(선택) 쇼핑정보 E-mail 수신 동의
 				</label>
 		  </div>
 		  <div class="form-check">
-  				<input class="form-check-input" type="checkbox" value="" id="defaultCheck4">
+  				<input class="form-check-input" type="checkbox" value="no" id="defaultCheck4" name="sms">
+  				<input type="hidden" id="c_2" name="">
   				<label class="form-check-label" for="defaultCheck4">
     				(선택) 쇼핑정보 SMS 수신 동의
 				</label>
 				<br>
 				<br>
-				<p>※ 선택항목의 경우 동의하지 않아도 불이익을 받지 않습니다.</p>
-				<p class="font-weight-bold">※ 만 14세 미만은 회원가입 및 서비스 이용이 불가합니다.</p>
+				<p class="font-weight-bold">※ 선택항목의 경우 동의하지 않아도 불이익을 받지 않습니다.</p>
 		  </div>
-		  <input type="submit" class="my-5 btn btn-dark btn-lg btn-block" value="회원가입 하기" id="smt_btn">
+		  <input type="submit" class="my-5 btn btn-dark btn-lg btn-block" value="회원가입 하기">
 		</form>
       
       

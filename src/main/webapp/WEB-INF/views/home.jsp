@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page session="false" %>
 <!DOCTYPE html>
 <html>
 
@@ -27,6 +26,12 @@
 
     <!-- Custom styles for this template -->
     <link href="${pageContext.request.contextPath}/resources/css/creative.min.css" rel="stylesheet">
+	<script type="text/javascript">
+		var msg = '${param.msg}';
+		if(msg != ''){
+			alert(msg);
+		}
+	</script>
 
   </head>
 
@@ -45,6 +50,8 @@
 	      <div class="carousel-caption d-none d-md-block">
     		<h2 style="font-size:100px; text-shadow: 0 0 2px gray;">BATTLE FIELD V</h2>
    	 		<h4 style="margin-bottom: 300px; text-shadow: 0 0 2px black;">정통 FPS의 최신작 지금 만나보세요.</h4>
+   	 		
+   	 		
   		 </div>
 	    </div>
 	    <div class="carousel-item">
@@ -246,6 +253,7 @@
 
     <!-- Custom scripts for this template -->
     <script src="${pageContext.request.contextPath}/resources/js/creative.min.js"></script>
+    
 
   </body>
 

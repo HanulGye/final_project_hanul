@@ -6,7 +6,8 @@ public class MemberDTO {
 	private String pw;
 	private String name;
 	private String phone; 
-	private String mailing, sms;
+	private String mailing; 
+	private String sms;
 	private String grade;
 	private int point;
 	
