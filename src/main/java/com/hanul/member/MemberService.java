@@ -1,10 +1,8 @@
 package com.hanul.member;
 
-import java.util.StringTokenizer;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.ModelAndView;
@@ -54,11 +52,16 @@ public class MemberService {
 		
 		MemberDTO memberDTO2 = memberDAO.login(memberDTO);
 		if(memberDTO2 != null) {
-			request.getSession().setAttribute("login_info", memberDTO2.getName());
+			request.getSession().setAttribute("login_info", memberDTO2);
 		}
 		modelAndView = new ModelAndView();
 		//modelAndView.addObject("member_data",memberDTO2); 굳이 보낼 필요 없을듯
 		modelAndView.setViewName("redirect:"+uri);
 		return modelAndView;
 	}
+	/*public void d() {
+		MemberDTO memberDTO = memberDAO.login(memberDTO);
+		CartDTO cartDTO = cartDAO.dddd(dfdsf);
+		memberDTO.setCartDTO(cartDTO);
+	}*/
 }

@@ -9,7 +9,7 @@
 				<c:choose>
 					<c:when test="${!empty login_info}">
 						<li class="nav-item mr-3"><a href="${pageContext.request.contextPath}/member/logout"><i class="fas fa-sign-out-alt" aria-hidden="true" style="color: white;"> logOut</i></a></li>
-						<li class="nav-item mr-3"><a href="#"><i class="fas fa-address-card" aria-hidden="true" style="color: white;"> MyPage</i></a></li>
+						<li class="nav-item mr-3"><a href="${pageContext.request.contextPath}/member/myPage"><i class="fas fa-address-card" aria-hidden="true" style="color: white;"> MyPage</i></a></li>
 					</c:when>
 					<c:otherwise>
 						<li class="nav-item mr-3"><a id="login_popup" href="#" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-user-circle" aria-hidden="true" style="color: white;"> login</i></a></li>

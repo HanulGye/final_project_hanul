@@ -3,6 +3,27 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="memberMapper">
+	<!-- <resultMap type="MemberDTO" id="tccR">
+		<id property="id_member" column="id_member" />
+		<result property="pw" column="pw"/>
+		<result property="name" column="name"/>
+		<result property="phone" column="phone"/>
+		<result property="mailing" column="mailing"/>
+		<result property="sms" column="sms"/>
+		<result property="grade" column="grade"/>
+		<result property="point" column="point"/>
+		<association resultMap="tccR2" property="cart" javaType="CartDTO"></association>
+	</resultMap>
+	
+	<resultMap type="CartDTO" id="tccR2">
+		<id property="id_cart_order" column="id_cart_order" />
+		<result property="id_product" column="id_product" />
+		<result property="quantity" column="quantity" />
+		<result property="id_member" column="id_member" />
+		<result property="id_guest" column="id_guest" />
+		<result property="reg_date" column="reg_date" />
+	</resultMap> -->
+	
 	<insert id="join" parameterType="MemberDTO">
 		insert into member values(#{id_member}, #{pw}, #{name}, #{phone}, #{mailing, jdbcType=VARCHAR}, #{sms, jdbcType=VARCHAR}, 'Normal', 0)
 	</insert>
@@ -12,6 +33,9 @@
 	<select id="idCheck" parameterType="String" resultType="String">
 		select id from member where id_member = #{id_member}
 	</select>
+	<!-- <select id="tcc" resultMap="tccR" parameterType="String">
+		select m.name c.sale from member m inner join order_cart c on (m.id_member = c.id_member and m.id_member = #{id_member})
+	</select> -->
 	
 </mapper>  
   

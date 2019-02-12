@@ -1,5 +1,8 @@
 package com.hanul.member;
 
+import java.util.List;
+
+import com.hanul.order_cart.CartDTO;
 
 public class MemberDTO {
 	private String id_member; 
@@ -10,8 +13,18 @@ public class MemberDTO {
 	private String sms;
 	private String grade;
 	private int point;
+	private List<CartDTO> carts;
 	
 	
+	
+	
+	
+	public List<CartDTO> getCarts() {
+		return carts;
+	}
+	public void setCarts(List<CartDTO> carts) {
+		this.carts = carts;
+	}
 	public String getId_member() {
 		return id_member;
 	}

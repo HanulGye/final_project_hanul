@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page session="false" %>
 <!DOCTYPE html>
 <html>
 
@@ -41,7 +40,7 @@
     <div id="margin-top-container">
       	<h1 class="text-center display-4 mb-5">Cart</h1>
       	<div class="row">
-         <div class="col-lg-7">
+         <div class="col-lg-10 offset-lg-1">
          	<table class="table">
 			  <colgroup>
 					<col style="width:70%">
@@ -54,10 +53,11 @@
 			    </tr>
 			  </thead>
 			  <tbody class="table-outerfont-size">
-			    <c:forEach var="i" begin="1" end="3">
+			    <%-- <c:forEach var="i" begin="1" end="3"> --%>
 			    <tr class="tr-border-style">
 			      <td>
-			      	<table class="cart-innerTable-style">
+			      	<i class="fas fa-exclamation-triangle wrn"></i>
+			      	<%-- <table class="cart-innerTable-style">
 			      		
 			      		<tr>
 			      			<td rowspan="5"><img class="pr-3" style="height: 30%" alt="" src="${pageContext.request.contextPath}/resources/img/product_test_img/rockman_11.jpg"></td>
@@ -78,21 +78,26 @@
 			      		<tr>
 			      			<td class="text-center font-weight-bold" colspan="2"><button type="button" class="rounded btn btn-dark btn-sm" data-toggle="modal" data-target="#option_change_window">옵션 & 수량변경</button></td>
 			      		</tr>
-			      	</table>
+			      	</table> --%>
 			      </td>
-			      <td class="pt-4 font-weight-bold">45,000 원</td>
+			      <!-- <td class="pt-4 font-weight-bold">45,000 원</td>
 			      <td>
 			      	<button type="button" class="close" aria-label="Close">
   						<span aria-hidden="true">&times;</span>
 					</button>
-				  </td>
+				  </td> -->
 			    </tr>
-			    </c:forEach>
+			    <tr>
+			    	<td>
+			    		<p class="etypgh text-center">주문하신 상품이 없습니다.</p>
+			    	</td>
+			    </tr>
+			    <%-- </c:forEach> --%>
 			  </tbody>
 			</table>
          </div>	
          
-         <div class="col-lg-3 offset-lg-2 ">
+         <!-- <div class="col-lg-3 offset-lg-2 ">
          	<div class="card">
 			  <div class="card-header text-left">
 			    <ul class="nav nav-pills card-header-pills row">
@@ -154,7 +159,7 @@
 				</ul>
 			  </div>
 			</div>
-         </div>
+         </div> -->
       	</div>
       	
       

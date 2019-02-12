@@ -14,6 +14,7 @@
 		<typeAlias type="com.hanul.product_option.Product_optionDTO" alias="Product_optionDTO"/>
 		<typeAlias type="com.hanul.product_evaluation.Product_evaluationDTO" alias="Product_evaluationDTO"/>
 		<typeAlias type="com.hanul.member.MemberDTO" alias="MemberDTO"/>
+		<typeAlias type="com.hanul.order_cart.CartDTO" alias="CartDTO"/>
 	</typeAliases>
 
 </configuration>  
