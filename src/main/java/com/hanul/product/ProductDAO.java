@@ -29,4 +29,8 @@ public class ProductDAO {
 	public List<ProductDTO> selectListBySearch(String platform) throws Exception{
 		return sqlSession.selectList(NAMESPACE+"selectListBySearch", platform);
 	}
+	
+	public List<ProductDTO> cartSelect(String id_member) throws Exception{
+		return sqlSession.selectList(NAMESPACE+"cartSelect", id_member);
+	}
 }

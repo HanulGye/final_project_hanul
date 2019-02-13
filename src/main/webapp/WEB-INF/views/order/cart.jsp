@@ -40,7 +40,8 @@
     <div id="margin-top-container">
       	<h1 class="text-center display-4 mb-5">Cart</h1>
       	<div class="row">
-         <div class="col-lg-10 offset-lg-1">
+         <div class="col-lg-7">
+         <!-- 상품이 없을 경우  <div class="col-lg-10 offset-lg-1"> -->
          	<table class="table">
 			  <colgroup>
 					<col style="width:70%">
@@ -53,51 +54,53 @@
 			    </tr>
 			  </thead>
 			  <tbody class="table-outerfont-size">
-			    <%-- <c:forEach var="i" begin="1" end="3"> --%>
+			    <c:forEach items="${carts}" var="dto"> 
 			    <tr class="tr-border-style">
 			      <td>
-			      	<i class="fas fa-exclamation-triangle wrn"></i>
-			      	<%-- <table class="cart-innerTable-style">
+			      	<table class="cart-innerTable-style">
 			      		
 			      		<tr>
-			      			<td rowspan="5"><img class="pr-3" style="height: 30%" alt="" src="${pageContext.request.contextPath}/resources/img/product_test_img/rockman_11.jpg"></td>
+			      			<td rowspan="5"><img class="pr-3" style="height: 30%" alt="" src="../resources/product/${dto.products.mainImg.fname}"></td>
 			      		</tr>
 			      		<tr>
-			      			<td class="text-center font-weight-bold">Rockman 11</td>
+			      			<td class="text-center font-weight-bold">${dto.products.name}</td>
 			      		</tr>
 			      		<tr>
-			      			<td>플랫폼 : PS4</td>
+			      			<td>플랫폼 : ${dto.products.platform}</td>
 			      		</tr>
 			      		<tr>
-			      			<td class="border-none">옵션 : 옵션내용이 들어가는 영역입니다.</td>
+			      			<td class="border-none">옵션 : ${dto.product_options.name}</td>
 			      			
 			      		</tr>
 			      		<tr>
-			      			<td class="border-none">수량 : 1</td>
+			      			<td class="border-none">수량 : ${dto.quantity}</td>
 			      		</tr>
 			      		<tr>
-			      			<td class="text-center font-weight-bold" colspan="2"><button type="button" class="rounded btn btn-dark btn-sm" data-toggle="modal" data-target="#option_change_window">옵션 & 수량변경</button></td>
+			      			<td class="text-center font-weight-bold" colspan="2"><button type="button" class="rounded btn btn-dark btn-sm" data-toggle="modal" data-target="#${dto.id_cart_order}">옵션 & 수량변경</button></td>
 			      		</tr>
-			      	</table> --%>
+			      	</table> 
 			      </td>
-			      <!-- <td class="pt-4 font-weight-bold">45,000 원</td>
+			      <td class="pt-4 font-weight-bold">${dto.products.price} 원</td>
 			      <td>
 			      	<button type="button" class="close" aria-label="Close">
   						<span aria-hidden="true">&times;</span>
 					</button>
-				  </td> -->
+				  </td>
+				  <!-- 장바구니에 상품 없을 경우  -->	
+			      <!-- <td><i class="fas fa-exclamation-triangle wrn"></i></td>-->
 			    </tr>
-			    <tr>
+			    <!-- 장바구니에 상품 없을 경우 -->
+			    <!-- <tr>
 			    	<td>
-			    		<p class="etypgh text-center">주문하신 상품이 없습니다.</p>
+			    		<p class="etypgh text-center">장바구니에 상품이 없습니다.</p>
 			    	</td>
-			    </tr>
-			    <%-- </c:forEach> --%>
+			    </tr> -->
+			    </c:forEach>
 			  </tbody>
 			</table>
          </div>	
          
-         <!-- <div class="col-lg-3 offset-lg-2 ">
+         <div class="col-lg-3 offset-lg-2 ">
          	<div class="card">
 			  <div class="card-header text-left">
 			    <ul class="nav nav-pills card-header-pills row">
@@ -159,7 +162,7 @@
 				</ul>
 			  </div>
 			</div>
-         </div> -->
+         </div> 
       	</div>
       	
       
@@ -169,8 +172,9 @@
 	<%@include file="/WEB-INF/views/temp/footer.jsp"%>
 	<%@include file="/WEB-INF/views/temp/loginBox.jsp"%>
 
+<c:forEach items="${carts}" var="dto">
 
-<div class="modal fade" tabindex="-1" role="dialog" id="option_change_window">
+<div class="modal fade" tabindex="-1" role="dialog" id="${dto.id_cart_order}">
 <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
 <div class="modal-content">
 <div class="modal-body">
@@ -188,17 +192,18 @@
     	</div>
     </div>
     <div class="row mb-5">
-      <div class="col-md-6"><img class="ml-4" style="width: 100%" alt="" src="${pageContext.request.contextPath}/resources/img/product_test_img/rockman_11.jpg"></div>
+      <div class="col-md-6"><img class="ml-4" style="width: 100%" alt="" src="../resources/product/${dto.products.mainImg.fname}"></div>
       <div class="col-md-5 offset-md-1 modal_box_style">
-      	<p class="h5 font-weight-bold text-center mb-3">Rockman 11</p>
+      	<p class="h5 font-weight-bold text-center mb-3">${dto.products.name}</p>
       	<p class="mt-4">옵션</p>
       	<select class="form-control form-control-sm mb-4">
-  			<option>[옵션 1] 옵션 1 문구 영역입니다.</option>
-  			<option>[옵션 2] 옵션 2 문구 영역입니다.</option>
+  			<c:forEach items="${options}" var="opt">
+  			<option>[옵션] ${opt.name} / ${opt.price}</option>
+  			</c:forEach>
 		</select>
 		<p class="mt-4">수량</p>
 		<div class="input-group mb-4">
-		  <input type="text" readonly class="form-control-plaintext" placeholder="기존 수량 표시" aria-label="Recipient's username with two button addons" aria-describedby="button-addon4">
+		  <input type="text" readonly class="form-control-plaintext" value="${dto.quantity}" aria-label="Recipient's username with two button addons" aria-describedby="button-addon4">
 		  <div class="input-group-append" id="button-addon4">
 		    <button class="btn btn-outline-dark rounded-0" type="button">+</button>
 		    <button class="btn btn-outline-dark rounded-0" type="button">-</button>
@@ -212,6 +217,7 @@
 </div>
 </div>
 </div>
+</c:forEach>
 
 
     <!-- Bootstrap core JavaScript -->

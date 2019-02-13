@@ -7,4 +7,7 @@
 	<insert id="insert" parameterType="Product_imgDTO">
 		insert into product_img values(proimg_seq.nextval, #{fname}, #{oname}, #{kind}, #{id_product})
 	</insert>
+	<select id="onlyMain" parameterType="Integer" resultType="Product_imgDTO">
+		select f.fname from product p, product_img f where p.id_product = f.id_product and f.kind = 'main' and p.id_product = #{id_product}
+	</select>
 </mapper>  

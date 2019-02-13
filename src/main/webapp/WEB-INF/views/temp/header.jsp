@@ -16,8 +16,8 @@
 						<li class="nav-item mr-3"><a href="${pageContext.request.contextPath}/member/join"><i class="fa fa-user-plus" aria-hidden="true" style="color: white;"> Join</i></a></li>
 					</c:otherwise>
 				</c:choose>
-				<li class="nav-item mr-3"><i class="fa fa-truck" aria-hidden="true" style="color: white;"> Order</i></li>
-				<li class="nav-item" style="margin-right: 30px;"><i class="fa fa-shopping-cart" aria-hidden="true" style="color: white;"> Cart</i></li>
+				<li class="nav-item mr-3"><a href="#"><i class="fa fa-truck" aria-hidden="true" style="color: white;"> Order</i></a></li>
+				<li class="nav-item" style="margin-right: 30px;"><a href="${pageContext.request.contextPath}/order/cart"><i class="fa fa-shopping-cart" aria-hidden="true" style="color: white;"> Cart</i></a></li>
 			</ul>
 		</div>
 	</nav>

@@ -42,7 +42,7 @@ public class ProductService {
 		if(productOptions!=null) {
 			for(int i=0;i<productOptions.length;i++) {
 				Product_optionDTO product_optionDTO = new Product_optionDTO();
-				product_optionDTO.setName_option(productOptions[i]);
+				product_optionDTO.setName(productOptions[i]);
 				product_optionDTO.setId_product(productId);
 				product_optionDAO.insert(product_optionDTO);
 			}

@@ -33,9 +33,5 @@
 	<select id="idCheck" parameterType="String" resultType="String">
 		select id from member where id_member = #{id_member}
 	</select>
-	<!-- <select id="tcc" resultMap="tccR" parameterType="String">
-		select m.name c.sale from member m inner join order_cart c on (m.id_member = c.id_member and m.id_member = #{id_member})
-	</select> -->
-	
 </mapper>  
   

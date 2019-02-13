@@ -5,6 +5,12 @@
   
   <mapper namespace="product_optionMapper">
   	<insert id="insert" parameterType="Product_optionDTO">
-  		insert into product_option values(proopt_seq.nextval, #{id_product}, #{name_option})
+  		insert into product_option values(proopt_seq.nextval, #{id_product}, #{name}, #{price})
   	</insert>
+  	<select id="cartSelect" parameterType="String" resultType="Product_optionDTO">
+  		select opt.name, opt.price from product p, product_option opt, order_cart c, member m where c.id_product = p.id_product and c.id_option_product = opt.id_option_product and c.id_member = m.id_member and m.id_member = #{id_member}
+  	</select>
+  	<select id="cartOptSel" parameterType="String" resultType="Product_optionDTO">
+  		select opt.* from product_option opt, order_cart c where c.id_cart_order = #{id_cart_order}
+  	</select>
   </mapper>

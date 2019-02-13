@@ -1,7 +1,6 @@
 package com.hanul.product;
 
 import java.sql.Date;
-import java.util.List;
 
 import com.hanul.product_img.Product_imgDTO;
 
@@ -11,13 +10,19 @@ public class ProductDTO {
 	private String name, platform, company, genre;
 	private Date relase_date;
 	private double sum_score;
+	private Product_imgDTO mainImg;
 	
 	
 	
 	
 	
 	
-	
+	public Product_imgDTO getMainImg() {
+		return mainImg;
+	}
+	public void setMainImg(Product_imgDTO mainImg) {
+		this.mainImg = mainImg;
+	}
 	public double getSum_score() {
 		return sum_score;
 	}

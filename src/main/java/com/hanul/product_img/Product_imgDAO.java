@@ -16,4 +16,8 @@ public class Product_imgDAO {
 		return sqlSession.insert(NAMESPACE+"insert", product_imgDTO);
 	}
 	
+	public Product_imgDTO onlyMain(int id_product) throws Exception{
+		return sqlSession.selectOne(NAMESPACE+"onlyMain", id_product);
+	}
+	
 }

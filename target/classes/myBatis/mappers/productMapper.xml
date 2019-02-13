@@ -16,5 +16,8 @@
   	<select id="selectListBySearch" resultType="ProductDTO" parameterType="String">
   		select * from product where platform = #{platform} order by relase_date desc
   	</select>
+  	<select id="cartSelect" parameterType="String" resultType="ProductDTO">
+  		select p.id_product, p.name, p.price, p.platform from product p, product_option opt, order_cart c, member m where c.id_product = p.id_product and c.id_option_product = opt.id_option_product and c.id_member = m.id_member and m.id_member = #{id_member} 
+  	</select>
 </mapper>  
   

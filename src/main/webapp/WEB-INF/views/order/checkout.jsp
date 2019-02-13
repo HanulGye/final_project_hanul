@@ -215,7 +215,30 @@
 			    </ul>
 			  </div>
 			  <div class="card-body text-left ml-3">
-				<table class="font_sizing text-center">
+				<table class="font_sizing text-center" style="width: 100%">
+				  <tbody>
+				    <tr>
+				      <td rowspan="5"><img class="pr-3" style="height: 30%" alt="" src="${pageContext.request.contextPath}/resources/img/product_test_img/rockman_11.jpg"></td>
+				      <td class="font-weight-bold" colspan="2">Rockman 11</td>
+				    </tr>
+				    <tr>
+				      <td class="text-left">Platform</td>
+				      <td>PlayStation4</td>
+				    </tr>
+				    <tr>
+				      <td class="text-left">Option</td>
+				      <td>[상세 보기]</td>
+				    </tr>
+				    <tr>
+				      <td class="text-left">Quantity</td>
+				      <td>1</td>
+				    </tr>
+				    <tr>
+				      <td class="font-weight-bold" colspan="2">45,950 원</td>
+				    </tr>
+				  </tbody>
+				</table>
+				<table class="font_sizing text-center mt-4" style="width: 100%">
 				  <tbody>
 				    <tr>
 				      <td rowspan="5"><img class="pr-3" style="height: 30%" alt="" src="${pageContext.request.contextPath}/resources/img/product_test_img/rockman_11.jpg"></td>
