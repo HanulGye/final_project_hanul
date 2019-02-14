@@ -10,4 +10,15 @@
 	<insert id="insert" parameterType="Product_evaluationDTO">
 		insert into product_evaluation values(proeva_seq.nextval, #{id_product}, #{id_member}, #{title_eval}, #{contents_eval}, #{score_eval})
 	</insert>
+	<select id="shopList" parameterType="String" resultType="String">
+		select round(avg(e.score_eval),1) 
+  		from product p 
+  		left join product_img img 
+  		on p.id_product = img.id_product
+  		left join product_evaluation e
+  		on p.id_product = e.id_product
+  		where img.kind = 'main'
+  		and p.platform = #{platform}
+  		group by p.name, p.price, img.fname
+	</select>
  </mapper>

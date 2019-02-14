@@ -2,6 +2,7 @@ package com.hanul.product;
 
 import java.sql.Date;
 
+import com.hanul.product_evaluation.Product_evaluationDTO;
 import com.hanul.product_img.Product_imgDTO;
 
 public class ProductDTO {
@@ -11,12 +12,26 @@ public class ProductDTO {
 	private Date relase_date;
 	private double sum_score;
 	private Product_imgDTO mainImg;
+	private Product_evaluationDTO evalDTO;
+	private String test;
 	
 	
 	
 	
 	
 	
+	public String getTest() {
+		return test;
+	}
+	public void setTest(String test) {
+		this.test = test;
+	}
+	public Product_evaluationDTO getEvalDTO() {
+		return evalDTO;
+	}
+	public void setEvalDTO(Product_evaluationDTO evalDTO) {
+		this.evalDTO = evalDTO;
+	}
 	public Product_imgDTO getMainImg() {
 		return mainImg;
 	}

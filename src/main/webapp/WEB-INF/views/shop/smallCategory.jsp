@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page session="false" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <!DOCTYPE html>
 <html>
 
@@ -89,28 +89,30 @@
 		
 		
           <div class="row">
-
+			<c:forEach items="${products}" var="dto">
             <div class="col-lg-2 col-md-6 mb-4">
               <div class="card h-100">
-                <a href="#"><img class="card-img-top p-2" src="" alt="" style="height: 264px;"></a>
+                <a href="#"><img class="card-img-top" src="../resources/product/${dto.mainImg.fname}" alt="" style="height: 264px;"></a>
                 <span class="back_new"></span>
                 <div class="card-body">
-                  <h4 class="card-title">
-                    <a href="#"></a>
+                  <h4 class="card-title text-center">
+                    <a class="titleSize font-weight-bold" href="#">${dto.name}</a>
                   </h4>
-                  <h5>$24.99</h5>
+                  <p class="titleSize font-weight-bold"><i class="fas fa-won-sign"></i>&nbsp;${dto.price}</p>
                   <div>
 	                  <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-					  <span class="font-weight-light ml-4">4.5</span>
+					  <span class="font-weight-light ml-4">
+					  	<c:if test="${dto.test ne null}">
+					  	${dto.test}
+					  	</c:if>
+					  </span>
 					  <span><img alt="" src="${pageContext.request.contextPath}/resources/img/icon_img/freeShipping.png"></span>                  
                   </div>
                 </div>
               </div>
             </div>
-
-            
-
-          </div>
+			</c:forEach>
+            </div>
           <!-- /.row -->
 		  <div class="mt-4">
 			 <nav aria-label="Page navigation example">

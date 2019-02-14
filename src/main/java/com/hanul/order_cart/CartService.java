@@ -50,7 +50,7 @@ public class CartService {
 			//cartDTO안에 있는 각각의 productDTO, productOptionDTO에 proAr, optAr의 객체들을 넣어주는 작업
 			//(셀렉트결과들을 합쳐주는 과정)
 			for(int i=0;i<cartAr.size();i++) {
-				int sum = proAr.get(i).getPrice() + optAr.get(i).getPrice();
+				int sum = (proAr.get(i).getPrice() + optAr.get(i).getPrice()) * cartAr.get(i).getQuantity();
 				proAr.get(i).setPrice(sum);
 				cartAr.get(i).setProducts(proAr.get(i));
 				cartAr.get(i).setProduct_options(optAr.get(i));
@@ -63,14 +63,49 @@ public class CartService {
 		// 
 		
 		List<CartDTO> cartAr2 = cartDAO.cartSelect(id_member);
-		String [] ids = new String[cartAr2.size()];
-		List<Product_optionDTO> options = new ArrayList<Product_optionDTO>();
+		List<List<Product_optionDTO>> optLists = new ArrayList<List<Product_optionDTO>>();
 		for(int i=0;i<cartAr2.size();i++) {
-			ids[i] = cartAr2.get(i).getId_cart_order();
-			options = product_optionDAO.cartOptSel(ids[i]);
+			List<Product_optionDTO> options = product_optionDAO.cartOptSel(cartAr.get(i).getId_cart_order());
+			optLists.add(options);
 		}
+		modelAndView.addObject("optList", optLists);
 		
-		modelAndView.addObject("options", options);
+		return modelAndView;
+	}
+	
+	public ModelAndView cartDel(String id_cart_order) throws Exception{
+		modelAndView = new ModelAndView();
+		String msg = "장바구니 삭제실패";
+		int result = cartDAO.cartDel(id_cart_order);
+		if(result>0) {
+			msg = "장바구니 삭제성공";
+		}
+		modelAndView.setViewName("redirect:./");
+		modelAndView.addObject("message", msg);
+		return modelAndView;
+	}
+	
+	public ModelAndView cartDelAll(String id_member) throws Exception{
+		modelAndView = new ModelAndView();
+		String msg = "오류가 발생했습니다.";
+		int result = cartDAO.cartDelAll(id_member);
+		if(result>0) {
+			msg = "장바구니를 모두 비웠습니다.";
+		}
+		modelAndView.setViewName("redirect:./");
+		modelAndView.addObject("message", msg);
+		return modelAndView;
+	}
+	
+	public ModelAndView optUpdate(CartDTO cartDTO) throws Exception{
+		modelAndView = new ModelAndView();
+		String msg = "진행 중 오류가 발생했습니다.";
+		int result = cartDAO.optUpdate(cartDTO);
+		if(result>0) {
+			msg = "옵션 및 수량이 변경되었습니다.";
+		}
+		modelAndView.setViewName("redirect:./");
+		modelAndView.addObject("message", msg);
 		
 		return modelAndView;
 	}

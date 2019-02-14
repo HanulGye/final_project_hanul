@@ -17,4 +17,16 @@ public class CartDAO {
 	public List<CartDTO> cartSelect(String id_member) throws Exception{
 		return sqlSession.selectList(NAMESPACE+"cartSelect", id_member);
 	}
+	
+	public int cartDel(String id_cart_order) throws Exception{
+		return sqlSession.delete(NAMESPACE+"cartDel", id_cart_order);
+	}
+	
+	public int cartDelAll(String id_member) throws Exception{
+		return sqlSession.delete(NAMESPACE+"cartDelAll", id_member);
+	}
+	
+	public int optUpdate(CartDTO cartDTO) throws Exception{
+		return sqlSession.update(NAMESPACE+"optUpdate", cartDTO);
+	}
 }

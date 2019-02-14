@@ -44,6 +44,7 @@ public class ProductService {
 				Product_optionDTO product_optionDTO = new Product_optionDTO();
 				product_optionDTO.setName(productOptions[i]);
 				product_optionDTO.setId_product(productId);
+				product_optionDTO.setPrice(0);
 				product_optionDAO.insert(product_optionDTO);
 			}
 		}
@@ -83,7 +84,7 @@ public class ProductService {
 			result = product_imgDAO.insert(imgs.get(i));
 		}
 		modelAndView = new ModelAndView();
-		modelAndView.setViewName("redirect:./regist");
+		modelAndView.setViewName("redirect:./");
 		modelAndView.addObject("message", "regist success");
 		return modelAndView; 
 	}
@@ -124,5 +125,22 @@ public class ProductService {
 		modelAndView.setViewName("/admin/product/stock");
 		
 		return modelAndView;
+	}
+	
+	public ModelAndView shopList(String platform) throws Exception{
+		List<ProductDTO> proAr = productDAO.shopList(platform);
+		if(proAr!=null) {
+			List<Product_imgDTO> imgAr = product_imgDAO.shopList(platform);
+			List<String> evAr = product_evaluationDAO.shopList(platform);
+			for(int i=0;i<proAr.size();i++){
+				proAr.get(i).setMainImg(imgAr.get(i));
+				proAr.get(i).setTest(evAr.get(i));
+			}
+		}
+		
+		modelAndView = new ModelAndView();
+		modelAndView.addObject("products", proAr);
+		return modelAndView;
+		
 	}
 }

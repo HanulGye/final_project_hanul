@@ -530,6 +530,10 @@ header.masthead p {
 	height: 100px;
 }
 
+.titleSize{
+	font-size: small;
+}
+
 /* article */
 
 .little_margin{

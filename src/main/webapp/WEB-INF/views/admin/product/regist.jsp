@@ -89,22 +89,22 @@
 					<select id="formGroupExampleInput5" class="form-control" name="platform">
         				<option selected>하단의 기종을 선택해주세요.</option>
         				<optgroup label="PlayStation">
-        					<option value="[PS4]">[PS4]</option>
-        					<option value="[PS VR]">[PS VR]</option>
-        					<option value="[PS3]">[PS3]</option>
-        					<option value="[PS Vita]">[PS Vita]</option>
+        					<option value="PS4">[PS4]</option>
+        					<option value="PS VR">[PS VR]</option>
+        					<option value="PS3">[PS3]</option>
+        					<option value="PS Vita">[PS Vita]</option>
         				</optgroup>
         				<optgroup label="Nintendo">
-        					<option value="[Switch]">[Switch]</option>
-        					<option value="[3DS]">[3DS]</option>
+        					<option value="Switch">[Switch]</option>
+        					<option value="3DS">[3DS]</option>
         				</optgroup>
         				<optgroup label="XBox">
-        					<option value="[XBox One]">[XBox One]</option>
-        					<option value="[Xbox 360]">[Xbox 360]</option>
+        					<option value="XBox One">[XBox One]</option>
+        					<option value="XBox 360">[XBox 360]</option>
         				</optgroup>
         				<optgroup label="ETC">
-	        				<option value="[Hardware]">[Hardware]</option>
-	        				<option value="[Peripheral]">[Peripheral]</option>        				
+	        				<option value="Hardware">[Hardware]</option>
+	        				<option value="Peripheral">[Peripheral]</option>        				
         				</optgroup>
       				</select>
 				</div>

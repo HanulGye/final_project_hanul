@@ -33,4 +33,9 @@ public class ProductDAO {
 	public List<ProductDTO> cartSelect(String id_member) throws Exception{
 		return sqlSession.selectList(NAMESPACE+"cartSelect", id_member);
 	}
+	
+	public List<ProductDTO> shopList(String platform) throws Exception{
+		return sqlSession.selectList(NAMESPACE+"shopList", platform);
+	}
+	
 }

@@ -35,10 +35,10 @@
 		          PlayStation
 		       </a>
 		       <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
-		         <a class="dropdown-item text-light" href="./shop/smallCategory">PlayStation 4</a>
-		         <a class="dropdown-item text-light" href="#">PlayStation VR</a>
-		         <a class="dropdown-item text-light" href="#">PlayStation 3</a>
-		         <a class="dropdown-item text-light" href="#">PlayStation Vita	</a>
+		         <a class="dropdown-item text-light" href="${pageContext.request.contextPath}/shop/smallCategory?platform=PS4">PlayStation 4</a>
+		         <a class="dropdown-item text-light" href="${pageContext.request.contextPath}/shop/smallCategory?platform=PS VR">PlayStation VR</a>
+		         <a class="dropdown-item text-light" href="${pageContext.request.contextPath}/shop/smallCategory?platform=PS3">PlayStation 3</a>
+		         <a class="dropdown-item text-light" href="${pageContext.request.contextPath}/shop/smallCategory?platform=PS Vita">PlayStation Vita	</a>
 		       </div>
 		     </li>
             <li class="nav-item dropdown">
@@ -46,8 +46,8 @@
 		          Nintendo
 		       </a>
 		       <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
-		         <a class="dropdown-item text-light" href="#">Nintendo Switch</a>
-		         <a class="dropdown-item text-light" href="#">Nintendo 3DS</a>
+		         <a class="dropdown-item text-light" href="${pageContext.request.contextPath}/shop/smallCategory?platform=Switch">Nintendo Switch</a>
+		         <a class="dropdown-item text-light" href="${pageContext.request.contextPath}/shop/smallCategory?platform=3DS">Nintendo 3DS</a>
 		       </div>
 		     </li>
 		     <li class="nav-item dropdown">
@@ -55,8 +55,8 @@
 		          XBox
 		       </a>
 		       <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
-		         <a class="dropdown-item text-light" href="#">XBox One</a>
-		         <a class="dropdown-item text-light" href="#">XBox 360</a>
+		         <a class="dropdown-item text-light" href="${pageContext.request.contextPath}/shop/smallCategory?platform=XBox One">XBox One</a>
+		         <a class="dropdown-item text-light" href="${pageContext.request.contextPath}/shop/smallCategory?platform=XBox 360">XBox 360</a>
 		       </div>
 		     </li>
 		     <li class="nav-item dropdown">
@@ -64,8 +64,8 @@
 		          Etc
 		       </a>
 		       <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
-		         <a class="dropdown-item text-light" href="#">Hardware</a>
-		         <a class="dropdown-item text-light" href="#">Peripheral</a>
+		         <a class="dropdown-item text-light" href="${pageContext.request.contextPath}/shop/smallCategory?platform=Hardware">Hardware</a>
+		         <a class="dropdown-item text-light" href="${pageContext.request.contextPath}/shop/smallCategory?platform=Peripheral">Peripheral</a>
 		       </div>
 		     </li>
 		     <li class="nav-item dropdown">

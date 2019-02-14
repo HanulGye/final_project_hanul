@@ -4,6 +4,15 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="order_cartMapper">
 	<select id="cartSelect" parameterType="String" resultType="CartDTO">
-		select c.id_cart_order, c.quantity from product p, product_option opt, order_cart c, member m where c.id_product = p.id_product and c.id_option_product = opt.id_option_product and c.id_member = m.id_member and m.id_member = #{id_member}
+		select c.id_cart_order, c.quantity from product p, product_option opt, order_cart c, member m where c.id_product = p.id_product and c.id_option_product = opt.id_option_product and c.id_member = m.id_member and m.id_member = #{id_member} ORDER by c.reg_date asc
 	</select>
+	<delete id="cartDel" parameterType="String">
+		delete order_cart where id_cart_order = #{id_cart_order}
+	</delete>
+	<delete id="cartDelAll" parameterType="String">
+		DELETE order_cart where id_member = #{id_member}
+	</delete>
+	<update id="optUpdate" parameterType="CartDTO">
+		update order_cart set id_option_product = #{id_option_product}, quantity = #{quantity} where id_cart_order = #{id_cart_order}
+	</update>
 </mapper>  

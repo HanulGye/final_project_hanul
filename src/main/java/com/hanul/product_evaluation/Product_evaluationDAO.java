@@ -21,4 +21,8 @@ public class Product_evaluationDAO {
 	public int insert(Product_evaluationDTO product_evaluationDTO) throws Exception{
 		return sqlSession.insert(NAMESPACE+"insert", product_evaluationDTO);
 	}
+	
+	public List<String> shopList(String platform) throws Exception{
+		return sqlSession.selectList(NAMESPACE+"shopList", platform);
+	}
 }
