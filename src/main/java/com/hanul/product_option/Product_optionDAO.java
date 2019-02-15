@@ -26,4 +26,8 @@ public class Product_optionDAO {
 		return sqlSession.selectList(NAMESPACE+"cartOptSel", id_cart_order);
 	}
 	
+	public List<Product_optionDTO> selectOne(Integer id_product) throws Exception{
+		return sqlSession.selectList(NAMESPACE+"selectOne", id_product);
+	}
+	
 }

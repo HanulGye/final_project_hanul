@@ -92,11 +92,11 @@
 			<c:forEach items="${products}" var="dto">
             <div class="col-lg-2 col-md-6 mb-4">
               <div class="card h-100">
-                <a href="#"><img class="card-img-top" src="../resources/product/${dto.mainImg.fname}" alt="" style="height: 264px;"></a>
+                <a href="${pageContext.request.contextPath}/shop/product?id_product=${dto.id_product}"><img class="card-img-top" src="../resources/product/${dto.mainImg.fname}" alt="" style="height: 264px;"></a>
                 <span class="back_new"></span>
                 <div class="card-body">
                   <h4 class="card-title text-center">
-                    <a class="titleSize font-weight-bold" href="#">${dto.name}</a>
+                    <a class="titleSize font-weight-bold" href="${pageContext.request.contextPath}/shop/product?id_product=${dto.id_product}">${dto.name}</a>
                   </h4>
                   <p class="titleSize font-weight-bold"><i class="fas fa-won-sign"></i>&nbsp;${dto.price}</p>
                   <div>

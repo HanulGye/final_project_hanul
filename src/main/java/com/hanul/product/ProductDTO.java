@@ -17,11 +17,19 @@ public class ProductDTO {
 	private Product_evaluationDTO evalDTO;
 	private String test;
 	private List<Product_optionDTO> options;
+	private Product_optionDTO selOption;
 	
 	
 	
 	
 	
+	
+	public Product_optionDTO getSelOption() {
+		return selOption;
+	}
+	public void setSelOption(Product_optionDTO selOption) {
+		this.selOption = selOption;
+	}
 	public List<Product_optionDTO> getOptions() {
 		return options;
 	}

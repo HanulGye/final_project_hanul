@@ -25,5 +25,7 @@ public class Product_imgDAO {
 	public List<Product_imgDTO> shopList(String platform) throws Exception{
 		return sqlSession.selectList(NAMESPACE+"shopList", platform);
 	}
-	
+	public List<Product_imgDTO> selectOne(Integer id_product) throws Exception{
+		return sqlSession.selectList(NAMESPACE+"selectOne", id_product);
+	}
 }

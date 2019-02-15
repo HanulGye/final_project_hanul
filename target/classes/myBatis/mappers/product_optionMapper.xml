@@ -13,4 +13,14 @@
   	<select id="cartOptSel" parameterType="String" resultType="Product_optionDTO">
   		select opt.* from product p, product_option opt, order_cart c where p.id_product = opt.id_product and p.id_product = c.id_product and c.id_cart_order = #{id_cart_order}
   	</select>
+  	<select id="selectOne" parameterType="Integer" resultType="Product_optionDTO">
+		select opt.name, opt.price
+  		from product p
+  		left join product_img img
+		on p.id_product = img.id_product
+		left join product_option opt
+		on p.id_product = opt.id_product
+		where img.kind = 'sub'
+		and p.id_product = #{id_product}
+  	</select>
   </mapper>

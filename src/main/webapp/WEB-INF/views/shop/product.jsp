@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page session="false" %>
 <!DOCTYPE html>
 <html>
 
@@ -43,12 +42,12 @@
 		  <img class="mb-3 font_img_size" alt="" src="${pageContext.request.contextPath}/resources/img/icon_img/playstation-font.png">	
           <!-- <h2 class="my-4">Shop Name</h2> -->
           <div class="list-group list-group-flush">
-            <a href="#" class="list-group-item list-group-item-action">Category 1</a>
-            <a href="#" class="list-group-item list-group-item-action">Category 2</a>
-            <a href="#" class="list-group-item list-group-item-action">Category 3</a>
-            <a href="#" class="list-group-item list-group-item-action">Category 4</a>
-            <a href="#" class="list-group-item list-group-item-action">Category 5</a>
-            <a href="#" class="list-group-item list-group-item-action">Category 6</a>
+            <a href="#" class="list-group-item list-group-item-action">Action</a>
+            <a href="#" class="list-group-item list-group-item-action">Sports</a>
+            <a href="#" class="list-group-item list-group-item-action">RPG</a>
+            <a href="#" class="list-group-item list-group-item-action">Casual & Character</a>
+            <a href="#" class="list-group-item list-group-item-action">Fighting</a>
+            <a href="#" class="list-group-item list-group-item-action">ETC</a>
             <a class="list-group-item nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 		          Category 7
 		       </a>
@@ -66,15 +65,15 @@
           <div class="row">
 			<div class="mx-auto mb-5">
 				<button type="button" class="btn btn-light rounded btn-lg"><i class="fa fa-arrow-left" aria-hidden="true"></i>&nbsp; Prev</button>
-				<button type="button" class="btn btn-light rounded btn-lg">List</button>
+				<a href="${pageContext.request.contextPath}/shop/smallCategory?platform=${product[0].platform}"><button type="button" class="btn btn-light rounded btn-lg">List</button></a>
 				<button type="button" class="btn btn-light rounded btn-lg">Next &nbsp;<i class="fa fa-arrow-right" aria-hidden="true"></i></button>
 			</div>
             <div class="mx-auto">
-            	<img alt="" src="${pageContext.request.contextPath}/resources/img/product_test_img/rockman11_inside.jpg">
+            	<img alt="" src="../resources/product/${product[0].mainImg.fname }">
             </div>
 			<div class="mx-auto mt-5">
 				<button type="button" class="btn btn-light rounded btn-lg"><i class="fa fa-arrow-left" aria-hidden="true"></i>&nbsp; Prev</button>
-				<button type="button" class="btn btn-light rounded btn-lg">List</button>
+				<a href="${pageContext.request.contextPath}/shop/smallCategory?platform=${product[0].platform}"><button type="button" class="btn btn-light rounded btn-lg">List</button></a>
 				<button type="button" class="btn btn-light rounded btn-lg">Next &nbsp;<i class="fa fa-arrow-right" aria-hidden="true"></i></button>
 			</div>
           </div>
@@ -87,35 +86,37 @@
 		<div class="col-lg-3">
          	<div class="card">
 			  <div class="card-body card_bottom_margin text-left ml-3">
-				<p class="my-4 font-weight-bold">[PS4] 록맨 11 한글 자막판</p>
+				<p class="my-4 font-weight-bold">${product[0].platform}&nbsp;${product[0].name}</p>
 				<table class="mt-4 font_sizing" style="width: 100%">
 					<tbody>
 						<tr>
 							<td>제조사</td>
-							<td class="text-right">CAPCOM</td>
+							<td class="text-right">${product[0].company}</td>
 						</tr>
 						<tr>
 							<td>출시일</td>
-							<td class="text-right">2018/12/28</td>
+							<td class="text-right">${product[0].relase_date}</td>
 						</tr>
 						<tr>
 							<td>소비자가격</td>
-							<td class="text-right">54,800 원</td>
+							<td class="text-right">${product[0].price}&nbsp;원</td>
 						</tr>
 						<tr>
 							<td>적립금</td>
+							<input type="hidden" value="${product[0].price}" id="pro_price">
 							<td class="text-right">500 원</td>
 						</tr>
 						<tr>
 							<td>판매가격</td>
-							<td class="font-weight-bold text-right text-danger" style="font-size: 1.000rem;">45,000 원</td>
+							<td class="font-weight-bold text-right text-danger" style="font-size: 1.000rem;">${product[0].price}&nbsp;원</td>
 						</tr>
 					</tbody>
 				</table>
 				<p class="mt-4 font_sizing">옵션</p>
-      			<select class="form-control form-control-sm mb-4 font_sizing">
-  					<option>[옵션 1] 옵션 1 문구 영역입니다.</option>
-  					<option>[옵션 2] 옵션 2 문구 영역입니다.</option>
+      			<select class="form-control form-control-sm mb-4 font_sizing">			
+		  			<c:forEach items="${product}" var="dto">
+			  			<option title="${dto.selOption.name}" value="${dto.selOption.price}">[옵션] ${dto.selOption.name}&nbsp;/&nbsp;${dto.selOption.price}</option>
+		  			</c:forEach>  						
 				</select>
 				<table class="mt-3" style="width: 100%">
 					<tbody>

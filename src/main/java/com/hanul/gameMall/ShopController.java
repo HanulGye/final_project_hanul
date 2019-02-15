@@ -25,8 +25,10 @@ public class ShopController {
 	}
 	
 	@RequestMapping(value="product")
-	public void product() throws Exception{
-	
+	public ModelAndView product(HttpServletRequest request) throws Exception{
+		String id = request.getParameter("id_product");
+		Integer id_product = Integer.parseInt(id);
+		return productService.selectOne(id_product);
 	}
 	
 }

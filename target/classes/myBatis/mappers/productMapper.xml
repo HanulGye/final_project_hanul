@@ -31,5 +31,15 @@
   		group by p.name, p.price, p.relase_date, p.id_product, img.fname
   		order by p.relase_date desc
   	</select>
+  	<select id="selectOne" parameterType="Integer" resultType="ProductDTO">
+  		select p.*
+  		from product p
+  		left join product_img img
+		on p.id_product = img.id_product
+		left join product_option opt
+		on p.id_product = opt.id_product
+		where img.kind = 'sub'
+		and p.id_product = #{id_product}
+  	</select>
 </mapper>  
   
