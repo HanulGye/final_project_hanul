@@ -28,7 +28,8 @@
   		on p.id_product = e.id_product
   		where img.kind = 'main'
   		and p.platform = #{platform}
-  		group by p.name, p.price, img.fname
+  		group by p.name, p.price, p.relase_date, img.fname
+  		order by p.relase_date desc
   	</select>
 </mapper>  
   

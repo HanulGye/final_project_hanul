@@ -89,7 +89,7 @@ public class ProductService {
 		
 		
 		modelAndView = new ModelAndView();
-		modelAndView.setViewName("redirect:./");
+		modelAndView.setViewName("redirect:./regist");
 		modelAndView.addObject("message", "regist success");
 		return modelAndView; 
 	}
