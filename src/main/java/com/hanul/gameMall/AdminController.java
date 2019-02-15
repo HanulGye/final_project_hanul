@@ -45,8 +45,8 @@ public class AdminController {
 	}
 	
 	@RequestMapping(value="product/regist", method=RequestMethod.POST )
-	public ModelAndView registProcess(ProductDTO productDTO, String [] productOptions, HttpSession session, MultipartFile mainImg, MultipartFile subImg, RedirectAttributes redirectAttributes) throws Exception{
-		return productService.insert(productDTO, productOptions, session, mainImg, subImg);
+	public ModelAndView registProcess(ProductDTO productDTO, HttpSession session, MultipartFile mainImage, MultipartFile subImage ) throws Exception{
+		return productService.insert(productDTO, session, mainImage, subImage);
 	}
 	
 	@RequestMapping(value="product/stock")

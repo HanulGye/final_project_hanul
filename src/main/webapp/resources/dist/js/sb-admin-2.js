@@ -57,7 +57,7 @@ $(function() {
 });
 var count = 0;
 function addOpt() {
-	var add_opt = '<div class="form-group mar_top_two"><label for="opt_name">옵션 상품명</label><button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button><input type="text" class="form-control" id="opt_name" placeholder="옵션 상품명을 입력하세요." name="productOptions"></div>'
+	var add_opt = '<div class="form-group mar_top_two"><label for="opt_name">옵션 상품명</label><button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button><input type="text" class="form-control" id="opt_name" placeholder="옵션 상품명을 입력하세요." name="options['+count+'].name"><label for="opt_price">옵션 가격</label><input type="number" class="form-control" id="opt_price" placeholder="옵션 가격 입력하세요." name="options['+count+'].price"></div>'
 	if(count<5){
 		count++;
 		$('#add_opt_area').append(add_opt);

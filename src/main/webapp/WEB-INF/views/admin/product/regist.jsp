@@ -65,24 +65,22 @@
 			<div class="row">
 			<form class="col-lg-8" action="./regist" method="post" enctype="multipart/form-data">
 				<div class="form-group">
-					<label for="formGroupExampleInput">상품명</label> <input
-						type="text" class="form-control" id="formGroupExampleInput"
-						placeholder="상품명을 입력하세요." name="name">
+					<label for="formGroupExampleInput">상품명</label> 
+					<input type="text" class="form-control" id="formGroupExampleInput" placeholder="상품명을 입력하세요." name="name">
 				</div>
 				<div class="form-group">
-					<label for="formGroupExampleInput2">가격설정</label> <input
-						type="number" class="form-control" id="formGroupExampleInput2"
-						placeholder="원을 제외한 숫자만을 입력하세요." name="price">
+					<label for="formGroupExampleInput2">가격설정</label> 
+					<input type="number" class="form-control" id="formGroupExampleInput2" placeholder="원을 제외한 숫자만을 입력하세요." name="price">
 				</div>
 				<div class="form-group">
 					<label for="mainImg1">대표 이미지 설정</label> <input
 						type="file" class="form-control" id="mainImg1"
-						placeholder="상품 리스트 페이지에 노출되는 이미지 영역입니다." name="mainImg">
+						placeholder="상품 리스트 페이지에 노출되는 이미지 영역입니다." name="mainImage">
 				</div>
 				<div class="form-group">
 					<label for="subImg1">설명 이미지 설정</label> <input
 						type="file" class="form-control" id="subImg1"
-						placeholder="개별 상품 페이지에 노출되는 이미지 영역입니다." name="subImg">
+						placeholder="개별 상품 페이지에 노출되는 이미지 영역입니다." name="subImage">
 				</div>
 				<div class="form-group">
 					<label for="formGroupExampleInput5">기종</label> 

@@ -31,58 +31,63 @@ public class ProductService {
 	private Product_evaluationDAO product_evaluationDAO;
 	private ModelAndView modelAndView;
 	
-	public ModelAndView insert(ProductDTO productDTO, String [] productOptions, HttpSession session, MultipartFile mainImg, MultipartFile subImg) throws Exception {
+	public ModelAndView insert(ProductDTO productDTO, HttpSession session, MultipartFile mainImage, MultipartFile subImage) throws Exception {
 		//상품 인서트
 		int productId = productDAO.getProductId();
 		productDTO.setId_product(productId);
 		int result = productDAO.insert(productDTO);
 		
 		//옵션 인서트
+		
+		 if(productDTO.getOptions()!=null) { 
+			 for(int i=0;i<productDTO.getOptions().size();i++) { 
+				 Product_optionDTO product_optionDTO = new Product_optionDTO();
+				 product_optionDTO.setName(productDTO.getOptions().get(i).getName());
+				 product_optionDTO.setId_product(productId);
+				 product_optionDTO.setPrice(productDTO.getOptions().get(i).getPrice());
+				 product_optionDAO.insert(product_optionDTO); 
+				 } 
+			 }
 
-		if(productOptions!=null) {
-			for(int i=0;i<productOptions.length;i++) {
-				Product_optionDTO product_optionDTO = new Product_optionDTO();
-				product_optionDTO.setName(productOptions[i]);
-				product_optionDTO.setId_product(productId);
-				product_optionDTO.setPrice(0);
-				product_optionDAO.insert(product_optionDTO);
-			}
-		}
-		
 		//이미지 실제 저장
-		FileSaver fileSaver = new FileSaver();
-		String realPath = session.getServletContext().getRealPath("resources/product");
-		List<Product_imgDTO> imgs = new ArrayList<Product_imgDTO>();
-		for(int i=0;i<2;i++) {
-			Product_imgDTO product_imgDTO = new Product_imgDTO();
-			imgs.add(product_imgDTO);
-		}
-		
-		//이미지 테이블 인서트	
-		for(int i=0;i<imgs.size();i++) {
-			
-			if(mainImg.isEmpty()||subImg.isEmpty()) {
-					imgs.get(i).setId_product(productId);
-					imgs.get(i).setFname("no-image.png");
-					imgs.get(i).setOname("no-image.png");
-					imgs.get(i).setKind("no");
-			}else {
-				String fname = fileSaver.saveFile(realPath, mainImg);
-				String fname2 = fileSaver.saveFile(realPath, subImg);
-				imgs.get(i).setId_product(productId);
-				if(i==0) {
-					imgs.get(i).setFname(fname);
-					imgs.get(i).setOname(mainImg.getOriginalFilename());
-					imgs.get(i).setKind("main");
-					
-				}else {
-					imgs.get(i).setFname(fname2);
-					imgs.get(i).setOname(subImg.getOriginalFilename());
-					imgs.get(i).setKind("sub");
-				}
+			FileSaver fileSaver = new FileSaver();
+			String realPath = session.getServletContext().getRealPath("resources/product");
+			System.out.println(realPath);
+			List<Product_imgDTO> imgs = new ArrayList<Product_imgDTO>();
+			for(int i=0;i<2;i++) {
+				Product_imgDTO product_imgDTO = new Product_imgDTO();
+				imgs.add(product_imgDTO);
 			}
-			result = product_imgDAO.insert(imgs.get(i));
-		}
+			
+			//이미지 테이블 인서트	
+			for(int i=0;i<imgs.size();i++) {
+				
+				if(mainImage.isEmpty()||subImage.isEmpty()) {
+						imgs.get(i).setId_product(productId);
+						imgs.get(i).setFname("no-image.png");
+						imgs.get(i).setOname("no-image.png");
+						imgs.get(i).setKind("no");
+				}else {
+					String fname = fileSaver.saveFile(realPath, mainImage);
+					String fname2 = fileSaver.saveFile(realPath, subImage);
+					imgs.get(i).setId_product(productId);
+					if(i==0) {
+						imgs.get(i).setFname(fname);
+						imgs.get(i).setOname(mainImage.getOriginalFilename());
+						imgs.get(i).setKind("main");
+						
+					}else {
+						imgs.get(i).setFname(fname2);
+						imgs.get(i).setOname(subImage.getOriginalFilename());
+						imgs.get(i).setKind("sub");
+					}
+				}
+				result = product_imgDAO.insert(imgs.get(i));
+			}
+
+
+		
+		
 		modelAndView = new ModelAndView();
 		modelAndView.setViewName("redirect:./");
 		modelAndView.addObject("message", "regist success");

@@ -6,7 +6,6 @@ public class Product_optionDTO {
 	private String name;
 	private int price;
 	
-	
 	public int getId_option_product() {
 		return id_option_product;
 	}
@@ -31,8 +30,5 @@ public class Product_optionDTO {
 	public void setPrice(int price) {
 		this.price = price;
 	}
-	
-	
-	
-	
+		
 }

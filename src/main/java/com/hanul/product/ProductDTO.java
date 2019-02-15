@@ -1,9 +1,11 @@
 package com.hanul.product;
 
 import java.sql.Date;
+import java.util.List;
 
 import com.hanul.product_evaluation.Product_evaluationDTO;
 import com.hanul.product_img.Product_imgDTO;
+import com.hanul.product_option.Product_optionDTO;
 
 public class ProductDTO {
 
@@ -14,12 +16,18 @@ public class ProductDTO {
 	private Product_imgDTO mainImg;
 	private Product_evaluationDTO evalDTO;
 	private String test;
+	private List<Product_optionDTO> options;
 	
 	
 	
 	
 	
-	
+	public List<Product_optionDTO> getOptions() {
+		return options;
+	}
+	public void setOptions(List<Product_optionDTO> options) {
+		this.options = options;
+	}
 	public String getTest() {
 		return test;
 	}
