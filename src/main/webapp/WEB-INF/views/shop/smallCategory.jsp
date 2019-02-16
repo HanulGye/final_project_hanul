@@ -39,23 +39,37 @@
       <div class="row">
 
         <div class="col-lg-2">
-		  <img class="mb-3 font_img_size" alt="" src="${pageContext.request.contextPath}/resources/img/icon_img/xbox_one_font.png">	
-          <!-- <h2 class="my-4">Shop Name</h2> -->
-          <div class="list-group list-group-flush">
-            <a href="#" class="list-group-item list-group-item-action">Action</a>
-            <a href="#" class="list-group-item list-group-item-action">Sports</a>
-            <a href="#" class="list-group-item list-group-item-action">RPG</a>
-            <a href="#" class="list-group-item list-group-item-action">Casual & Character</a>
-            <a href="#" class="list-group-item list-group-item-action">Fighting</a>
-            <a href="#" class="list-group-item list-group-item-action">ETC</a>
-            <a class="list-group-item nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		          더 보기
-		       </a>
-		       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-		         <a class="dropdown-item" href="#">Playstation3</a>
-		         <a class="dropdown-item" href="#">Playstation2</a>
-		       </div>
-          </div>
+		  	<c:choose>
+		  		<c:when test="${param.platform eq 'Hardware' || param.platform eq 'Peripheral'}">
+		  			<h2 class="menu_font">E.T.C</h2>
+		  			<div class="list-group list-group-flush">
+			            <a href="#" class="list-group-item list-group-item-action">Hardware</a>
+			            <a href="#" class="list-group-item list-group-item-action">Peripheral</a>
+			          </div>
+		  		</c:when>
+		  		<c:otherwise>
+			  		<img class="mb-3 font_img_size" alt="" src="
+					  <c:choose>
+					  	<c:when test="${fn:contains(param.platform, 'PS')}">
+					  		${pageContext.request.contextPath}/resources/img/icon_img/playstation-font.png
+					  	</c:when>
+					  	<c:when test="${fn:contains(param.platform, 'XB')}">
+					  		${pageContext.request.contextPath}/resources/img/icon_img/xbox_font.png
+					  	</c:when>
+					  	<c:otherwise>
+					  		${pageContext.request.contextPath}/resources/img/icon_img/nintendo_font.png		  		
+					  	</c:otherwise>
+					  </c:choose>">	
+			          <div class="list-group list-group-flush">
+			            <a href="#" class="list-group-item list-group-item-action">Action</a>
+			            <a href="#" class="list-group-item list-group-item-action">Sports</a>
+			            <a href="#" class="list-group-item list-group-item-action">RPG</a>
+			            <a href="#" class="list-group-item list-group-item-action">Casual & Character</a>
+			            <a href="#" class="list-group-item list-group-item-action">Fighting</a>
+			            <a href="#" class="list-group-item list-group-item-action">ETC</a>
+			          </div>
+		  		</c:otherwise>
+		  	</c:choose>
 
         </div>
         <!-- /.col-lg-3 -->

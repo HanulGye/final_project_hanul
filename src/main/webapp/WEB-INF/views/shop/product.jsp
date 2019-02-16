@@ -104,7 +104,7 @@
 						<tr>
 							<td>적립금</td>
 							<input type="hidden" value="${product[0].price}" id="pro_price">
-							<td class="text-right">500 원</td>
+							<td class="text-right" id="point_price"></td>
 						</tr>
 						<tr>
 							<td>판매가격</td>
@@ -113,16 +113,20 @@
 					</tbody>
 				</table>
 				<p class="mt-4 font_sizing">옵션</p>
-      			<select class="form-control form-control-sm mb-4 font_sizing">			
-		  			<c:forEach items="${product}" var="dto">
-			  			<option title="${dto.selOption.name}" value="${dto.selOption.price}">[옵션] ${dto.selOption.name}&nbsp;/&nbsp;${dto.selOption.price}</option>
-		  			</c:forEach>  						
+      			<select class="form-control form-control-sm mb-4 font_sizing" id="opt_select">			
+		  			<!-- 옵션이 가격이 0원인데 골라야 하는 경우에 어떻게 하지..? -->
+		  			<c:if test="${product[0].selOption.name ne '옵션 없음'}">
+		  				<option selected="selected" title="옵션 없음" value="0">[옵션] 옵션 없음 / 0</option>
+		  			</c:if>
+		  					<c:forEach items="${product}" var="dto">
+			  				<option title="${dto.selOption.name}" value="${dto.selOption.price}">[옵션] ${dto.selOption.name}&nbsp;/&nbsp;${dto.selOption.price}</option>
+		  					</c:forEach> 	
 				</select>
 				<table class="mt-3" style="width: 100%">
 					<tbody>
 						<tr>
 							<td class="font-weight-bold">총 상품 금액</td>
-							<td class="font-weight-bold text-danger text-right">45,000 원</td>
+							<td class="font-weight-bold text-danger text-right" id="total_price"></td>
 						</tr>
 						<tr>
 							<td class="pt-3" colspan="2">
@@ -415,6 +419,8 @@
 
     <!-- Custom scripts for this template -->
     <script src="${pageContext.request.contextPath}/resources/js/creative.min.js"></script>
+
+	<script src="${pageContext.request.contextPath}/resources/js/product_page.js"></script>
 
   </body>
 
