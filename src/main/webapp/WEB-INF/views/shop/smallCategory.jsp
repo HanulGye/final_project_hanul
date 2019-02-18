@@ -76,12 +76,14 @@
 
         <div class="col-lg-10">
 
-          <form class="form-inline" id="go_to_top">
+          <!-- <form class="form-inline" id="go_to_top">
           	<div class="mx-auto mb-4">
 		    	<input class="form-control form-control-lg mr-sm-2" type="search" placeholder="검색" aria-label="Search">
 		    	<button class="btn btn-dark my-2 my-sm-0" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>          	
           	</div>
-	  	  </form>
+	  	  </form> -->
+	  	  
+	  	  <h1 class="text-center display-4 mb-5">Product</h1>
 		
 		  <div class="btn-group btn-group-sm btn-group-toggle my-4 col-lg-4 offset-lg-8" data-toggle="buttons">
 			  <label class="btn btn-outline-dark active sorting_group">

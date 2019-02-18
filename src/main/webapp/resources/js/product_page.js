@@ -3,7 +3,7 @@ $(function() {
 	pro_price *= 1;
 	var point_price = pro_price / 100;
 	$('#point_price').attr('title',point_price);
-	$('#point_price').text(point_price+' 원  ');
+	$('#point_price').text(point_price+' 원');
 	
 });
 
