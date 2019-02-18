@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page session="false" %>
 <!DOCTYPE html>
 <html>
 
@@ -54,9 +53,9 @@
 			    </ul>
 			  </div>
 			  <div class="card-body text-left ml-3">
-				<p>이름 데이터</p>
-				<p>전화번호 데이터</p>
-				<p>이메일 데이터</p>
+				<p>${member_data.name}</p>
+				<p>${member_data.phone}</p>
+				<p>${member_data.id_member}</p>
 			  </div>
 			</div>
 			

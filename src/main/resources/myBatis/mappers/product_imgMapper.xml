@@ -19,10 +19,35 @@
   		on p.id_product = e.id_product
   		where img.kind = 'main'
   		and p.platform = #{platform}
-  		group by p.name, p.price, p.relase_date, p.id_product, img.fname
+  		group by p.name, p.price, p.relase_date, p.id_product, p.genre, p.platform, img.fname
   		order by p.relase_date desc
 	</select>
-	<select id="selectOne" parameterType="Integer" resultType="Product_imgDTO">
+	<select id="shopListGenre" parameterType="ProductDTO" resultType="Product_imgDTO">
+  		select img.fname 
+  		from product p 
+  		left join product_img img 
+  		on p.id_product = img.id_product
+  		left join product_evaluation e
+  		on p.id_product = e.id_product
+  		where img.kind = 'main'
+  		and p.platform = #{platform}
+  		and p.genre = #{genre}
+  		group by p.name, p.price, p.relase_date, p.id_product, p.platform, img.fname
+  		order by p.relase_date desc
+  	</select>
+  	<select id="shopListAll" parameterType="String" resultType="Product_imgDTO">
+  		select img.fname 
+  		from product p 
+  		left join product_img img 
+  		on p.id_product = img.id_product
+  		left join product_evaluation e
+  		on p.id_product = e.id_product
+  		where img.kind = 'main'
+  		and p.genre = #{genre}
+  		group by p.name, p.price, p.relase_date, p.id_product, p.genre, p.platform, img.fname
+  		order by p.relase_date desc
+  	</select>
+	<select id="selectOne" parameterType="ProductDTO" resultType="Product_imgDTO">
 		select img.fname
   		from product p
   		left join product_img img

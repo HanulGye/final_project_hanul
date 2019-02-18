@@ -38,8 +38,16 @@ public class ProductDAO {
 		return sqlSession.selectList(NAMESPACE+"shopList", platform);
 	}
 	
-	public List<ProductDTO> selectOne(Integer id_product) throws Exception{
-		return sqlSession.selectList(NAMESPACE+"selectOne", id_product);
+	public List<ProductDTO> shopListGenre(ProductDTO productDTO) throws Exception{
+		return sqlSession.selectList(NAMESPACE+"shopListGenre", productDTO);
+	}
+	
+	public List<ProductDTO> shopListAll(String genre) throws Exception{
+		return sqlSession.selectList(NAMESPACE+"shopListAll", genre);
+	}
+	
+	public List<ProductDTO> selectOne(ProductDTO productDTO) throws Exception{
+		return sqlSession.selectList(NAMESPACE+"selectOne", productDTO);
 	}
 	
 }

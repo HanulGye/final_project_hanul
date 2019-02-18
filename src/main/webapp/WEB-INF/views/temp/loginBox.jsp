@@ -2,8 +2,8 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>   
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
-<c:set var="URL" value="${pageContext.request.requestURL}" />
-<c:set var="URI" value="${pageContext.request.requestURI}" />
+
+
 
 
   <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -36,7 +36,7 @@
 			<p class="font_sizing col-sm text-center">아직 계정이 없으신가요?</p>
 			<a class="font_sizing col-sm text-center" href="#">등록하러 가기</a>		  
 		</div>
-		<input type="hidden" value="${URI}" name="uri">
+		
 		<div class="ml_25p">
 			<button type="submit" class="btn btn-dark btn_lg btn_sizing mt-4 mb-4">Login</button>
 			<div>

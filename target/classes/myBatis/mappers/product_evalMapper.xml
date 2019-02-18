@@ -19,7 +19,32 @@
   		on p.id_product = e.id_product
   		where img.kind = 'main'
   		and p.platform = #{platform}
-  		group by p.name, p.price, p.relase_date, p.id_product, img.fname
+  		group by p.name, p.price, p.relase_date, p.id_product, p.genre, p.platform, img.fname
   		order by p.relase_date desc
 	</select>
+	<select id="shopListGenre" parameterType="ProductDTO" resultType="String">
+  		select round(avg(e.score_eval),1) 
+  		from product p 
+  		left join product_img img 
+  		on p.id_product = img.id_product
+  		left join product_evaluation e
+  		on p.id_product = e.id_product
+  		where img.kind = 'main'
+  		and p.platform = #{platform}
+  		and p.genre = #{genre}
+  		group by p.name, p.price, p.relase_date, p.id_product, p.platform, img.fname
+  		order by p.relase_date desc
+  	</select>
+  	<select id="shopListAll" parameterType="String" resultType="String">
+  		select round(avg(e.score_eval),1) 
+  		from product p 
+  		left join product_img img 
+  		on p.id_product = img.id_product
+  		left join product_evaluation e
+  		on p.id_product = e.id_product
+  		where img.kind = 'main'
+  		and p.genre = #{genre}
+  		group by p.name, p.price, p.relase_date, p.id_product, p.genre, p.platform, img.fname
+  		order by p.relase_date desc
+  	</select>
  </mapper>

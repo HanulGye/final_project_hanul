@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.hanul.member.MemberDTO;
+import com.hanul.order.OrderService;
 import com.hanul.order_cart.CartDTO;
 import com.hanul.order_cart.CartService;
 
@@ -19,9 +20,17 @@ public class OrderController {
 	@Inject
 	private CartService cartService;
 	
+	@Inject
+	private OrderService orderService;
+	
 	@RequestMapping(value="checkout")
-	public void checkout() throws Exception{
-		
+	public ModelAndView checkout(HttpServletRequest request) throws Exception{
+		MemberDTO memberDTO =  (MemberDTO) request.getSession().getAttribute("login_info");
+		String id_member = "";
+		if(memberDTO!=null) {
+			id_member = memberDTO.getId_member();			
+		}
+		return orderService.orderCheck(memberDTO);
 	}
 	
 	@RequestMapping(value="cart", method=RequestMethod.GET)

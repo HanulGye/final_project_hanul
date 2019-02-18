@@ -145,17 +145,50 @@ public class ProductService {
 		return modelAndView;
 
 	}
+	
+	public ModelAndView shopListGenre (ProductDTO productDTO) throws Exception{
+		List<ProductDTO> proAr = productDAO.shopListGenre(productDTO);
+		if (proAr != null) {
+			List<Product_imgDTO> imgAr = product_imgDAO.shopListGenre(productDTO);
+			List<String> evAr = product_evaluationDAO.shopListGenre(productDTO);
+			for (int i = 0; i < proAr.size(); i++) {
+				proAr.get(i).setMainImg(imgAr.get(i));
+				proAr.get(i).setTest(evAr.get(i));
+			}
+		}
 
-	public ModelAndView selectOne(Integer id_product) throws Exception {
-		List<ProductDTO> product = productDAO.selectOne(id_product);
+		modelAndView = new ModelAndView();
+		modelAndView.addObject("products", proAr);
+		modelAndView.setViewName("/shop/smallCategory");
+		return modelAndView;
+	}
+	
+	public ModelAndView shopListAll(String genre) throws Exception{
+		List<ProductDTO> proAr = productDAO.shopListAll(genre);
+		if (proAr != null) {
+			List<Product_imgDTO> imgAr = product_imgDAO.shopListAll(genre);
+			List<String> evAr = product_evaluationDAO.shopListAll(genre);
+			for (int i = 0; i < proAr.size(); i++) {
+				proAr.get(i).setMainImg(imgAr.get(i));
+				proAr.get(i).setTest(evAr.get(i));
+			}
+		}
+		modelAndView = new ModelAndView();
+		modelAndView.addObject("products", proAr);
+		modelAndView.setViewName("/shop/smallCategory");
+		return modelAndView;
+	}
+
+	public ModelAndView selectOne(ProductDTO productDTO) throws Exception {
+		List<ProductDTO> product = productDAO.selectOne(productDTO);
 		if (product != null) {
-			List<Product_imgDTO> image = product_imgDAO.selectOne(id_product);
-			List<Product_optionDTO> option = product_optionDAO.selectOne(id_product);
+			List<Product_imgDTO> image = product_imgDAO.selectOne(productDTO);
+			List<Product_optionDTO> option = product_optionDAO.selectOne(productDTO);
 			
 			 try { 
 				 option.get(0).getName();
 			  
-			 }catch (NullPointerException e) {
+			 }catch (Exception e) {
 			  
 				 Product_optionDTO selOption = new Product_optionDTO();
 				 selOption.setName("옵션 없음"); 

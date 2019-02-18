@@ -7,6 +7,8 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
+import com.hanul.product.ProductDTO;
+
 @Repository
 public class Product_optionDAO {
 	
@@ -26,8 +28,8 @@ public class Product_optionDAO {
 		return sqlSession.selectList(NAMESPACE+"cartOptSel", id_cart_order);
 	}
 	
-	public List<Product_optionDTO> selectOne(Integer id_product) throws Exception{
-		return sqlSession.selectList(NAMESPACE+"selectOne", id_product);
+	public List<Product_optionDTO> selectOne(ProductDTO productDTO) throws Exception{
+		return sqlSession.selectList(NAMESPACE+"selectOne", productDTO);
 	}
 	
 }

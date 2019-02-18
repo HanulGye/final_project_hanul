@@ -7,6 +7,8 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
+import com.hanul.product.ProductDTO;
+
 @Repository
 public class Product_imgDAO {
 
@@ -25,7 +27,16 @@ public class Product_imgDAO {
 	public List<Product_imgDTO> shopList(String platform) throws Exception{
 		return sqlSession.selectList(NAMESPACE+"shopList", platform);
 	}
-	public List<Product_imgDTO> selectOne(Integer id_product) throws Exception{
-		return sqlSession.selectList(NAMESPACE+"selectOne", id_product);
+	
+	public List<Product_imgDTO> shopListGenre(ProductDTO productDTO) throws Exception{
+		return sqlSession.selectList(NAMESPACE+"shopListGenre", productDTO);
+	}
+	
+	public List<Product_imgDTO> shopListAll(String genre) throws Exception {
+		return sqlSession.selectList(NAMESPACE+"shopListAll", genre);
+	}
+	
+	public List<Product_imgDTO> selectOne(ProductDTO productDTO) throws Exception{
+		return sqlSession.selectList(NAMESPACE+"selectOne", productDTO);
 	}
 }

@@ -106,28 +106,36 @@
         <div class="row">
           <div class="col-lg-3 col-md-6 text-center">
             <div class="service-box mt-5 mx-auto">
+              <a href="${pageContext.request.contextPath}/shop/smallCategory?platform=PS4">
               <img src="${pageContext.request.contextPath}/resources/img/icon_img/ps_icon.png" style="width: 95px; height: 95px;">
+              </a>
               <h3 class="mt-3">Play Station 4</h3>
               <p class="text-muted mb-0">View into PS4</p>
             </div>
           </div>
           <div class="col-lg-3 col-md-6 text-center">
             <div class="service-box mt-5 mx-auto">
+              <a href="${pageContext.request.contextPath}/shop/smallCategory?platform=Switch">
               <img src="${pageContext.request.contextPath}/resources/img/icon_img/nintendo_icon.png" style="width: 90px; height: 90px;">
+              </a>
               <h3 class="mt-4">Switch</h3>
               <p class="text-muted mb-0">View into Switch</p>
             </div>
           </div>
           <div class="col-lg-3 col-md-6 text-center">
             <div class="service-box mt-5 mx-auto">
+              <a href="${pageContext.request.contextPath}/shop/smallCategory?platform=XBox One">
               <img src="${pageContext.request.contextPath}/resources/img/icon_img/xbox_icon.png" style="width: 90px; height: 90px;">
+              </a>
               <h3 class="mt-4">Xbox One</h3>
               <p class="text-muted mb-0">View into Xbox One</p>
             </div>
           </div>
           <div class="col-lg-3 col-md-6 text-center">
             <div class="service-box mt-5 mx-auto">
+              <a href="${pageContext.request.contextPath}/shop/smallCategory?platform=Hardware">
               <i class="fa fa-gamepad fa-6x" aria-hidden="true"></i>
+              </a>
               <h3 class="mt-4">ETC</h3>
               <p class="text-muted mb-0">View into HardWare, Controller And Etc</p>
             </div>
@@ -140,7 +148,7 @@
       <div class="container-fluid p-0">
         <div class="row no-gutters">
           <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="./test">
+            <a class="portfolio-box" href="${pageContext.request.contextPath}/shop/smallCategory/all?genre=action&platform=all">
               <img class="img-fluid" src="${pageContext.request.contextPath}/resources/img/portfolio/thumbnails/action_thumbnail.png" alt="">
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
@@ -155,7 +163,7 @@
             </a>
           </div>
           <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="${pageContext.request.contextPath}/resources/img/portfolio/fullsize/2.jpg">
+            <a class="portfolio-box" href="${pageContext.request.contextPath}/shop/smallCategory/all?genre=sports&platform=all">
               <img class="img-fluid" src="${pageContext.request.contextPath}/resources/img/portfolio/thumbnails/sports_thumbnail.jpg" alt="">
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
@@ -170,7 +178,7 @@
             </a>
           </div>
           <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="${pageContext.request.contextPath}/resources/img/portfolio/fullsize/3.jpg">
+            <a class="portfolio-box" href="${pageContext.request.contextPath}/shop/smallCategory/all?genre=rpg&platform=all">
               <img class="img-fluid" src="${pageContext.request.contextPath}/resources/img/portfolio/thumbnails/rpg_thumbnail.jpg" alt="">
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
@@ -185,7 +193,7 @@
             </a>
           </div>
           <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="${pageContext.request.contextPath}/resources/img/portfolio/fullsize/4.jpg">
+            <a class="portfolio-box" href="${pageContext.request.contextPath}/shop/smallCategory/all?genre=casualNcharacter&platform=all">
               <img class="img-fluid" src="${pageContext.request.contextPath}/resources/img/portfolio/thumbnails/casual_thumbnail.jpg" alt="">
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
@@ -200,7 +208,7 @@
             </a>
           </div>
           <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="#">
+            <a class="portfolio-box" href="${pageContext.request.contextPath}/shop/smallCategory/all?genre=fighting&platform=all">
               <img class="img-fluid" src="${pageContext.request.contextPath}/resources/img/portfolio/thumbnails/versus_thumbnail.jpg" alt="">
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
@@ -215,7 +223,7 @@
             </a>
           </div>
           <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="${pageContext.request.contextPath}/resources/img/portfolio/fullsize/6.jpg">
+            <a class="portfolio-box" href="${pageContext.request.contextPath}/shop/smallCategory/all?genre=etc&platform=all">
               <img class="img-fluid" src="${pageContext.request.contextPath}/resources/img/portfolio/thumbnails/etc_thumbnail.jpg" alt="">
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">

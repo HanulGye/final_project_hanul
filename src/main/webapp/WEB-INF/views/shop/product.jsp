@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <!DOCTYPE html>
 <html>
 
@@ -39,23 +40,42 @@
       <div class="row">
 
         <div class="col-lg-2">
-		  <img class="mb-3 font_img_size" alt="" src="${pageContext.request.contextPath}/resources/img/icon_img/playstation-font.png">	
-          <!-- <h2 class="my-4">Shop Name</h2> -->
-          <div class="list-group list-group-flush">
-            <a href="#" class="list-group-item list-group-item-action">Action</a>
-            <a href="#" class="list-group-item list-group-item-action">Sports</a>
-            <a href="#" class="list-group-item list-group-item-action">RPG</a>
-            <a href="#" class="list-group-item list-group-item-action">Casual & Character</a>
-            <a href="#" class="list-group-item list-group-item-action">Fighting</a>
-            <a href="#" class="list-group-item list-group-item-action">ETC</a>
-            <a class="list-group-item nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		          Category 7
-		       </a>
-		       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-		         <a class="dropdown-item" href="#">Playstation3</a>
-		         <a class="dropdown-item" href="#">Playstation2</a>
-		       </div>
-          </div>
+          <c:choose>
+          	<c:when test="${param.platform eq 'all'}">
+          		<h2 class="menu_font">All Platform</h2>
+		  			<div class="list-group list-group-flush">
+			            <a href="${pageContext.request.contextPath}/shop/smallCategory/all?genre=action&platform=all" class="list-group-item list-group-item-action">Action</a>
+			            <a href="${pageContext.request.contextPath}/shop/smallCategory/all?genre=sports&platform=all" class="list-group-item list-group-item-action">Sports</a>
+			            <a href="${pageContext.request.contextPath}/shop/smallCategory/all?genre=rpg&platform=all" class="list-group-item list-group-item-action">RPG</a>
+			            <a href="${pageContext.request.contextPath}/shop/smallCategory/all?genre=casualNcharacter&platform=all" class="list-group-item list-group-item-action">Casual & Character</a>
+			            <a href="${pageContext.request.contextPath}/shop/smallCategory/all?genre=fighting&platform=all" class="list-group-item list-group-item-action">Fighting</a>
+			            <a href="${pageContext.request.contextPath}/shop/smallCategory/all?genre=etc&platform=all" class="list-group-item list-group-item-action">ETC</a>
+			        </div>
+          	</c:when>
+          	<c:otherwise>
+			  <img class="mb-3 font_img_size" alt="" src="
+				<c:choose>
+					<c:when test="${fn:contains(product[0].platform, 'PS')}">
+						${pageContext.request.contextPath}/resources/img/icon_img/playstation-font.png
+					</c:when>
+					<c:when test="${fn:contains(product[0].platform, 'XB')}">
+						${pageContext.request.contextPath}/resources/img/icon_img/xbox_font.png
+					</c:when>
+					<c:otherwise>
+						${pageContext.request.contextPath}/resources/img/icon_img/nintendo_font.png		  		
+					</c:otherwise>
+				</c:choose>">			  	
+	          <!-- <h2 class="my-4">Shop Name</h2> -->
+	          <div class="list-group list-group-flush">
+				<a href="${pageContext.request.contextPath}/shop/smallCategory/genre?platform=${product[0].platform}&genre=action" class="list-group-item list-group-item-action">Action</a>
+				<a href="${pageContext.request.contextPath}/shop/smallCategory/genre?platform=${product[0].platform}&genre=sports" class="list-group-item list-group-item-action">Sports</a>
+				<a href="${pageContext.request.contextPath}/shop/smallCategory/genre?platform=${product[0].platform}&genre=rpg" class="list-group-item list-group-item-action">RPG</a>
+				<a href="${pageContext.request.contextPath}/shop/smallCategory/genre?platform=${product[0].platform}&genre=casualNcharacter" class="list-group-item list-group-item-action">Casual & Character</a>
+				<a href="${pageContext.request.contextPath}/shop/smallCategory/genre?platform=${product[0].platform}&genre=fighting" class="list-group-item list-group-item-action">Fighting</a>
+				<a href="${pageContext.request.contextPath}/shop/smallCategory/genre?platform=${product[0].platform}&genre=etc" class="list-group-item list-group-item-action">ETC</a>
+	          </div>
+          	</c:otherwise>
+          </c:choose>
 
         </div>
         <!-- /.col-lg-3 -->
@@ -86,7 +106,7 @@
 		<div class="col-lg-3">
          	<div class="card">
 			  <div class="card-body card_bottom_margin text-left ml-3">
-				<p class="my-4 font-weight-bold">${product[0].platform}&nbsp;${product[0].name}</p>
+				<p class="my-4 font-weight-bold">[${product[0].platform}]&nbsp;${product[0].name}</p>
 				<table class="mt-4 font_sizing" style="width: 100%">
 					<tbody>
 						<tr>

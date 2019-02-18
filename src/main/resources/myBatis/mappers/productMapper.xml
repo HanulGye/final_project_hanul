@@ -20,7 +20,7 @@
   		select p.id_product, p.name, p.price, p.platform from product p, product_option opt, order_cart c, member m where c.id_product = p.id_product and c.id_option_product = opt.id_option_product and c.id_member = m.id_member and m.id_member = #{id_member} ORDER by c.reg_date asc 
   	</select>
   	<select id="shopList" parameterType="String" resultType="ProductDTO">
-  		select p.name, p.price, p.id_product 
+  		select p.name, p.price, p.genre, p.platform, p.id_product 
   		from product p 
   		left join product_img img 
   		on p.id_product = img.id_product
@@ -28,10 +28,35 @@
   		on p.id_product = e.id_product
   		where img.kind = 'main'
   		and p.platform = #{platform}
-  		group by p.name, p.price, p.relase_date, p.id_product, img.fname
+  		group by p.name, p.price, p.relase_date, p.id_product, p.genre, p.platform, img.fname
   		order by p.relase_date desc
   	</select>
-  	<select id="selectOne" parameterType="Integer" resultType="ProductDTO">
+  	<select id="shopListGenre" parameterType="ProductDTO" resultType="ProductDTO">
+  		select p.name, p.price, p.id_product, p.genre, p.platform 
+  		from product p 
+  		left join product_img img 
+  		on p.id_product = img.id_product
+  		left join product_evaluation e
+  		on p.id_product = e.id_product
+  		where img.kind = 'main'
+  		and p.platform = #{platform}
+  		and p.genre = #{genre}
+  		group by p.name, p.price, p.relase_date, p.id_product, p.genre, p.platform, img.fname
+  		order by p.relase_date desc
+  	</select>
+  	<select id="shopListAll" parameterType="String" resultType="ProductDTO">
+  		select p.name, p.price, p.genre, p.platform, p.id_product 
+  		from product p 
+  		left join product_img img 
+  		on p.id_product = img.id_product
+  		left join product_evaluation e
+  		on p.id_product = e.id_product
+  		where img.kind = 'main'
+  		and p.genre = #{genre}
+  		group by p.name, p.price, p.relase_date, p.id_product, p.genre, p.platform, img.fname
+  		order by p.relase_date desc
+  	</select>
+  	<select id="selectOne" parameterType="ProductDTO" resultType="ProductDTO">
   		select p.*
   		from product p
   		left join product_img img

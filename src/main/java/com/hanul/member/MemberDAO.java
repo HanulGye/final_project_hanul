@@ -25,4 +25,8 @@ public class MemberDAO {
 	}
 	//member 꺼내오는 쿼리 매퍼에서 짜서 그거 불러오는거 하나 추가해야됨 . 
 	
+	public MemberDTO orderCheck(MemberDTO memberDTO) throws Exception{
+		return sqlSession.selectOne(NAMESPACE+"orderCheck", memberDTO);
+	}
+	
 }

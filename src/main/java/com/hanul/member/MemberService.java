@@ -1,10 +1,13 @@
 package com.hanul.member;
 
 
+import java.util.Enumeration;
+
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 @Service
@@ -41,14 +44,14 @@ public class MemberService {
 	
 	public ModelAndView login(MemberDTO memberDTO, String uri, HttpServletRequest request) throws Exception{
 		
-		uri = uri.replace("/WEB-INF/views", "");
+		/*uri = uri.replace("/WEB-INF/views", "");
 		uri = uri.replace(".jsp", "");
 		uri = uri.replace("/gameMall", "");
 		//matches method는 매개변수로 들어가는 정규식과 문자열을 비교하여 true, false값 도출
 		//정규식 표현은 구글링
 		if(uri.matches(".*home.*")) {
 			uri = uri.replace("home", "");
-		}
+		}*/
 		
 		MemberDTO memberDTO2 = memberDAO.login(memberDTO);
 		if(memberDTO2 != null) {
@@ -59,9 +62,6 @@ public class MemberService {
 		modelAndView.setViewName("redirect:"+uri);
 		return modelAndView;
 	}
-	/*public void d() {
-		MemberDTO memberDTO = memberDAO.login(memberDTO);
-		CartDTO cartDTO = cartDAO.dddd(dfdsf);
-		memberDTO.setCartDTO(cartDTO);
-	}*/
+
+	
 }

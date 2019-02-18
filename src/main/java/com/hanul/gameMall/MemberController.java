@@ -31,6 +31,7 @@ public class MemberController {
 	
 	@RequestMapping(value="login", method=RequestMethod.POST)
 	public ModelAndView login(MemberDTO memberDTO, String uri, HttpServletRequest request) throws Exception{
+		uri = request.getHeader("referer");
 		return memberService.login(memberDTO, uri, request);
 	}
 	

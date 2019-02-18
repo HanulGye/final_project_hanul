@@ -30,7 +30,7 @@
 
   </head>
 
-  <body id="page-top">
+  <body class ="nanum_onlyFont" id="page-top">
 	<%@include file="/WEB-INF/views/temp/header.jsp"%>
 
     
@@ -38,7 +38,8 @@
 
       <div class="row">
 
-        <div class="col-lg-2">
+		<!-- platform을 etc로 넣고 하위에 hardware나 peripheral 넣어야 할듯 -->
+        <div class="col-lg-2 font-weight-bold">
 		  	<c:choose>
 		  		<c:when test="${param.platform eq 'Hardware' || param.platform eq 'Peripheral'}">
 		  			<h2 class="menu_font">E.T.C</h2>
@@ -46,6 +47,17 @@
 			            <a href="#" class="list-group-item list-group-item-action">Hardware</a>
 			            <a href="#" class="list-group-item list-group-item-action">Peripheral</a>
 			          </div>
+		  		</c:when>
+		  		<c:when test="${param.genre ne null && param.platform eq 'all'}">
+		  			<h2 class="menu_font">All Platform</h2>
+		  			<div class="list-group list-group-flush">
+			            <a href="${pageContext.request.contextPath}/shop/smallCategory/all?genre=action&platform=all" class="list-group-item list-group-item-action">Action</a>
+			            <a href="${pageContext.request.contextPath}/shop/smallCategory/all?genre=sports&platform=all" class="list-group-item list-group-item-action">Sports</a>
+			            <a href="${pageContext.request.contextPath}/shop/smallCategory/all?genre=rpg&platform=all" class="list-group-item list-group-item-action">RPG</a>
+			            <a href="${pageContext.request.contextPath}/shop/smallCategory/all?genre=casualNcharacter&platform=all" class="list-group-item list-group-item-action">Casual & Character</a>
+			            <a href="${pageContext.request.contextPath}/shop/smallCategory/all?genre=fighting&platform=all" class="list-group-item list-group-item-action">Fighting</a>
+			            <a href="${pageContext.request.contextPath}/shop/smallCategory/all?genre=etc&platform=all" class="list-group-item list-group-item-action">ETC</a>
+			        </div>
 		  		</c:when>
 		  		<c:otherwise>
 			  		<img class="mb-3 font_img_size" alt="" src="
@@ -61,12 +73,12 @@
 					  	</c:otherwise>
 					  </c:choose>">	
 			          <div class="list-group list-group-flush">
-			            <a href="#" class="list-group-item list-group-item-action">Action</a>
-			            <a href="#" class="list-group-item list-group-item-action">Sports</a>
-			            <a href="#" class="list-group-item list-group-item-action">RPG</a>
-			            <a href="#" class="list-group-item list-group-item-action">Casual & Character</a>
-			            <a href="#" class="list-group-item list-group-item-action">Fighting</a>
-			            <a href="#" class="list-group-item list-group-item-action">ETC</a>
+			            <a href="${pageContext.request.contextPath}/shop/smallCategory/genre?platform=${param.platform}&genre=action" class="list-group-item list-group-item-action">Action</a>
+			            <a href="${pageContext.request.contextPath}/shop/smallCategory/genre?platform=${param.platform}&genre=sports" class="list-group-item list-group-item-action">Sports</a>
+			            <a href="${pageContext.request.contextPath}/shop/smallCategory/genre?platform=${param.platform}&genre=rpg" class="list-group-item list-group-item-action">RPG</a>
+			            <a href="${pageContext.request.contextPath}/shop/smallCategory/genre?platform=${param.platform}&genre=casualNcharacter" class="list-group-item list-group-item-action">Casual & Character</a>
+			            <a href="${pageContext.request.contextPath}/shop/smallCategory/genre?platform=${param.platform}&genre=fighting" class="list-group-item list-group-item-action">Fighting</a>
+			            <a href="${pageContext.request.contextPath}/shop/smallCategory/genre?platform=${param.platform}&genre=etc" class="list-group-item list-group-item-action">ETC</a>
 			          </div>
 		  		</c:otherwise>
 		  	</c:choose>
@@ -108,11 +120,29 @@
 			<c:forEach items="${products}" var="dto">
             <div class="col-lg-2 col-md-6 mb-4">
               <div class="card h-100">
-                <a href="${pageContext.request.contextPath}/shop/product?id_product=${dto.id_product}"><img class="card-img-top" src="../resources/product/${dto.mainImg.fname}" alt="" style="height: 264px;"></a>
+              	<c:choose>
+              		<c:when test="${param.genre ne null && param.platform eq 'all'}">
+		                <a href="${pageContext.request.contextPath}/shop/product?id_product=${dto.id_product}&platform=all">
+		                	<img class="card-img-top" src="${pageContext.request.contextPath}/resources/product/${dto.mainImg.fname}" alt="" style="height: 264px;">
+			            </a>
+              		</c:when>
+              		<c:otherwise>
+              			<a href="${pageContext.request.contextPath}/shop/product?id_product=${dto.id_product}">
+		                	<img class="card-img-top" src="${pageContext.request.contextPath}/resources/product/${dto.mainImg.fname}" alt="" style="height: 264px;">
+			            </a>
+              		</c:otherwise>
+              	</c:choose>
                 <span class="back_new"></span>
                 <div class="card-body">
                   <h4 class="card-title text-center">
-                    <a class="titleSize font-weight-bold" href="${pageContext.request.contextPath}/shop/product?id_product=${dto.id_product}">${dto.name}</a>
+                  	<c:choose>
+                  		<c:when test="${param.genre ne null && param.platform eq 'all'}">
+                  			<a class="titleSize font-weight-bold" href="${pageContext.request.contextPath}/shop/product?id_product=${dto.id_product}&platform=all">${dto.name}</a>
+                  		</c:when>
+                  		<c:otherwise>
+		                    <a class="titleSize font-weight-bold" href="${pageContext.request.contextPath}/shop/product?id_product=${dto.id_product}">${dto.name}</a>
+                  		</c:otherwise>
+                  	</c:choose>
                   </h4>
                   <p class="titleSize font-weight-bold"><i class="fas fa-won-sign"></i>&nbsp;${dto.price}</p>
                   <div>
@@ -122,7 +152,9 @@
 					  	${dto.test}
 					  	</c:if>
 					  </span>
+					  <c:if test="${dto.price >= 50000}">
 					  <span><img alt="" src="${pageContext.request.contextPath}/resources/img/icon_img/freeShipping.png"></span>                  
+					  </c:if>
                   </div>
                 </div>
               </div>
@@ -130,19 +162,7 @@
 			</c:forEach>
             </div>
           <!-- /.row -->
-		  <div class="mt-4">
-			 <nav aria-label="Page navigation example">
-			  <ul class="pagination justify-content-center">
-			    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-			    <li class="page-item"><a class="page-link" href="#">1</a></li>
-			    <li class="page-item active" aria-current="page">
-			      <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-			    </li>
-			    <li class="page-item"><a class="page-link" href="#">3</a></li>
-			    <li class="page-item"><a class="page-link" href="#">Next</a></li>
-			  </ul>
-			 </nav>
-	     </div>
+		  
 		
         </div>
         <!-- /.col-lg-9 -->
