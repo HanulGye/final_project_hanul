@@ -17,7 +17,16 @@
   		select * from product where platform = #{platform} order by relase_date desc
   	</select>
   	<select id="cartSelect" parameterType="String" resultType="ProductDTO">
-  		select p.id_product, p.name, p.price, p.platform from product p, product_option opt, order_cart c, member m where c.id_product = p.id_product and c.id_option_product = opt.id_option_product and c.id_member = m.id_member and m.id_member = #{id_member} ORDER by c.reg_date asc 
+  		select p.id_product, p.name, p.price, p.platform 
+  		from order_cart c
+		left join product p
+		on c.id_product = p.id_product
+		left join member m
+		on c.id_member = m.id_member
+		left join product_option opt
+		on c.id_option_product = opt.id_option_product
+		where m.id_member = #{id_member}
+		order by c.reg_date asc
   	</select>
   	<select id="shopList" parameterType="String" resultType="ProductDTO">
   		select p.name, p.price, p.genre, p.platform, p.id_product 

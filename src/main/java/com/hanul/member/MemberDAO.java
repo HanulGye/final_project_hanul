@@ -29,4 +29,8 @@ public class MemberDAO {
 		return sqlSession.selectOne(NAMESPACE+"orderCheck", memberDTO);
 	}
 	
+	public MemberDTO find_mail(MemberDTO memberDTO) throws Exception{
+		return sqlSession.selectOne(NAMESPACE+"find_mail", memberDTO);
+	}
+	
 }

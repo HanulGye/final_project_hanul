@@ -29,5 +29,21 @@
 		<!-- 파일 당 size -->
 		<property name="maxUploadSizePerFile" value="10485760"></property>
 		<property name="defaultEncoding" value="UTF-8"></property>
-	</bean>		
+	</bean>
+	
+	<bean id="mailSender" class ="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<property name="host" value="smtp.gmail.com" />
+		<property name="port" value="587" />
+		<property name="username" value="kye2056@gmail.com" />
+		<property name="password" value="godtlsehd-315!" />
+ 		<property name="javaMailProperties">
+ 			<props>
+            	<prop key="mail.transport.protocol">smtp</prop>
+            	<prop key="mail.smtp.auth">true</prop>
+            	<prop key="mail.smtp.starttls.enable">true</prop>
+            	<prop key="mail.debug">true</prop>
+            </props>
+        </property>
+	</bean>
+			
 </beans>

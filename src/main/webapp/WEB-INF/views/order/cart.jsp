@@ -240,7 +240,7 @@
       	<p class="h5 font-weight-bold text-center mb-3">${dto.products.name}</p>
       	<p class="mt-4">옵션</p>
       	<select class="form-control form-control-sm mb-4" name="id_option_product">
-      		
+      		<option value="">[옵션] 옵션없음 / 0</option>
   			<c:forEach items="${optList}" var="opt" varStatus="status2">
   				<c:if test="${status.index eq status2.index}">
   				<c:forEach items="${opt}" var="opt2">

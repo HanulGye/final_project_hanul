@@ -2,7 +2,10 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>   
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
-
+<head>
+	<!-- kakao -->
+	<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+</head>
 
 
 
@@ -29,12 +32,12 @@
     			로그인 상태를 유지합니다.
 			</label>
 		</div>
-		<a class="col-sm font_sizing text-center" href="#">비밀번호를 잊어버리셨나요?</a>
+		<a class="col-sm font_sizing text-center" href="${pageContext.request.contextPath}/member/find">비밀번호를 잊어버리셨나요?</a>
 		
 		</div>
 		<div class="row">
 			<p class="font_sizing col-sm text-center">아직 계정이 없으신가요?</p>
-			<a class="font_sizing col-sm text-center" href="#">등록하러 가기</a>		  
+			<a class="font_sizing col-sm text-center" href="${pageContext.request.contextPath}/member/join">등록하러 가기</a>		  
 		</div>
 		
 		<div class="ml_25p">
@@ -51,3 +54,20 @@
     </div>
   </div>
 </div>
+
+<script type='text/javascript'>
+  		//<![CDATA[
+    	// 사용할 앱의 JavaScript 키를 설정해 주세요.
+    	Kakao.init('8855bdefcad85a49302a2c5061b45c6d');
+   		 // 카카오 로그인 버튼을 생성합니다.
+   		Kakao.Auth.createLoginButton({
+      container: '#kakao-login-btn',
+      success: function(authObj) {
+        alert(JSON.stringify(authObj));
+      },
+      fail: function(err) {
+         alert(JSON.stringify(err));
+      }
+    });
+  	//]]>
+	</script>

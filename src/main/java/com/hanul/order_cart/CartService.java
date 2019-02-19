@@ -50,10 +50,19 @@ public class CartService {
 			//cartDTO안에 있는 각각의 productDTO, productOptionDTO에 proAr, optAr의 객체들을 넣어주는 작업
 			//(셀렉트결과들을 합쳐주는 과정)
 			for(int i=0;i<cartAr.size();i++) {
-				int sum = (proAr.get(i).getPrice() + optAr.get(i).getPrice()) * cartAr.get(i).getQuantity();
-				proAr.get(i).setPrice(sum);
-				cartAr.get(i).setProducts(proAr.get(i));
-				cartAr.get(i).setProduct_options(optAr.get(i));
+				
+				try {
+					int sum = (proAr.get(i).getPrice() + optAr.get(i).getPrice()) * cartAr.get(i).getQuantity();
+					proAr.get(i).setPrice(sum);
+					cartAr.get(i).setProducts(proAr.get(i));
+					cartAr.get(i).setProduct_options(optAr.get(i));
+				}catch (Exception e) {
+					Product_optionDTO product_optionDTO = new Product_optionDTO();
+					product_optionDTO.setName("옵션없음");
+					product_optionDTO.setPrice(0);
+					optAr.add(product_optionDTO);
+				}
+				
 
 			}
 		}

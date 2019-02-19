@@ -30,12 +30,13 @@
 		var msg = '${param.msg}';
 		if(msg != ''){
 			alert(msg);
+			location.href = '${pageContext.request.contextPath}';
 		}
 	</script>
 
   </head>
 
-  <body id="page-top">
+  <body class="nanum_onlyFont" id="page-top">
 	<%@include file="/WEB-INF/views/temp/header.jsp"%>
 
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -133,7 +134,7 @@
           </div>
           <div class="col-lg-3 col-md-6 text-center">
             <div class="service-box mt-5 mx-auto">
-              <a href="${pageContext.request.contextPath}/shop/smallCategory?platform=Hardware">
+              <a class="text-reset text-decoration-none" href="${pageContext.request.contextPath}/shop/smallCategory?platform=Hardware">
               <i class="fa fa-gamepad fa-6x" aria-hidden="true"></i>
               </a>
               <h3 class="mt-4">ETC</h3>

@@ -31,12 +31,15 @@
 		select * from member where id_member = #{id_member} and pw = #{pw}
 	</select>
 	<select id="idCheck" parameterType="String" resultType="String">
-		select id from member where id_member = #{id_member}
+		select id_member from member where id_member = #{id_member}
 	</select>
 	<select id="orderCheck" parameterType="MemberDTO" resultType="MemberDTO">
 		select m.name, m.phone, m.id_member
 		from member m
 		where m.id_member = #{id_member}
+	</select>
+	<select id="find_mail" parameterType="MemberDTO" resultType="MemberDTO">
+		select * from member where id_member = #{id_member}
 	</select>
 </mapper>  
   

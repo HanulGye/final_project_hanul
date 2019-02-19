@@ -13,8 +13,20 @@
         </div>
         <div class="row">
           <div class="col-lg-4 ml-auto text-center">
-        	<i class="fa fa-user-circle fa-3x mb-3 sr-contact-1"></i>
-        	<p>LogIn</p>
+          	<c:choose>
+          		<c:when test="${!empty login_info}">
+          			<a href="${pageContext.request.contextPath}/member/logout">
+          			<i class="fas fa-sign-out-alt fa-3x mb-3 sr-contact-1"></i>
+          			<p>LogOut</p>
+          			</a>
+          		</c:when>
+          		<c:otherwise>
+		        	<a id="login_popup2" href="#" data-toggle="modal" data-target="#exampleModalCenter">
+		        	<i class="fa fa-user-circle fa-3x mb-3 sr-contact-1"></i>
+		        	<p>LogIn</p>
+		        	</a>          		
+          		</c:otherwise>
+          	</c:choose>
           </div>
           <div class="col-lg-4 mr-auto text-center">
             <i class="fas fa-phone fa-3x mb-3 sr-contact-1"></i>
@@ -23,20 +35,34 @@
         </div>
         <div class="row">
          <div class="col-lg-4 ml-auto text-center">
-        	<i class="fa fa-user-plus fa-3x mb-3 sr-contact-1"></i>
-        	<p>Join</p>
+         	<c:choose>
+         		<c:when test="${!empty login_info}">
+         			<a href="${pageContext.request.contextPath}/member/myPage">
+         			<i class="fas fa-address-card fa-3x mb-3 sr-contact-1"></i>
+         			<p>MyPage</p>
+         			</a>
+         		</c:when>
+         		<c:otherwise>
+		        	<a href="${pageContext.request.contextPath}/member/join">
+		        	<i class="fa fa-user-plus fa-3x mb-3 sr-contact-1"></i>
+		        	<p>Join</p>
+		        	</a>
+         		</c:otherwise>
+         	</c:choose>
          </div>
          <div class="col-lg-4 mr-auto text-center">
+            <a href="mailto:your-email@your-domain.com">
             <i class="fas fa-envelope fa-3x mb-3 sr-contact-2"></i>
-            <p>
-              <a href="mailto:your-email@your-domain.com">adminster@test.com</a>
-            </p>
+            <p>adminster@test.com</p>
+            </a>
           </div>
         </div>
         <div class="row">
          <div class="col-lg-4 ml-auto text-center">
+         	<a href=#>
          	<i class="fa fa-map-marker fa-3x mb-3"></i>
         	<p>매장 안내</p>
+         	</a>
          </div>
          <div class="col-lg-4 mr-auto text-center">
          	<i></i>

@@ -42,7 +42,7 @@ public class MemberService {
 		return modelAndView;
 	}
 	
-	public ModelAndView login(MemberDTO memberDTO, String uri, HttpServletRequest request) throws Exception{
+	public ModelAndView login(MemberDTO memberDTO, HttpServletRequest request) throws Exception{
 		
 		/*uri = uri.replace("/WEB-INF/views", "");
 		uri = uri.replace(".jsp", "");
@@ -52,15 +52,25 @@ public class MemberService {
 		if(uri.matches(".*home.*")) {
 			uri = uri.replace("home", "");
 		}*/
+		modelAndView = new ModelAndView();
 		
 		MemberDTO memberDTO2 = memberDAO.login(memberDTO);
 		if(memberDTO2 != null) {
 			request.getSession().setAttribute("login_info", memberDTO2);
+		}else {
+			modelAndView.addObject("msg", "로그인 정보가 틀렸습니다. 다시 시도해주십시오.");
 		}
-		modelAndView = new ModelAndView();
 		//modelAndView.addObject("member_data",memberDTO2); 굳이 보낼 필요 없을듯
-		modelAndView.setViewName("redirect:"+uri);
+		modelAndView.setViewName("redirect:../");
 		return modelAndView;
+	}
+	
+	public MemberDTO findMail(MemberDTO memberDTO) throws Exception{
+		MemberDTO resultDTO = memberDAO.find_mail(memberDTO);
+		if(resultDTO==null) {
+			throw new Exception();
+		}
+		return resultDTO;
 	}
 
 	

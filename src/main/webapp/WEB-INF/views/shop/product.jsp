@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<%! private HttpServletRequest request; %>
 <!DOCTYPE html>
 <html>
 
@@ -85,7 +86,9 @@
           <div class="row">
 			<div class="mx-auto mb-5">
 				<button type="button" class="btn btn-light rounded btn-lg"><i class="fa fa-arrow-left" aria-hidden="true"></i>&nbsp; Prev</button>
-				<a href="${pageContext.request.contextPath}/shop/smallCategory?platform=${product[0].platform}"><button type="button" class="btn btn-light rounded btn-lg">List</button></a>
+				<a href="<%=request.getHeader("referer")%>">
+					<button type="button" class="btn btn-light rounded btn-lg to_back_btn">List</button>
+				</a>
 				<button type="button" class="btn btn-light rounded btn-lg">Next &nbsp;<i class="fa fa-arrow-right" aria-hidden="true"></i></button>
 			</div>
             <div class="mx-auto">

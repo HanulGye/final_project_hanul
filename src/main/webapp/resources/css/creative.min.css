@@ -25,13 +25,14 @@ hr.light {
 }
 
 a {
-  color: #F05F40;
+  color: black;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
 }
 
 a:hover {
-  color: #f05f40;
+  color: red;
+  text-decoration: none;
 }
 
 h1,
@@ -478,6 +479,10 @@ header.masthead p {
 
 .footer_margin{
 	margin: 10%;
+}
+
+.errorStyle{
+	color: red;
 }
 
 /* cart */

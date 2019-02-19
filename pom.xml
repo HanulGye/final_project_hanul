@@ -21,6 +21,20 @@
 	</repositories>
 	
 	<dependencies>
+		<!-- forMailing support -->
+		<dependency>
+    		<groupId>org.springframework</groupId>
+   			<artifactId>spring-context-support</artifactId>
+    		<version>${org.springframework-version}</version>
+		</dependency>
+		<!-- Java Mail API -->
+        <dependency>
+        	<groupId>javax.mail</groupId>
+        	<artifactId>mail</artifactId>
+         	<version>1.4.7</version>
+		</dependency>
+
+
 		<!-- hibernate annotations-->
 		<dependency>
             <groupId>org.hibernate</groupId>

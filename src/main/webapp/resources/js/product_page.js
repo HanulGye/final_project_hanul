@@ -29,3 +29,10 @@ $(function() {
 	$('#total_price').text(total_price+' 원');
 	$('#total_price').attr('title', total_price);
 });
+
+
+$(function() {
+	$('.to_back_btn').click(function() {
+		history.forward(1);
+	});
+});
