@@ -46,5 +46,12 @@ public class ShopController {
 		return productService.selectOne(productDTO);
 	}
 	
+	@RequestMapping(value="market")
+	public ModelAndView market() throws Exception{
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.setViewName("temp/market");
+		return modelAndView;
+	}
+	
 	
 }

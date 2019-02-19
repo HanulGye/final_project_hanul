@@ -44,26 +44,32 @@ public class CartService {
 			
 			
 			List<Product_optionDTO> optAr = product_optionDAO.cartSelect(id_member);
-			
+			for(int i=0; i<optAr.size();i++) {
+				//옵션이 없는 경우 NullPointerException 발생
+				//catch문에서 임의의 값 (옵션없음, 0)을 넣어줌.
+				try {
+					optAr.get(i).getName();
+					
+				}catch (Exception e) {
+					Product_optionDTO product_optionDTO = new Product_optionDTO();
+					product_optionDTO.setName("옵션없음");
+					product_optionDTO.setPrice(0);
+					optAr.set(i, product_optionDTO);
+				}
+					
+				
+				
+			}
 			
 			
 			//cartDTO안에 있는 각각의 productDTO, productOptionDTO에 proAr, optAr의 객체들을 넣어주는 작업
 			//(셀렉트결과들을 합쳐주는 과정)
 			for(int i=0;i<cartAr.size();i++) {
+				int sum = (proAr.get(i).getPrice() + optAr.get(i).getPrice()) * cartAr.get(i).getQuantity();				
+				proAr.get(i).setPrice(sum);
+				cartAr.get(i).setProducts(proAr.get(i));
+				cartAr.get(i).setProduct_options(optAr.get(i));
 				
-				try {
-					int sum = (proAr.get(i).getPrice() + optAr.get(i).getPrice()) * cartAr.get(i).getQuantity();
-					proAr.get(i).setPrice(sum);
-					cartAr.get(i).setProducts(proAr.get(i));
-					cartAr.get(i).setProduct_options(optAr.get(i));
-				}catch (Exception e) {
-					Product_optionDTO product_optionDTO = new Product_optionDTO();
-					product_optionDTO.setName("옵션없음");
-					product_optionDTO.setPrice(0);
-					optAr.add(product_optionDTO);
-				}
-				
-
 			}
 		}
 		

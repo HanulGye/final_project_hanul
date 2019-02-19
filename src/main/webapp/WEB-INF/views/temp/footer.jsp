@@ -59,7 +59,7 @@
         </div>
         <div class="row">
          <div class="col-lg-4 ml-auto text-center">
-         	<a href=#>
+         	<a href="${pageContext.request.contextPath}/shop/market">
          	<i class="fa fa-map-marker fa-3x mb-3"></i>
         	<p>매장 안내</p>
          	</a>

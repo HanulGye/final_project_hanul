@@ -22,6 +22,15 @@
 		DELETE order_cart where id_member = #{id_member}
 	</delete>
 	<update id="optUpdate" parameterType="CartDTO">
-		update order_cart set id_option_product = #{id_option_product, jdbcType=INTEGER}, quantity = #{quantity} where id_cart_order = #{id_cart_order}
+		update order_cart
+		<choose>
+			<when test="id_option_product == 0">
+			set id_option_product = null, quantity = #{quantity}
+			</when>
+			<otherwise>
+			set id_option_product = #{id_option_product}, quantity = #{quantity}
+			</otherwise>
+		</choose> 
+		where id_cart_order = #{id_cart_order}
 	</update>
 </mapper>  
