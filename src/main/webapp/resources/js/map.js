@@ -42,10 +42,17 @@ $(function() {
 		
 		var mapOptions = {
 				center: new naver.maps.LatLng(x, y),
-				zoom: 12
+				zoom: 12,
+		        zoomControl: true,
+		        minZoom: 1
 		};
-		
+				
 		var map = new naver.maps.Map('map', mapOptions);
+		
+		var marker = new naver.maps.Marker({
+			position: new naver.maps.LatLng(x, y),
+			map: map
+		});
 	});
 	
 	

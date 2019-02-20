@@ -30,7 +30,7 @@ public class OrderController {
 		if(memberDTO!=null) {
 			id_member = memberDTO.getId_member();			
 		}
-		return orderService.orderCheck(memberDTO);
+		return cartService.cartSelect(id_member);
 	}
 	
 	@RequestMapping(value="cart", method=RequestMethod.GET)

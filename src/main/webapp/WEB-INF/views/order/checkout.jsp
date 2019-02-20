@@ -32,7 +32,7 @@
     <link href="${pageContext.request.contextPath}/resources/css/creative.min.css" rel="stylesheet">
   </head>
 
-  <body id="page-top">
+  <body class="nanum_onlyFont">
 	<%@include file="/WEB-INF/views/temp/header.jsp"%>
 
     
@@ -53,9 +53,9 @@
 			    </ul>
 			  </div>
 			  <div class="card-body text-left ml-3">
-				<p>${member_data.name}</p>
-				<p>${member_data.phone}</p>
-				<p>${member_data.id_member}</p>
+				<p>test</p>
+				<p>test</p>
+				<p>test</p>
 			  </div>
 			</div>
 			
@@ -213,62 +213,47 @@
 			      
 			    </ul>
 			  </div>
+			  
 			  <div class="card-body text-left ml-3">
-				<table class="font_sizing text-center" style="width: 100%">
+				<c:forEach items="${carts}" var="dto" varStatus="numbering">
+				
+				<table class="font_sizing text-center mt-4 cartArea" style="width: 100%">
 				  <tbody>
 				    <tr>
-				      <td rowspan="5"><img class="pr-3" style="height: 30%" alt="" src="${pageContext.request.contextPath}/resources/img/product_test_img/rockman_11.jpg"></td>
-				      <td class="font-weight-bold" colspan="2">Rockman 11</td>
+				      <td rowspan="5"><img style="height: 30%" alt="" src="../resources/product/${dto.products.mainImg.fname}"></td>
+				      <td class="font-weight-bold" colspan="2">${dto.products.name}</td>
 				    </tr>
 				    <tr>
 				      <td class="text-left">Platform</td>
-				      <td>PlayStation4</td>
+				      <td>${dto.products.platform}</td>
 				    </tr>
 				    <tr>
 				      <td class="text-left">Option</td>
-				      <td>[상세 보기]</td>
+				      <td><button type="button" class="btn btn-secondary rounded btn_small" data-toggle="modal" data-target="#${dto.id_cart_order}">상세보기</button></td>
 				    </tr>
 				    <tr>
 				      <td class="text-left">Quantity</td>
-				      <td>1</td>
+				      <td>${dto.quantity}</td>
 				    </tr>
 				    <tr>
-				      <td class="font-weight-bold" colspan="2">45,950 원</td>
+				      <td class="font-weight-bold" colspan="2">${dto.products.price} 원</td>
+				      <input type="hidden" id="price${numbering.index}" value="${dto.products.price}">
 				    </tr>
 				  </tbody>
 				</table>
-				<table class="font_sizing text-center mt-4" style="width: 100%">
-				  <tbody>
-				    <tr>
-				      <td rowspan="5"><img class="pr-3" style="height: 30%" alt="" src="${pageContext.request.contextPath}/resources/img/product_test_img/rockman_11.jpg"></td>
-				      <td class="font-weight-bold" colspan="2">Rockman 11</td>
-				    </tr>
-				    <tr>
-				      <td class="text-left">Platform</td>
-				      <td>PlayStation4</td>
-				    </tr>
-				    <tr>
-				      <td class="text-left">Option</td>
-				      <td>[상세 보기]</td>
-				    </tr>
-				    <tr>
-				      <td class="text-left">Quantity</td>
-				      <td>1</td>
-				    </tr>
-				    <tr>
-				      <td class="font-weight-bold" colspan="2">45,950 원</td>
-				    </tr>
-				  </tbody>
-				</table>
+				</c:forEach>
+			
 				<table class="mt-4" style="width: 100%">
 					<tbody>
 						<tr>
 							<td>상품금액</td>
-							<td class="text-right">45,950 원</td>
+							<td class="text-right" id="view1"></td>
+							<input type="hidden" id="productP">
 						</tr>
 						<tr>
 							<td>배송비</td>
-							<td class="text-right">2,500 원</td>
+							<td class="text-right" id="view2"></td>
+							<input type="hidden" id="shippingP">
 						</tr>
 						<tr>
 							<td>상품 할인금액</td>
@@ -283,8 +268,9 @@
 				<table class="mt-3" style="width: 100%">
 					<tbody>
 						<tr>
-							<td class="font-weight-bold">총 결제 예정 금액</td>
-							<td class="font-weight-bold text-right">48,450 원</td>
+							<td class="font-weight-bold importantRed">총 결제 예정 금액</td>
+							<td class="font-weight-bold text-right importantRed" id="view3"></td>
+							<input type="hidden" id="totalP">
 						</tr>
 					</tbody>
 				</table>
@@ -315,8 +301,24 @@
     <%@include file="/WEB-INF/views/temp/footer.jsp"%>
     <%@include file="/WEB-INF/views/temp/loginBox.jsp"%>
   
-   
-
+   	<c:forEach items="${carts}" var="dto" varStatus="status">
+   	<div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id="${dto.id_cart_order}">
+  		<div class="modal-dialog modal-sm modal-dialog-centered">
+    		<div class="modal-content">
+      			<div class="modal-header">
+        			<h5 class="modal-title" id="exampleModalCenterTitle">Confirm Option</h5>
+        			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          				<span aria-hidden="true">&times;</span>
+        			</button>
+      			</div>
+      			<div class="modal-body">
+       				<p class="font_sizing cOptName">[옵션명]&nbsp;${dto.product_options.name}</p>
+       				<p class="font_sizing cOptPrice">[가&nbsp;&nbsp;&nbsp;&nbsp;격]&nbsp;${dto.product_options.price}</p>
+      			</div>
+    		</div>
+  		</div>
+	</div>
+	</c:forEach>
 
 	
     <!-- Bootstrap core JavaScript -->
@@ -331,6 +333,9 @@
 
     <!-- Custom scripts for this template -->
     <script src="${pageContext.request.contextPath}/resources/js/creative.min.js"></script>
+
+	<!-- scriptCustooooom -->
+    <script src="${pageContext.request.contextPath}/resources/js/cart.js"></script>
 
   </body>
 
