@@ -38,10 +38,10 @@
 
     
     <div id="margin-top-container">
-		<h1 class="text-center display-4 mb-5">Find Password</h1>
-      	<form:form action="${pageContext.request.contextPath}/member/find" method="post" class="login_form_style mx_5 my_5" commandName="memberDTO">
+		<h1 class="text-center display-4 mb-5">Find Order</h1>
+      	<form:form action="" method="post" class="login_form_style mx_5 my_5" commandName="memberDTO">
  		<div class="form-group text_box_sizing">
-		    <input type="text" class="form-control" placeholder="E-mail 주소 입력" name="id_member" value="${memberDTO.id_member}">
+		    <input type="text" class="form-control" placeholder="주문번호 16자리 입력" name="id_member" value="${memberDTO.id_member}">
 		</div>
 		<div class="text_box_sizing">
 			<form:errors path="id_member" class="sorting_group errorStyle"/>
@@ -50,7 +50,7 @@
 			<button type="submit" class="btn btn-dark btn_lg btn_sizing mt-4 mb-4">확인</button>
 		</div>
 		<div>
-			<p class="text-center sorting_group">가입하신 이메일로 아이디와 비밀번호를 전송합니다.</p>
+			<p class="text-center sorting_group">비회원 주문시, 발급받은 주문번호를 입력해주세요.</p>
 		</div>
  		</form:form>
       

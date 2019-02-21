@@ -32,7 +32,7 @@
     <link href="${pageContext.request.contextPath}/resources/css/creative.min.css" rel="stylesheet">
   </head>
 
-  <body id="page-top">
+  <body class="nanum_onlyFont">
 	<%@include file="/WEB-INF/views/temp/header.jsp"%>
 
     
@@ -135,19 +135,30 @@
 			  </div>
 			  <div class="card-body text-center">
 			     <div class="row">
-					<c:forEach var="i" begin="1" end="4" step="1">
+					
 					<div class="col-lg-3 col-md-6 mb-4">
 		              <div class="card h-100">
-		                <a href="#"><img class="card-img-top p-2" src="${pageContext.request.contextPath}/resources/img/product_test_img/0090020007002.jpg" alt="" style="height: 264px;"></a>
+		                <a href="#"><img class="card-img-top p-2" src="${pageContext.request.contextPath}/resources/img/product_test_img/0090020006352.jpg" alt="" style="height: 264px;"></a>
 		                <div class="card-body">
 		                  <h4 class="card-title">
-		                    <a href="#">Item Two</a>
+		                    <a href="#" class="titleSize font-weight-bold">드래곤 퀘스트 XI</a>
 		                  </h4>
-		                  <h5>$24.99</h5>
+		                  <h5><i class="fas fa-won-sign"></i>&nbsp;57,000</h5>
+		                </div>
+		              </div>
+		            </div>
+		            <div class="col-lg-3 col-md-6 mb-4">
+		              <div class="card h-100">
+		                <a href="#"><img class="card-img-top p-2" src="${pageContext.request.contextPath}/resources/img/product_test_img/rockman_11.jpg" alt="" style="height: 264px;"></a>
+		                <div class="card-body">
+		                  <h4 class="card-title">
+		                    <a href="#" class="titleSize font-weight-bold">록맨 11</a>
+		                  </h4>
+		                  <h5><i class="fas fa-won-sign"></i>&nbsp;34,000</h5>
 		                </div>
 		              </div>
 		            </div>			
-					</c:forEach>
+					
 		            
 		          </div>
 			  </div>

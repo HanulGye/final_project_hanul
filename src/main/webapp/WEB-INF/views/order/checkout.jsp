@@ -53,9 +53,9 @@
 			    </ul>
 			  </div>
 			  <div class="card-body text-left ml-3">
-				<p>test</p>
-				<p>test</p>
-				<p>test</p>
+				<p>${login_info.name}</p>
+				<p>${login_info.phone}</p>
+				<p>${login_info.id_member}</p>
 			  </div>
 			</div>
 			
@@ -191,7 +191,7 @@
 			    	위 주문의 상품, 가격, 할인, 배송정보에 동의합니다.
 				 </label>
 				</div>
-				<button type="button" class="my-4 btn btn-dark btn-lg btn-block">45,950원 결제하기</button>
+				<button type="button" class="my-4 btn btn-dark btn-lg btn-block" id="view4"></button>
 			  </div>
 			</div>
 			

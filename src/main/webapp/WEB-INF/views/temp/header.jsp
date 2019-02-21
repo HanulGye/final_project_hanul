@@ -10,13 +10,15 @@
 					<c:when test="${!empty login_info}">
 						<li class="nav-item mr-3"><a href="${pageContext.request.contextPath}/member/logout"><i class="fas fa-sign-out-alt" aria-hidden="true" style="color: white;"> logOut</i></a></li>
 						<li class="nav-item mr-3"><a href="${pageContext.request.contextPath}/member/myPage"><i class="fas fa-address-card" aria-hidden="true" style="color: white;"> MyPage</i></a></li>
+						<li class="nav-item mr-3"><a href="${pageContext.request.contextPath}/order/checkout"><i class="fa fa-truck" aria-hidden="true" style="color: white;"> Order</i></a></li>
 					</c:when>
 					<c:otherwise>
 						<li class="nav-item mr-3"><a id="login_popup" href="#" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-user-circle" aria-hidden="true" style="color: white;"> login</i></a></li>
 						<li class="nav-item mr-3"><a href="${pageContext.request.contextPath}/member/join"><i class="fa fa-user-plus" aria-hidden="true" style="color: white;"> Join</i></a></li>
+						<li class="nav-item mr-3"><a href="${pageContext.request.contextPath}/order/find"><i class="fa fa-truck" aria-hidden="true" style="color: white;"> Order</i></a></li>
 					</c:otherwise>
 				</c:choose>
-				<li class="nav-item mr-3"><a href="#"><i class="fa fa-truck" aria-hidden="true" style="color: white;"> Order</i></a></li>
+				
 				<li class="nav-item" style="margin-right: 30px;"><a href="${pageContext.request.contextPath}/order/cart"><i class="fa fa-shopping-cart" aria-hidden="true" style="color: white;"> Cart</i></a></li>
 			</ul>
 		</div>
@@ -77,7 +79,7 @@
 		         <a class="dropdown-item text-light" href="#">Review</a>
 		         <a class="dropdown-item text-light" href="#">QnA</a>
 		         <a class="dropdown-item text-light" href="#">Off-line Market</a>
-		         <a class="dropdown-item text-light" href="#">What's New</a>
+		         <a class="dropdown-item text-light" href="${pageContext.request.contextPath}/community/main">What's New</a>
 		       </div>
 		     </li>
           </ul>

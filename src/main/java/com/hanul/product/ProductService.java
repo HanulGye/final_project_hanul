@@ -191,6 +191,7 @@ public class ProductService {
 			 }catch (Exception e) {
 			  
 				 Product_optionDTO selOption = new Product_optionDTO();
+				 selOption.setId_product(0);
 				 selOption.setName("옵션 없음"); 
 				 selOption.setPrice(0); 
 				 option.add(0, selOption);

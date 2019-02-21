@@ -125,4 +125,16 @@ public class CartService {
 		return modelAndView;
 	}
 	
+	public ModelAndView cartInsert(CartDTO cartDTO) throws Exception{
+		modelAndView = new ModelAndView();
+		String msg = "장바구니 등록 중 오류가 발생했습니다.";
+		int result = cartDAO.cartInsert(cartDTO);
+		if(result>0) {
+			msg = "장바구니에 상품을 등록했습니다.";
+		}
+		modelAndView.setViewName("redirect:./");
+		modelAndView.addObject("message", msg);
+		return modelAndView;
+	}
+	
 }

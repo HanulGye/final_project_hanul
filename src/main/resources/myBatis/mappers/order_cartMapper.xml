@@ -33,4 +33,19 @@
 		</choose> 
 		where id_cart_order = #{id_cart_order}
 	</update>
+	<insert id="cartInsert" parameterType="CartDTO">
+		insert into order_cart values(
+			'C-'||CART_SEQ.nextval||'-'||to_char(systimestamp, 'SSFF'),
+			#{id_product}, 
+			<choose>
+				<when test="id_option_product == 0">
+				null,
+				</when>
+				<otherwise>
+				#{id_option_product},
+				</otherwise>
+			</choose>
+			1, #{id_member}, null, sysdate
+		)
+	</insert>
 </mapper>  

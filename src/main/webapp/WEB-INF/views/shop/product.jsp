@@ -2,7 +2,6 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
-<%! private HttpServletRequest request; %>
 <!DOCTYPE html>
 <html>
 
@@ -32,7 +31,7 @@
 
   </head>
 
-  <body id="page-top">
+  <body class="nanum_onlyFont">
 	<%@include file="/WEB-INF/views/temp/header.jsp"%>
 
     
@@ -109,6 +108,9 @@
 		<div class="col-lg-3">
          	<div class="card">
 			  <div class="card-body card_bottom_margin text-left ml-3">
+			  	<form action="${pageContext.request.contextPath}/order/cart/insert" method="post">
+			  		<input type="hidden" value="${product[0].id_product}" name="id_product">
+			  		<input type="hidden" value="${login_info.id_member}" name="id_member">
 				<p class="my-4 font-weight-bold">[${product[0].platform}]&nbsp;${product[0].name}</p>
 				<table class="mt-4 font_sizing" style="width: 100%">
 					<tbody>
@@ -136,13 +138,12 @@
 					</tbody>
 				</table>
 				<p class="mt-4 font_sizing">옵션</p>
-      			<select class="form-control form-control-sm mb-4 font_sizing" id="opt_select">			
-		  			<!-- 옵션이 가격이 0원인데 골라야 하는 경우에 어떻게 하지..? -->
+      			<select class="form-control form-control-sm mb-4 font_sizing" id="opt_select" name="id_option_product">			
 		  			<c:if test="${product[0].selOption.name ne '옵션 없음'}">
-		  				<option selected="selected" title="옵션 없음" value="0">[옵션] 옵션 없음 / 0</option>
+		  				<option selected="selected" title="0" value="0">[옵션] 옵션 없음 / 0</option>
 		  			</c:if>
 		  					<c:forEach items="${product}" var="dto">
-			  				<option title="${dto.selOption.name}" value="${dto.selOption.price}">[옵션] ${dto.selOption.name}&nbsp;/&nbsp;${dto.selOption.price}</option>
+			  				<option title="${dto.selOption.price}" value="${dto.selOption.id_option_product}" class="">[옵션] ${dto.selOption.name}&nbsp;/&nbsp;${dto.selOption.price}</option>
 		  					</c:forEach> 	
 				</select>
 				<table class="mt-3" style="width: 100%">
@@ -161,7 +162,7 @@
 						</tr>
 						<tr>
 							<td class="pt-1" colspan="2">
-								<button type="button" class="rounded btn btn-secondary btn-block">
+								<button type="submit" class="rounded btn btn-secondary btn-block">
 									<i class="fa fa-shopping-cart" aria-hidden="true"></i>
 									&nbsp;장바구니
 								</button>
@@ -169,6 +170,7 @@
 						</tr>
 					</tbody>
 				</table>
+			  	</form>
 			  </div>
 			</div>
 			
@@ -392,14 +394,14 @@
 						</colgroup>
 						<tr class="border_bottom_gray">
 							<td><i class="fas fa-question"></i></td>
-							<td>록맨은 몇살인가요?</td>
+							<td>Question?</td>
 							<td class="text-right">19/01/06</td>
 						</tr>
 						<tr><td>&nbsp;</td></tr>
 						<!-- 문의 글 한 묶음  -->
 						<tr class="border_bottom_gray">
 							<td><i class="far fa-comment"></i></td>
-							<td>저도 잘 모르겠네요.</td>
+							<td>Answer.</td>
 							<td class="text-right">19/01/06</td>
 						</tr>
 						<tr><td>&nbsp;</td></tr>

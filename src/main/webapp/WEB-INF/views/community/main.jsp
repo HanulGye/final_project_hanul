@@ -31,28 +31,52 @@
 
   </head>
 
-  <body id="page-top">
+  <body class="nanum_onlyFont">
 	<%@include file="/WEB-INF/views/temp/header.jsp"%>
 	<!-- navigation 끝 각 메뉴별 링크 걸어둘 때까진 냅두기 -->
 
     
     <div id="margin-top-container">
-	  <h1 class="text-center display-4 mb-5">BoardName</h1>
+	  <h1 class="text-center display-4 mb-5">What's New</h1>
       <div class="row">
 
         <div class="col-lg-2">
           <h2 class="my-4">Community</h2>
           <div class="list-group list-group-flush">
-            <a href="#" class="list-group-item list-group-item-action">Category 1</a>
-            <a href="#" class="list-group-item list-group-item-action">Category 2</a>
-            <a href="#" class="list-group-item list-group-item-action">Category 3</a>
-            <a class="list-group-item list-group-item-action nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		          Category 4
+            <a href="#" class="list-group-item list-group-item-action">Notice</a>
+            <div>
+            <a class="list-group-item list-group-item-action nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		          Review
 		       </a>
-		       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-		         <a class="dropdown-item" href="#">Playstation3</a>
-		         <a class="dropdown-item" href="#">Playstation2</a>
+		       <div class="dropdown-menu menu_dd_style" aria-labelledby="navbarDropdown1">
+		         <a class="dropdown-item" href="${pageContext.request.contextPath}/community/review/main">PlayStation4</a>
+		         <a class="dropdown-item" href="#">Switch</a>
+		         <a class="dropdown-item" href="#">XBox One</a>
 		       </div>
+            </div>
+            
+            <div>
+		    <a class="list-group-item list-group-item-action nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		          QnA
+		       </a>
+		       <div class="dropdown-menu menu_dd_style" aria-labelledby="navbarDropdown2">
+		         <a class="dropdown-item" href="#">FAQ</a>
+		         <a class="dropdown-item" href="#">1:1 QnA</a>
+		       </div>
+            </div>
+		    
+		    <div>
+		    <a class="list-group-item list-group-item-action nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		          Off-line Market
+		       </a>
+		       <div class="dropdown-menu menu_dd_style" aria-labelledby="navbarDropdown3">
+		         <a class="dropdown-item" href="#">Market1</a>
+		         <a class="dropdown-item" href="#">Market2</a>
+		         <a class="dropdown-item" href="#">Market3</a>
+		       </div>
+		    </div>
+		    
+		    <a href="#" class="list-group-item list-group-item-action">What's NEW</a>
           </div>
 
         </div>
@@ -99,7 +123,13 @@
 					</tr>
 				</thead>
 				<tbody>
-					<c:forEach var="i" begin="1" end="10" step="1">
+					<tr>
+						<td class="pl-4"><a href="${pageContext.request.contextPath}/community/article">[PS4] psn 1월의 무료게임 안내!</a></td>
+						<td class="text-center">tester</td>
+						<td class="text-center">19-01-11</td>
+						<td class="text-center">0</td>
+					</tr>
+					<c:forEach var="i" begin="1" end="9" step="1">
 					<tr>
 						<td class="pl-4">test title</td>
 						<td class="text-center">tester</td>
@@ -112,19 +142,6 @@
             
           </div>
           <!-- /.row -->
-		  <div class="mt-4">
-			 <nav aria-label="Page navigation example">
-			  <ul class="pagination justify-content-center">
-			    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-			    <li class="page-item"><a class="page-link" href="#">1</a></li>
-			    <li class="page-item active" aria-current="page">
-			      <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-			    </li>
-			    <li class="page-item"><a class="page-link" href="#">3</a></li>
-			    <li class="page-item"><a class="page-link" href="#">Next</a></li>
-			  </ul>
-			 </nav>
-	     </div>
 		
         </div>
         <!-- /.col-lg-9 -->

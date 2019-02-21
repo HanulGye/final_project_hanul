@@ -33,7 +33,7 @@
 	<c:set var="uri" value="${pageContext.request.requestURI}" />
   </head>
 
-  <body id="page-top">
+  <body class="nanum_onlyFont">
 	<%@include file="/WEB-INF/views/temp/header.jsp"%>
 	<!-- navigation 끝 각 메뉴별 링크 걸어둘 때까진 냅두기 -->
 
@@ -45,16 +45,40 @@
         <div class="col-lg-2">
           <h2 class="my-4">Community</h2>
           <div class="list-group list-group-flush">
-            <a href="#" class="list-group-item list-group-item-action">Category 1</a>
-            <a href="#" class="list-group-item list-group-item-action">Category 2</a>
-            <a href="#" class="list-group-item list-group-item-action">Category 3</a>
-            <a class="list-group-item list-group-item-action nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		          Category 4
+            <a href="#" class="list-group-item list-group-item-action">Notice</a>
+            <div>
+            <a class="list-group-item list-group-item-action nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		          Review
 		       </a>
-		       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-		         <a class="dropdown-item" href="#">Playstation3</a>
-		         <a class="dropdown-item" href="#">Playstation2</a>
+		       <div class="dropdown-menu menu_dd_style" aria-labelledby="navbarDropdown1">
+		         <a class="dropdown-item" href="${pageContext.request.contextPath}/community/review/main">PlayStation4</a>
+		         <a class="dropdown-item" href="#">Switch</a>
+		         <a class="dropdown-item" href="#">XBox One</a>
 		       </div>
+            </div>
+            
+            <div>
+		    <a class="list-group-item list-group-item-action nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		          QnA
+		       </a>
+		       <div class="dropdown-menu menu_dd_style" aria-labelledby="navbarDropdown2">
+		         <a class="dropdown-item" href="#">FAQ</a>
+		         <a class="dropdown-item" href="#">1:1 QnA</a>
+		       </div>
+            </div>
+		    
+		    <div>
+		    <a class="list-group-item list-group-item-action nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		          Off-line Market
+		       </a>
+		       <div class="dropdown-menu menu_dd_style" aria-labelledby="navbarDropdown3">
+		         <a class="dropdown-item" href="#">Market1</a>
+		         <a class="dropdown-item" href="#">Market2</a>
+		         <a class="dropdown-item" href="#">Market3</a>
+		       </div>
+		    </div>
+		    
+		    <a href="#" class="list-group-item list-group-item-action">What's NEW</a>
           </div>
 
         </div>
@@ -87,7 +111,14 @@
 			<table class="table font_sizing nanum_onlyFont mb-5">
 				<thead>
 					<tr>
-						<th colspan="2" class="text-center"><p class="mb-0 nanum">[PS4] psn 1월의 무료게임 안내!</p></th>
+					<c:choose>
+						<c:when test="${uri eq '/gameMall/WEB-INF/views//community/article.jsp'}">
+						<th colspan="2" class="text-center"><p class="mb-0 nanum">[드래곤퀘스트 XI] 공략 01</p></th>
+						</c:when>
+						<c:otherwise>
+						<th colspan="2" class="text-center"><p class="mb-0 nanum">[PS4] psn 1월의 무료게임 안내!</p></th>						
+						</c:otherwise>
+					</c:choose>
 					</tr>
 				</thead>
 				<tbody>

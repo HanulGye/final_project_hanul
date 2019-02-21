@@ -31,7 +31,7 @@
 
   </head>
 
-  <body id="page-top">
+  <body class="nanum_onlyFont">
 	<%@include file="/WEB-INF/views/temp/header.jsp"%>
 	<!-- navigation 끝 각 메뉴별 링크 걸어둘 때까진 냅두기 -->
 
@@ -43,16 +43,18 @@
         <div class="col-lg-2">
           <h2 class="my-4" id="side_menu_title">Community</h2>
           <div class="list-group list-group-flush">
-            <a href="#" class="list-group-item list-group-item-action side_menu_contents">Category 1</a>
-            <a href="#" class="list-group-item list-group-item-action side_menu_contents">Category 2</a>
-            <a href="#" class="list-group-item list-group-item-action side_menu_contents">Category 3</a>
+            <a href="#" class="list-group-item list-group-item-action">Notice</a>
             <a class="list-group-item list-group-item-action nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		          Category 4
+		          Review
 		       </a>
 		       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-		         <a class="dropdown-item side_menu_contents" href="#">Playstation3</a>
-		         <a class="dropdown-item side_menu_contents" href="#">Playstation2</a>
+		         <a class="dropdown-item" href="#">Playstation4</a>
+		         <a class="dropdown-item" href="#">Switch</a>
+		         <a class="dropdown-item" href="#">XBox One</a>
 		       </div>
+            <a href="#" class="list-group-item list-group-item-action">QnA</a>
+            <a href="#" class="list-group-item list-group-item-action">Off-line Market</a>
+            <a href="#" class="list-group-item list-group-item-action">What's New</a>
           </div>
 
         </div>

@@ -31,7 +31,7 @@
 
   </head>
 
-  <body id="page-top">
+  <body class="nanum_onlyFont">
 	<%@include file="/WEB-INF/views/temp/header.jsp"%>
 	<!-- navigation 끝 각 메뉴별 링크 걸어둘 때까진 냅두기 -->
 
@@ -93,35 +93,21 @@
 	  	  </form>
 		
           <div class="row">
-			<c:forEach var="i" begin="1" end="12" step="1">
 			<div class="col-lg-2 col-md-6 mb-4">
               <div class="card h-100">
-                <a href="#"><img class="card-img-top" src="${pageContext.request.contextPath}/resources/img/product_test_img/0090020007002.jpg" alt="" style="height: 264px;"></a>
+                <a href="#"><img class="card-img-top" src="${pageContext.request.contextPath}/resources/img/product_test_img/0090020006352.jpg" alt="" style="height: 264px;"></a>
                 <div class="card-body">
                   <h4 class="card-title">
-                    <a href="#">Item Two</a>
+                    <a class="titleSize font-weight-bold" href="${pageContext.request.contextPath}/community/review/article">드래곤 퀘스트  XI</a>
                   </h4>
-                  <a href="{{ site.url }}{{ page.url }}#disqus_thread"  data-disqus-identifier="{{ page.id }}"><i class="far fa-comments">댓글 갯수</i></a>
+                  <a href="{{ site.url }}{{ page.url }}#disqus_thread"  data-disqus-identifier="{{ page.id }}"><i class="far fa-comments">0</i></a>
                 </div>
               </div>
             </div>			
-			</c:forEach>
             
           </div>
           <!-- /.row -->
-		  <div class="mt-4">
-			 <nav aria-label="Page navigation example">
-			  <ul class="pagination justify-content-center">
-			    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-			    <li class="page-item"><a class="page-link" href="#">1</a></li>
-			    <li class="page-item active" aria-current="page">
-			      <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-			    </li>
-			    <li class="page-item"><a class="page-link" href="#">3</a></li>
-			    <li class="page-item"><a class="page-link" href="#">Next</a></li>
-			  </ul>
-			 </nav>
-	     </div>
+		  
 		
         </div>
         <!-- /.col-lg-9 -->

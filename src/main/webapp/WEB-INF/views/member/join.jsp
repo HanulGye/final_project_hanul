@@ -33,7 +33,7 @@
     <link href="${pageContext.request.contextPath}/resources/css/creative.min.css" rel="stylesheet">
   </head>
 
-  <body id="page-top">
+  <body class="nanum_onlyFont">
 	<%@include file="/WEB-INF/views/temp/header.jsp"%>
 
     

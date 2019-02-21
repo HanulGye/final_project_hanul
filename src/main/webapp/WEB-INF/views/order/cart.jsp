@@ -41,7 +41,7 @@
     </script>
   </head>
 
-  <body id="page-top">
+  <body class="nanum_onlyFont">
 	<%@include file="/WEB-INF/views/temp/header.jsp"%>
 	<!-- navigation 끝 각 메뉴별 링크 걸어둘 때까진 냅두기 -->
 

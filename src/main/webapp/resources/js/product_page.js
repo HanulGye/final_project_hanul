@@ -11,7 +11,7 @@ $(function() {
 $(function() {
 	var a = 0;	
 	$('#opt_select').on('change', function() {
-		a = $(this).val();
+		a = $('#opt_select option:selected').attr('title');
 		a *= 1;
 		var pro_price = $('#pro_price').val();
 		pro_price *= 1;

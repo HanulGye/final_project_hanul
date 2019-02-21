@@ -33,6 +33,11 @@ public class OrderController {
 		return cartService.cartSelect(id_member);
 	}
 	
+	@RequestMapping(value="find")
+	public void find() throws Exception{
+		
+	}
+	
 	@RequestMapping(value="cart", method=RequestMethod.GET)
 	public ModelAndView cartSelect(HttpServletRequest request) throws Exception{
 		MemberDTO memberDTO =  (MemberDTO) request.getSession().getAttribute("login_info");
@@ -56,5 +61,10 @@ public class OrderController {
 	@RequestMapping(value="cart/update", method=RequestMethod.GET)
 	public ModelAndView optUpdate(CartDTO cartDTO) throws Exception{
 		return cartService.optUpdate(cartDTO);
+	}
+	
+	@RequestMapping(value="cart/insert", method=RequestMethod.POST)
+	public ModelAndView cartInsert(CartDTO cartDTO) throws Exception{
+		return cartService.cartInsert(cartDTO);
 	}
 }

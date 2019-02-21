@@ -27,6 +27,7 @@ $(function() {
 		totalPrice2 = totalPrice + sPp;
 		$('#totalP').val(totalPrice2);
 		$('#view3').text(totalPrice2+' 원');
+		$('#view4').text(totalPrice2+' 원  결제하기')
 	
 });
 
