@@ -245,7 +245,7 @@
     <section class="bg-dark text-white">
       <div class="container text-center">
         <h2 class="mb-4">공략보러 가자</h2>
-        <a class="btn btn-light btn-xl sr-button" href="#">Go to Community</a>
+        <a class="btn btn-light btn-xl sr-button" href="${pageContext.request.contextPath}/community/review/main">Go to Community</a>
       </div>
     </section>
 

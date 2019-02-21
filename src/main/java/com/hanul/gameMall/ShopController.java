@@ -19,9 +19,8 @@ public class ShopController {
 	
 	@RequestMapping(value="smallCategory")
 	public ModelAndView smallCategory(HttpServletRequest request) throws Exception{
-		String val = request.getParameter("platform");
-		System.out.println(val);
-		return productService.shopList(val);
+		String platform = request.getParameter("platform");
+		return productService.shopList(platform);
 		
 	}
 	
