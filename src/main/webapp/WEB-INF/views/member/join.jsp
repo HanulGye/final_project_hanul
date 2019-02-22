@@ -12,7 +12,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Creative - Start Bootstrap Theme</title>
+    <title>GameMall</title>
 
 	<!-- kakao -->
 	<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
@@ -40,9 +40,10 @@
     <div id="margin-top-container">
 		<h1 class="text-center display-4 mb-5">Join Us</h1>
       	<form action="./join" method="post" class="pt-5 join_form_style" id="frm">
-		  <div class="form-group">
-		    <input type="email" class="form-control" placeholder="사용하실 ID를 입력해주세요.(수신가능 E-mail)" id="input_id" name="id_member">
-		    <p class="cautionText" id="idText"></p>
+		  <div class="form-group row">
+		    <input type="email" class="form-control col-lg-9 margin_mail" placeholder="사용하실 ID를 입력해주세요.(수신가능 E-mail)" id="input_id" name="id_member">
+		    <input type="button" class="btn btn-light rounded col-lg-2" id="id_chk_btn" value="중복확인">
+		    <p class="cautionText margin_mail" id="idText"></p>
 		  </div>
 		  <div class="form-group">
 		    <input type="password" class="form-control" placeholder="영문+숫자+특수문자 8~16자리(특수문자 괄호()는 사용 불가)" id="input_pw" name="pw">

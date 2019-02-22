@@ -12,7 +12,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Creative - Start Bootstrap Theme</title>
+    <title>GameMall</title>
 
     <!-- Bootstrap core CSS -->
     <link href="${pageContext.request.contextPath}/resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -110,7 +110,8 @@
 			  <div class="card-body card_bottom_margin text-left ml-3">
 			  	<form action="${pageContext.request.contextPath}/order/cart/insert" method="post">
 			  		<input type="hidden" value="${product[0].id_product}" name="id_product">
-			  		<input type="hidden" value="${login_info.id_member}" name="id_member">
+					<input type="hidden" value="${login_info.id_member}" name="id_member">
+			  			
 				<p class="my-4 font-weight-bold">[${product[0].platform}]&nbsp;${product[0].name}</p>
 				<table class="mt-4 font_sizing" style="width: 100%">
 					<tbody>

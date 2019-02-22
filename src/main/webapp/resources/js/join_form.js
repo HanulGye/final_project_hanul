@@ -2,36 +2,103 @@
 
 $(function() {
 	
+	var id_chk = 0;
 	var result = 0;
 	var result2 = 0;
 	var result3 = 0;
 	var result4 = 0;
 	var result5 = 0;
+	var message2 = '';
+	var regExpId = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+	
+	//아이디 중복 Ajax 방식 함수
+	$(function() {
+		$('#id_chk_btn').click(function() {
+			var id_member = $(input_id).val();
+			$.ajax({
+				async : true,
+				type : 'POST',
+				data : id_member,
+				url : 'join/idCheck',
+				dataType : "json",
+				contentType : "application/json; charset=UTF-8",
+				success : function(data) {
+					if(id_member.match(regExpId) != null){
+						if(data.result > 0){
+							alert("아이디가 존재합니다. 다른 아이디를 입력해주세요.");
+							$('#input_id').val('');
+						}else{
+							alert("해당 id는 사용 가능합니다.");
+							message2 = '해당 Id는 사용 가능합니다.';
+							$('#idText').removeClass('text-danger');
+							$('#idText').addClass('text-success');
+							$('#idText').text(message2);
+							$('#idText').attr('style','display:block');
+							//$('#input_pw').focus();
+							id_chk = 1;
+						}
+						
+					}else{
+						message2 = 'Id는 이메일 형식으로 입력해주십시오.';
+						alert(message2);
+						$('#idText').removeClass('text-success');
+						$('#idText').addClass('text-danger');
+						$('#idText').text(message2);
+						$('#idText').attr('style','display:block');
+						id_chk = 0;
+						result = 0;
+					}
+				},
+				error : function(error) {
+					alert("입력값이 잘못되었습니다.");
+					$('#input_id').focus();
+				}
+			});
+			
+		});
+	});
+	
 	
 	
 	//아래의 5개의 함수는 각각 입력값에 대한 유효성 검사 역할
 	//아이디 중복여부 검사 남음(2019-02-08)
 	$(function() {
-		var regExpId = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+		$('#input_id').focus(function() {
+			id_chk = 0;
+		});
 		$('#input_id').blur(function() {
 			var idVal = $('#input_id').val();
 			var message = '해당 Id는 사용 가능합니다.';
 			if(idVal.match(regExpId) != null){
-				$('#idText').removeClass('text-danger');
-				$('#idText').addClass('text-success');
-				$('#idText').text(message);
-				$('#idText').attr('style','display:block');
-				result = 1;
-				return result;
+				if(id_chk==1){
+					$('#idText').removeClass('text-danger');
+					$('#idText').addClass('text-success');
+					$('#idText').text(message);
+					$('#idText').attr('style','display:block');
+					result = 1;
+					return result;
+				}else{
+					message = 'Id 중복검사를 실행해주십시오.'
+					alert(message);
+					$('#idText').removeClass('text-success');
+					$('#idText').addClass('text-danger');
+					$('#idText').text(message);
+					$('#idText').attr('style','display:block');
+					result = 1;
+					id_chk = 0;
+					return result;
+				}
 			}else{
 				message = 'Id는 이메일 형식으로 입력해주십시오.';
 				$('#idText').removeClass('text-success');
 				$('#idText').addClass('text-danger');
 				$('#idText').text(message);
 				$('#idText').attr('style','display:block');
+				id_chk = 0;
 				result = 0;
 				return result;
-			}
+			}	
+				
 		});
 		
 	})
@@ -132,7 +199,7 @@ $(function() {
 	//submit event
 	$(function() {
 		$('#frm').submit(function(event) {
-			if(result==1 && result2==1 && result3==1 && result4==1 && result5==1 && $('#defaultCheck1').is(':checked') && $('#defaultCheck2').is(':checked')){
+			if(id_chk==1 && result==1 && result2==1 && result3==1 && result4==1 && result5==1 && $('#defaultCheck1').is(':checked') && $('#defaultCheck2').is(':checked')){
 				//checkbox의 경우 check 되어있지 않으면 submit할 때 밸류가 넘어가지 않음.
 				//이럴 때는 hidden tag 사용 
 				if($('#defaultCheck3').is(':checked')){
@@ -158,6 +225,8 @@ $(function() {
 		
 	})
 
+
+	
 })
 
 

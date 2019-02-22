@@ -1,5 +1,8 @@
 package com.hanul.gameMall;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -7,8 +10,10 @@ import javax.servlet.http.HttpSession;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.Errors;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -76,6 +81,20 @@ public class MemberController {
 			return "member/find"; 
 		}
 		
+	}
+	
+	@RequestMapping(value="join/idCheck", method=RequestMethod.POST)
+	@ResponseBody
+	public Map<Object, Object> idcheck(@RequestBody String id_member) throws Exception{
+		int result = 0;
+		System.out.println(id_member);
+		Map<Object, Object> map = new HashMap<Object, Object>();
+		result = memberService.idCheck(id_member);
+		
+		System.out.println(result);
+		//0이면 가능 1이면 불가능
+		map.put("result", result);
+		return map;
 	}
 	
 }

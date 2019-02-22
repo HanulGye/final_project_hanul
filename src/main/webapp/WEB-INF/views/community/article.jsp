@@ -13,7 +13,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Creative - Start Bootstrap Theme</title>
+    <title>GameMall</title>
 
     <!-- Bootstrap core CSS -->
     <link href="${pageContext.request.contextPath}/resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -78,7 +78,7 @@
 		       </div>
 		    </div>
 		    
-		    <a href="#" class="list-group-item list-group-item-action">What's NEW</a>
+		    <a href="${pageContext.request.contextPath}/community/main" class="list-group-item list-group-item-action">What's NEW</a>
           </div>
 
         </div>
@@ -142,7 +142,20 @@
 						</td>
 					</tr>
 					<tr>
-						<td colspan="2" class="text-right font-weight-bold">목록보기</td>
+						<td colspan="2" class="text-right font-weight-bold">
+							<c:choose>
+								<c:when test="${uri eq '/gameMall/WEB-INF/views//community/article.jsp'}">
+									<a href="${pageContext.request.contextPath}/community/review/main">
+									목록보기
+									</a>								
+								</c:when>
+								<c:otherwise>
+									<a href="${pageContext.request.contextPath}/community/main">
+									목록보기
+									</a>
+								</c:otherwise>
+							</c:choose>
+						</td>
 					</tr>
 				</tbody>
 			</table>

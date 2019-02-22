@@ -12,7 +12,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Creative - Start Bootstrap Theme</title>
+    <title>GameMall</title>
 
     <!-- Bootstrap core CSS -->
     <link href="${pageContext.request.contextPath}/resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -87,7 +87,7 @@
 
           <form class="form-inline mb-4" id="go_to_top">
           	<div class="mx-auto mb-4">
-		    	<input class="form-control form-control-lg mr-sm-2" type="search" placeholder="공략을 보자" aria-label="Search">
+		    	<input class="form-control form-control-lg mr-sm-2" type="search" placeholder="공략 타이틀 검색" aria-label="Search">
 		    	<button class="btn btn-dark my-2 my-sm-0" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>          	
           	</div>
 	  	  </form>

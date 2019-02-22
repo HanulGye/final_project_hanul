@@ -29,17 +29,17 @@ public class MemberService {
 		return modelAndView;
 	}
 	
-	public ModelAndView idCheck(String id_member) throws Exception{
-		modelAndView = new ModelAndView();
+	public int idCheck(String id_member) throws Exception{
+		
 		String searchedId = memberDAO.idCheck(id_member);
+		System.out.println(searchedId);
 		int result =0;
 		if(searchedId!=null) {
 			result = 1;
 		}
 		
-		modelAndView.addObject("search_result", result);
 		
-		return modelAndView;
+		return result;
 	}
 	
 	public ModelAndView login(MemberDTO memberDTO, HttpServletRequest request) throws Exception{

@@ -45,7 +45,6 @@
 				#{id_option_product},
 				</otherwise>
 			</choose>
-			1, #{id_member}, null, sysdate
-		)
+			1, #{id_member}, null, sysdate)
 	</insert>
 </mapper>  

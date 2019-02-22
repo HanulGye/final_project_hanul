@@ -48,7 +48,7 @@
                                     <a href="login.html">공지사항 팝업 설정</a>
                                 </li>
                                 <li>
-                                    <a href="login.html">FAQ (위치 생각해볼 것)</a>
+                                    <a href="login.html">FAQ</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -57,10 +57,10 @@
                             <a href=""><i class="fas fa-truck fa-fw"></i> 주문 관리<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="blank.html">Blank Page</a>
+                                    <a href="#">Blank Page</a>
                                 </li>
                                 <li>
-                                    <a href="login.html">Login Page</a>
+                                    <a href="#">Login Page</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -76,7 +76,7 @@
                                     <a href="${pageContext.request.contextPath}/admin/product/stock">재고 리스트</a>
                                 </li>
                                 <li>
-                                    <a href="blank.html">상품 삭제</a>
+                                    <a href="#">상품 삭제</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -87,10 +87,10 @@
                             <a href=""><i class="fas fa-chart-bar fa-fw"></i> 총계 정보<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="blank.html">매출액 열람</a>
+                                    <a href="#">매출액 열람</a>
                                 </li>
                                 <li>
-                                    <a href="login.html">사이트 내 이용빈도</a>
+                                    <a href="#">사이트 내 이용빈도</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -100,10 +100,10 @@
                             <a href=""><i class="fas fa-users-cog fa-fw"></i> 회원 관리<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="blank.html">회원 리스트</a>
+                                    <a href="#">회원 리스트</a>
                                 </li>
                                 <li>
-                                    <a href="login.html">Login Page</a>
+                                    <a href="#">메일링 서비스</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -113,25 +113,25 @@
                             <a href=""><i class="fas fa-columns fa-fw"></i> 게시판 관리<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="blank.html">글 등록</a>
+                                    <a href="#">글 등록</a>
                                 </li>
                                 <li>
-                                    <a href="blank.html">게시글 관리<span class="fa arrow"></span></a>
+                                    <a href="#">게시글 관리<span class="fa arrow"></span></a>
                                     <ul class="nav nav-third-level">
                                         <li>
-                                            <a href="blank.html">공지사항</a>
+                                            <a href="#">공지사항</a>
                                         </li>
                                         <li>
-                                            <a href="blank.html">리뷰</a>
+                                            <a href="#">리뷰</a>
                                         </li>
                                         <li>
-                                            <a href="blank.html">1:1 문의</a>
+                                            <a href="#">1:1 문의</a>
                                         </li>
                                         <li>
-                                            <a href="blank.html">매장 게시판</a>
+                                            <a href="#">매장 게시판</a>
                                         </li>
                                         <li>
-                                            <a href="blank.html">새 소식</a>
+                                            <a href="#">새 소식</a>
                                         </li>
                                     </ul>
                                     <!-- /.nav-third-level -->

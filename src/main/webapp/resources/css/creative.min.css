@@ -386,6 +386,11 @@ header.masthead p {
 }
 /* Join form */
 
+.margin_mail{
+	margin-left:1.9%;
+	margin-right: 4%;
+}
+
 .join_form_style{
 	width: 45%;
 	margin-right: auto;

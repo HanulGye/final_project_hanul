@@ -14,7 +14,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Creative - Start Bootstrap Theme</title>
+    <title>GameMall</title>
 
 	<!-- kakao -->
 	<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
