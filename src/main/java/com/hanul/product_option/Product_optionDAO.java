@@ -24,6 +24,10 @@ public class Product_optionDAO {
 		return sqlSession.selectList(NAMESPACE+"cartSelect", id_member);
 	}
 	
+	public List<Product_optionDTO> cartSelect_guest(String id_guest) throws Exception{
+		return sqlSession.selectList(NAMESPACE+"cartSelect_guest", id_guest);
+	}
+	
 	public List<Product_optionDTO> cartOptSel(String id_cart_order) throws Exception{
 		return sqlSession.selectList(NAMESPACE+"cartOptSel", id_cart_order);
 	}

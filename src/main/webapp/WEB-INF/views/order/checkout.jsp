@@ -53,9 +53,18 @@
 			    </ul>
 			  </div>
 			  <div class="card-body text-left ml-3">
-				<p>${login_info.name}</p>
-				<p>${login_info.phone}</p>
-				<p>${login_info.id_member}</p>
+				<c:choose>
+					<c:when test="${login_info ne null}">
+						<p>${login_info.name}</p>
+						<p>${login_info.phone}</p>
+						<p>${login_info.id_member}</p>
+					</c:when>
+					<c:when test="${guest_info ne null}">
+						<input type="text" placeholder="이름을 입력해주세요.">
+						<input type="text" placeholder="전화번호를 입력해주세요.">
+						<input type="text" placeholder="이메일을 입력해주세요.">
+					</c:when>
+				</c:choose>
 			  </div>
 			</div>
 			

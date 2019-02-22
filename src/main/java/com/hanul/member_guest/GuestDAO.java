@@ -12,8 +12,8 @@ public class GuestDAO {
 	private SqlSession sqlSession;
 	private static final String NAMESPACE ="guestMapper.";
 	
-	public int insert_first() throws Exception{
-		return sqlSession.insert(NAMESPACE+"insert_first");
+	public int insert_first(String id_guest) throws Exception{
+		return sqlSession.insert(NAMESPACE+"insert_first", id_guest);
 	}
 	
 	

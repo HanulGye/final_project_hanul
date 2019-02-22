@@ -34,7 +34,6 @@
   <body class="nanum_onlyFont">
 	<%@include file="/WEB-INF/views/temp/header.jsp"%>
 
-    
     <div id="margin-top-container">
 
       <div class="row">
@@ -110,7 +109,14 @@
 			  <div class="card-body card_bottom_margin text-left ml-3">
 			  	<form action="${pageContext.request.contextPath}/order/cart/insert" method="post">
 			  		<input type="hidden" value="${product[0].id_product}" name="id_product">
-					<input type="hidden" value="${login_info.id_member}" name="id_member">
+					<c:choose>
+						<c:when test="${login_info eq null}">
+							<input type="hidden" value="${guest_info}" name="id_guest">
+						</c:when>
+						<c:otherwise>
+							<input type="hidden" value="${login_info.id_member}" name="id_member">
+						</c:otherwise>
+					</c:choose>
 			  			
 				<p class="my-4 font-weight-bold">[${product[0].platform}]&nbsp;${product[0].name}</p>
 				<table class="mt-4 font_sizing" style="width: 100%">

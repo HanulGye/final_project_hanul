@@ -70,7 +70,14 @@
 			    <tr>
 			      <th colspan="4">
 			      	<form action="./cart/delAll" method="post">
-			      		<input type="hidden" name="id_member" value="${login_info.id_member}">
+			      		<c:choose>
+			      			<c:when test="${login_info ne null}">
+					      		<input type="hidden" name="id_member" value="${login_info.id_member}">
+			      			</c:when>
+			      			<c:otherwise>
+			      				<input type="hidden" name="id_guest" value="${guest_info}">
+			      			</c:otherwise>
+			      		</c:choose>
 						<button type="submit" class="rounded btn btn-secondary btn-sm">
 			  				전체 삭제
 						</button>
@@ -182,7 +189,9 @@
 							<input type="hidden" id="totalP">
 						</tr>
 						<tr>
-							<td class="pt-3" colspan="2"><button type="button" class="rounded btn btn-danger btn-block">주문하기</button></td>						
+							<td class="pt-3" colspan="2">
+								<button type="button" class="rounded btn btn-danger btn-block" onclick="window.location.href='${pageContext.request.contextPath}/order/checkout'">주문하기</button>
+							</td>						
 						</tr>
 					</tbody>
 				</table>

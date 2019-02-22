@@ -1,10 +1,13 @@
 package com.hanul.gameMall;
 
 import java.text.DateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Locale;
+import java.util.Random;
 
 import javax.inject.Inject;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -42,6 +45,15 @@ public class HomeController {
 		
 		model.addAttribute("serverTime", formattedDate );
 		
+		if(request.getSession().getAttribute("login_info")==null && request.getSession().getAttribute("guest_info")==null) {
+			Random random = new Random();
+			String id_guest = "G-"+random.nextInt(10000);
+			int result = guestDAO.insert_first(id_guest);
+			if(result>0) {
+				request.getSession().setAttribute("guest_info", id_guest);
+			}
+			
+		}
 		
 		return "home";
 	}

@@ -15,11 +15,31 @@
 		where m.id_member = #{id_member}
 		order by c.reg_date asc
 	</select>
+	<select id="cartSelect_guest" parameterType="String" resultType="CartDTO">
+		select c.id_cart_order, c.quantity 
+		from order_cart c
+		left join product p
+		on c.id_product = p.id_product
+		left join guest g
+		on c.id_guest = g.id_guest
+		left join product_option opt
+		on c.id_option_product = opt.id_option_product
+		where g.id_guest = #{id_guest}
+		order by c.reg_date asc
+	</select>
 	<delete id="cartDel" parameterType="String">
 		delete order_cart where id_cart_order = #{id_cart_order}
 	</delete>
-	<delete id="cartDelAll" parameterType="String">
-		DELETE order_cart where id_member = #{id_member}
+	<delete id="cartDelAll" parameterType="HashMap">
+		DELETE order_cart 
+		<where>
+			<if test="id_member!=null">
+			id_member = #{id_member}
+			</if>
+			<if test="id_guest!=null">
+			id_guest = #{id_guest}
+			</if>
+		</where>
 	</delete>
 	<update id="optUpdate" parameterType="CartDTO">
 		update order_cart
@@ -45,6 +65,15 @@
 				#{id_option_product},
 				</otherwise>
 			</choose>
-			1, #{id_member}, null, sysdate)
+			1,
+			<choose>
+				<when test="id_member == null">
+				null, #{id_guest}, sysdate
+				</when>
+				<otherwise>
+				#{id_member}, null, sysdate
+				</otherwise>
+			</choose>
+			)
 	</insert>
 </mapper>  

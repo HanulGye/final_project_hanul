@@ -25,12 +25,17 @@ public class OrderController {
 	
 	@RequestMapping(value="checkout")
 	public ModelAndView checkout(HttpServletRequest request) throws Exception{
-		MemberDTO memberDTO =  (MemberDTO) request.getSession().getAttribute("login_info");
-		String id_member = "";
-		if(memberDTO!=null) {
-			id_member = memberDTO.getId_member();			
+		if(request.getSession().getAttribute("login_info")!=null) {
+			MemberDTO memberDTO =  (MemberDTO) request.getSession().getAttribute("login_info");
+			String id_member = "";
+			if(memberDTO!=null) {
+				id_member = memberDTO.getId_member();			
+			}	
+			return cartService.cartSelect(id_member);
+		}else {
+			String id_guest = (String)request.getSession().getAttribute("guest_info");
+			return cartService.cartSelect_guest(id_guest);
 		}
-		return cartService.cartSelect(id_member);
 	}
 	
 	@RequestMapping(value="find")
@@ -40,12 +45,20 @@ public class OrderController {
 	
 	@RequestMapping(value="cart", method=RequestMethod.GET)
 	public ModelAndView cartSelect(HttpServletRequest request) throws Exception{
-		MemberDTO memberDTO =  (MemberDTO) request.getSession().getAttribute("login_info");
-		String id_member = "";
-		if(memberDTO!=null) {
-			id_member = memberDTO.getId_member();			
+		//회원인지 게스트인지 확인
+		if(request.getSession().getAttribute("login_info")!=null) {
+			MemberDTO memberDTO =  (MemberDTO) request.getSession().getAttribute("login_info");
+			String id_member = "";
+			if(memberDTO!=null) {
+				id_member = memberDTO.getId_member();			
+			}	
+			return cartService.cartSelect(id_member);
+		}else {
+			String id_guest = (String)request.getSession().getAttribute("guest_info");
+			System.out.println(id_guest);
+			return cartService.cartSelect_guest(id_guest);
 		}
-		return cartService.cartSelect(id_member);
+		
 	}
 	
 	@RequestMapping(value="cart/del", method=RequestMethod.POST)
@@ -54,8 +67,10 @@ public class OrderController {
 	}
 	
 	@RequestMapping(value="cart/delAll", method=RequestMethod.POST)
-	public ModelAndView cartDelAll(String id_member) throws Exception{
-		return cartService.cartDelAll(id_member);
+	public ModelAndView cartDelAll(String id_member, String id_guest) throws Exception{
+		System.out.println("id_member :"+id_member);
+		System.out.println("id_guest :"+id_guest);
+		return cartService.cartDelAll(id_member, id_guest);
 	}
 	
 	@RequestMapping(value="cart/update", method=RequestMethod.GET)

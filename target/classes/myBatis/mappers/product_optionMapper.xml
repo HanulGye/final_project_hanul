@@ -19,8 +19,24 @@
 		where m.id_member = #{id_member}
 		order by c.reg_date asc
   	</select>
+  	<select id="cartSelect_guest" parameterType="String" resultType="Product_optionDTO">
+  		select opt.name, opt.price 
+  		from order_cart c
+		left join product p
+		on c.id_product = p.id_product
+		left join guest g
+		on c.id_guest = g.id_guest
+		left join product_option opt
+		on c.id_option_product = opt.id_option_product
+		where g.id_guest = #{id_guest}
+		order by c.reg_date asc
+  	</select>
   	<select id="cartOptSel" parameterType="String" resultType="Product_optionDTO">
-  		select opt.* from product p, product_option opt, order_cart c where p.id_product = opt.id_product and p.id_product = c.id_product and c.id_cart_order = #{id_cart_order}
+  		select opt.* from 
+  		product p, product_option opt, order_cart c 
+  		where p.id_product = opt.id_product 
+  		and p.id_product = c.id_product 
+  		and c.id_cart_order = #{id_cart_order}
   	</select>
   	<select id="selectOne" parameterType="ProductDTO" resultType="Product_optionDTO">
 		select opt.id_option_product, opt.name, opt.price

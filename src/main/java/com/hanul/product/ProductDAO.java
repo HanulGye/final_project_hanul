@@ -26,12 +26,17 @@ public class ProductDAO {
 		return sqlSession.selectList(NAMESPACE+"selectList");
 	}
 	
+	
 	public List<ProductDTO> selectListBySearch(String platform) throws Exception{
 		return sqlSession.selectList(NAMESPACE+"selectListBySearch", platform);
 	}
 	
 	public List<ProductDTO> cartSelect(String id_member) throws Exception{
 		return sqlSession.selectList(NAMESPACE+"cartSelect", id_member);
+	}
+	
+	public List<ProductDTO> cartSelect_guest(String id_guest) throws Exception{
+		return sqlSession.selectList(NAMESPACE+"cartSelect_guest", id_guest);
 	}
 	
 	public List<ProductDTO> shopList(String platform) throws Exception{

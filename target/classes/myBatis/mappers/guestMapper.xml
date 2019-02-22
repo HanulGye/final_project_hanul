@@ -3,8 +3,8 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="guestMapper">
-	<insert id="insert_first">
-		insert into guest values('G-'||GUEST_SEQ.nextval||'-'||to_char(systimestamp, 'SSFF'), null, null, null)
+	<insert id="insert_first" parameterType="String">
+		insert into guest values(#{id_guest}, null, null, null)
 	</insert>
 	<select id="select_id_guest" parameterType="String">
 		select id_guest from guest where id_guest = #{id_guest}
